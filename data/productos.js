@@ -318,7 +318,7 @@ Vegetales: Probá espolvorear unas batatas o choclos antes de asarlos.
         nombre: "Curry Colombo",
         categoria: "blends",
         emoji: "🥥",
-        imagen: "products/Curri Colombo.jpg",
+        imagen: "products/Curry Colombo.png",
         tagline: "El Caribe francés en estado puro.",
         descripcion: `🌴 CURRY COLOMBO — Las Antillas Francesas Sabores del Caribe · Rojo Malbec
 
@@ -372,7 +372,7 @@ Snacks: ¡Dale un giro único a tus pochoclos, frutos secos o chips!
         nombre: "Za'atar",
         categoria: "blends",
         emoji: "🫓",
-        imagen: "products/zaatar_rojo_malbec.png",
+        imagen: "products/Za,atar.png",
         tagline: "El perfume del Levante.",
         descripcion: `🌿 Za'atar  | Blend Auténtico & Vibrante
 
@@ -479,7 +479,7 @@ Ideal para: Cocciones largas, fondos, guisos de legumbres, arroces, salteados de
         nombre: "Pimienta Roja y Pimienta Larga",
         categoria: "pimientas",
         emoji: "❤️",
-        imagen: "products/pimienta_roja_v2.png",
+        imagen: "products/Pimienta Roja y Pimienta Larga.png",
         tagline: "Fuego suave y dulzura especiada",
         descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición Pimientas · Rojo Malbec
 
