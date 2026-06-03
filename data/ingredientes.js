@@ -110,7 +110,8 @@ const INGREDIENTES = [
   {
     "id": 9,
     "nombre": "Canela en Polvo",
-    "icono": "🍂",
+    "icono": "🌱",
+    "imagen": "images/ingredientes/cuenco_canela.png",
     "familia": "Lauraceae",
     "origen": "Sri Lanka (Ceilán)",
     "descripcion": "Corteza del árbol de canela. Perfil dulce-especiado.",
@@ -519,6 +520,7 @@ const INGREDIENTES = [
     "id": 41,
     "nombre": "Ajedrea",
     "icono": "🌿",
+    "imagen": "images/ingredientes/cuenco_ajedrea.png",
     "familia": "Lamiaceae",
     "origen": "Mediterráneo, Cáucaso",
     "descripcion": "Hierba de los sátiros. Perfil picante-herbáceo.",
@@ -934,7 +936,8 @@ const INGREDIENTES = [
   {
     "id": 78,
     "nombre": "Comino Molido",
-    "icono": "🌰",
+    "icono": "🌱",
+    "imagen": "images/ingredientes/cuenco_comino.png",
     "familia": "Apiaceae",
     "origen": "Levante, Egipto",
     "descripcion": "Comino en polvo. Aroma más intenso que en grano.",
@@ -1054,7 +1057,8 @@ const INGREDIENTES = [
   {
     "id": 90,
     "nombre": "Nuez Moscada Molida",
-    "icono": "🥜",
+    "icono": "🌰",
+    "imagen": "images/ingredientes/cuenco_nuez_moscada.png",
     "familia": "Myristicaceae",
     "origen": "Islas Banda",
     "descripcion": "Nuez moscada en polvo. Lista para usar.",
