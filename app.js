@@ -299,7 +299,7 @@ function renderIngredients() {
 
         return `
             <div class="ingredient-card ${isSelected ? 'selected' : ''}" data-id="${ing.id}">
-                <button class="info-btn" onclick="event.stopPropagation(); openIngredientInfo(${ing.id})">ℹ️</button>
+                <button class="info-btn" onclick="event.stopPropagation(); openIngredientInfo(${ing.id})">i</button>
                 ${mediaHtml}
                 <div class="ingredient-name">${ing.nombre}</div>
                 <div style="margin-top:5px; display:flex; flex-wrap:wrap; gap:4px; justify-content:center;">
@@ -323,7 +323,7 @@ function openIngredientInfo(id) {
     document.getElementById('modalTitle').textContent = ing.nombre;
     document.getElementById('modalTags').innerHTML = ing.perfiles.map(p => `<span class="profile-tag">${PERFIL_ICONS[p] || ''} ${p}</span>`).join('');
     document.getElementById('modalDesc').textContent = ing.descripcion;
-    document.getElementById('modalMaridaje').textContent = "Ideal para: " + ing.maridaje;
+    document.getElementById('modalMaridaje').textContent = ing.maridaje ? "Ideal para: " + ing.maridaje : "";
     
     elements.ingredientModal?.classList.add('active');
 }
