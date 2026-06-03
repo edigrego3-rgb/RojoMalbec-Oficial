@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Rojo Malbec</title>
+    <style>
+        :root {
+            --wine: #722F37;
+            --wine-dark: #4A1C24;
+            --kraft: #D4C4B7;
+            --text: #2C2C2C;
+            --bg: #F5EFE6;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+        .admin-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--wine);
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="url"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        button {
+            background-color: var(--wine);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: var(--wine-dark);
+        }
+        #statusMessage {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <h1>📝 Publicar en el Blog</h1>
+    
+    <div class="form-group">
+        <label>Título del Artículo</label>
+        <input type="text" id="postTitle" placeholder="Ej: Receta de Ojo de Bife al Malbec">
+    </div>
+
+    <div class="form-group">
+        <label>Resumen Corto</label>
+        <input type="text" id="postExcerpt" placeholder="Breve descripción que aparece en la tarjeta...">
+    </div>
+
+    <div class="form-group">
+        <label>URL de la Foto</label>
+        <input type="url" id="postImage" placeholder="https://ejemplo.com/foto.jpg">
+        <small style="color: #666;">Por ahora, pegá un link a cualquier foto en internet.</small>
+    </div>
+
+    <div class="form-group">
+        <label>Contenido Completo (Admite HTML)</label>
+        <textarea id="postContent" placeholder="Escribí tu receta acá..."></textarea>
+    </div>
+
+    <button id="btnPublish">Publicar Artículo</button>
+
+    <div id="statusMessage"></div>
+</div>
+
+<!-- Firebase Compat SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+<script src="admin.js"></script>
+</body>
+</html>

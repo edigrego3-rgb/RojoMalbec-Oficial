@@ -1,0 +1,4154 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#722F37">
+    <title>Rojo Malbec - Blends de Especias y Tés</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+/* ============================================
+   ROJO MALBEC E-COMMERCE - STYLES
+   Design System: Wine Red + Cream + Kraft
+   Font: Copperplate Gothic Bold (Titles) + Montserrat (Text)
+   ============================================ */
+
+:root {
+    --wine: #722F37;
+    --wine-dark: #4a1c20;
+    --wine-light: #9a4850;
+    --cream: #FDFCF8;
+    --kraft: #D2B48C;
+    --kraft-light: #E8DCC8;
+    --gold: #C9A227;
+    --text: #2c1e1a;
+    --text-light: #666;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+    --radius-lg: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Typography Overrides */
+h1, h2, h3, .nav-title, .hero-title, .screen-title {
+    font-family: 'Copperplate Gothic Bold', 'Copperplate', 'Cinzel', 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+/* ============================================
+   TOP NAVBAR (E-commerce Header)
+   ============================================ */
+.top-navbar {
+    background: linear-gradient(135deg, var(--wine) 0%, var(--wine-dark) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-title {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: none; /* Hidden on mobile */
+    gap: 20px;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: white;
+}
+
+.nav-cart {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--gold);
+    color: var(--wine-dark);
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-btn {
+    display: block; /* Visible on mobile */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Mobile Dropdown Menu */
+.mobile-menu {
+    display: none;
+    background: var(--wine-dark);
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-link {
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-link.active {
+    font-weight: bold;
+    color: var(--gold);
+}
+
+/* ============================================
+   APP CONTAINER & SCREENS
+   ============================================ */
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 80px);
+    position: relative;
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+.label-section {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px dashed var(--wine);
+    position: relative;
+    overflow: hidden;
+}
+
+.label-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--wine);
+}
+
+.label-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.label-section-header h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.label-icon {
+    font-size: 1.5rem;
+}
+
+.label-example {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label-example-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+}
+
+.label-example-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.label-section .form-group {
+    margin-bottom: 15px;
+}
+
+.label-section .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.screen-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.screen-title {
+    font-size: 1.8rem;
+    color: var(--wine);
+    letter-spacing: 0.5px;
+}
+
+.screen-subtitle {
+    color: var(--text-light);
+    margin-top: 5px;
+    font-size: 0.95rem;
+}
+
+.btn-back {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--kraft-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   HERO SECTION (Inicio)
+   ============================================ */
+.hero-section {
+    position: relative;
+    height: 400px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 40px;
+    background-image: url('images/portada1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5); /* Oscurece la foto para leer el texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+.hero-btn {
+    width: auto !important;
+    padding: 15px 40px !important;
+    font-size: 1.1rem !important;
+}
+
+.welcome-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--wine);
+    margin-bottom: 15px;
+}
+
+.home-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   ABOUT & BLOG SECTIONS
+   ============================================ */
+.about-content {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.about-content h3 {
+    color: var(--wine-light);
+    margin-bottom: 10px;
+    margin-top: 25px;
+    font-family: 'Playfair Display', serif; /* Mantener este para sub-títulos si gusta, o cambiar a Copperplate */
+}
+
+.about-content h3:first-child {
+    margin-top: 0;
+}
+
+.about-content p {
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.placeholder-image {
+    background: var(--kraft-light);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.blog-info {
+    padding: 20px;
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.blog-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--wine);
+}
+
+.blog-excerpt {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.btn-small {
+    padding: 8px 15px !important;
+    font-size: 0.8rem !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, var(--wine) 0%, var(--wine-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(114, 47, 55, 0.4);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--wine);
+    border: 2px solid var(--wine);
+    border-radius: var(--radius);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    padding: 18px 24px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1eb355;
+}
+
+/* ============================================
+   FILTERS & GRIDS (Products & Ingredients)
+   ============================================ */
+.filters-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.filters-row::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-chip {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background: var(--kraft-light);
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-chip.active {
+    background: var(--wine);
+    color: white;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: 0 2px 5px var(--shadow);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card.active {
+    border-color: var(--wine);
+    background: var(--kraft-light);
+}
+
+.profile-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.profile-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.products-grid, .ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 15px;
+    box-shadow: 0 2px 8px var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 12px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-emoji { font-size: 2.5rem; }
+
+.product-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: var(--text);
+    line-height: 1.2;
+    min-height: 2.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-tagline {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+
+/* Ingredient Card */
+.ingredient-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ingredient-card.selected {
+    border: 3px solid var(--wine);
+}
+
+.ingredient-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    background: var(--kraft-light);
+}
+
+.ingredient-info {
+    padding: 12px;
+}
+
+.ingredient-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.ingredient-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    background: var(--kraft-light);
+    border-radius: 10px;
+    font-size: 0.7rem;
+    color: var(--text-light);
+}
+
+/* ============================================
+   BLEND REVIEW & FORMS
+   ============================================ */
+.blend-empty {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-light);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.blend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blend-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.blend-item-remove {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #f5f5f5;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.blend-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--kraft-light);
+    border-radius: var(--radius);
+}
+
+.summary-title { font-weight: 600; margin-bottom: 10px; }
+.summary-count { color: var(--text-light); font-size: 0.9rem; }
+.profile-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.profile-tag {
+    padding: 4px 10px;
+    background: var(--wine);
+    color: white;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+/* Forms */
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    padding: 14px;
+    border: 2px solid var(--kraft-light);
+    border-radius: var(--radius);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--wine);
+}
+
+.form-group textarea { min-height: 100px; resize: vertical; }
+
+.label-section {
+    background: linear-gradient(135deg, var(--kraft-light) 0%, #f5efe6 100%);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 2px dashed var(--kraft);
+}
+
+.selected-ingredients {
+    background: var(--kraft-light);
+    padding: 15px;
+    border-radius: var(--radius);
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active { display: flex; }
+
+.modal-content {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: #f5f5f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-header { text-align: center; margin-bottom: 20px; }
+.modal-icon { font-size: 3rem; margin-bottom: 10px; }
+.modal-section { margin-bottom: 15px; }
+.modal-label { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); }
+.modal-value { font-size: 0.95rem; line-height: 1.5; }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.modal-add { margin-top: 20px; }
+
+.ecommerce-actions { margin-top: 25px; }
+
+/* ============================================
+   CART SIDEBAR
+   ============================================ */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: white;
+    z-index: 3000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2999;
+    display: none;
+}
+
+.cart-overlay.open {
+    display: block;
+}
+
+.cart-header {
+    padding: 20px;
+    background: var(--kraft-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h2 {
+    color: var(--wine);
+    margin: 0;
+}
+
+.btn-close-cart {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-empty-msg {
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 50px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: var(--cream);
+    padding: 10px;
+    border-radius: var(--radius);
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cart-footer {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.cart-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--kraft-light);
+    color: var(--text-light);
+}
+
+.site-footer p {
+    margin-bottom: 5px;
+}
+
+.site-footer strong {
+    color: var(--wine);
+    font-family: 'Copperplate Gothic Bold', 'Copperplate', 'Cinzel', serif;
+    font-size: 1.1rem;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* ============================================
+   DESKTOP MEDIA QUERIES (The "Tiendanube" Effect)
+   ============================================ */
+@media (min-width: 768px) {
+    
+    .mobile-menu-btn { display: none; }
+    
+    .nav-links { display: flex; }
+    
+    .hero-section {
+        height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .products-grid, .ingredients-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .product-image-container {
+        height: 200px;
+    }
+    
+    .ingredient-image {
+        height: 150px;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .order-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .order-form .form-group {
+        margin-bottom: 0;
+    }
+    
+    .label-section, .selected-ingredients, .btn-whatsapp {
+        grid-column: span 2;
+    }
+    
+    .home-actions {
+        flex-direction: row;
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-grid, .ingredients-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+/* ============================================
+   FLOATING BOTTOM BUTTON (ERGONOMIC FIX)
+   ============================================ */
+.floating-bottom-btn {
+    position: fixed;
+    bottom: 80px; /* Sobre la barra de navegaci�n inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translate(-50%, 100%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.floating-bottom-btn:hover {
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.post-full {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+</style>
+    
+</head>
+
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/logo1.jpg" alt="Rojo Malbec Logo" class="nav-logo" id="headerLogo" onerror="this.style.display='none'">
+                <h1 class="nav-title">Rojo Malbec</h1>
+            </div>
+            
+            <nav class="nav-links">
+                <button class="nav-link active" data-target="home">Inicio</button>
+                <button class="nav-link" data-target="products">Productos</button>
+                <button class="nav-link" data-target="explore">Creá tu Blend</button>
+                <button class="nav-link" data-target="about">Nosotros</button>
+                <button class="nav-link" data-target="blog">Blog</button>
+            </nav>
+
+            <div class="nav-cart" id="btnOpenCart">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-badge" id="cartBadgeGlobal" style="display:none;">0</span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="btnMobileMenu">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-link active" data-target="home">Inicio</button>
+        <button class="mobile-link" data-target="products">Productos</button>
+        <button class="mobile-link" data-target="explore">Creá tu Blend</button>
+        <button class="mobile-link" data-target="about">Nosotros</button>
+        <button class="mobile-link" data-target="blog">Blog</button>
+    </div>
+
+    <div id="app">
+        <main id="screen-home" class="screen active">
+            <section class="hero-section">
+                <div class="hero-overlay">
+                    <h2 class="hero-title">Rojo Malbec</h2>
+                    <p class="hero-subtitle">La esencia de Traslasierra en cada cristal. Sabores puros, sin aditivos ni conservantes.</p>
+                    <button class="btn-primary hero-btn" id="btnHeroGoToProducts">Descubrir el Catálogo</button>
+                </div>
+            </section>
+
+            <div class="welcome-section">
+                <h3 class="section-title">El Arte del Diseño de Especias</h3>
+                <p class="welcome-text">No vendemos condimentos industriales. Diseñamos blends de autor entendiendo el comportamiento térmico y químico de cada especia frente a los fuegos. Una experiencia culinaria pura, pensada para quienes respetan el ritual de la cocina y el asado.</p>
+            </div>
+
+            <div class="home-actions">
+                <button class="btn-primary" id="btnStartBlend">✨ Creá tu propio Blend Personalizado</button>
+                <button class="btn-secondary" id="btnGoToProducts">👀 Ver Catálogo de Productos</button>
+            </div>
+        </main>
+
+        <main id="screen-products" class="screen">
+            <div class="screen-header">
+                <h2 class="screen-title">Nuestros Productos</h2>
+            </div>
+            <div class="filters-row" id="productFiltersRow">
+                <button class="filter-chip active" data-product-filter="todos">Todos</button>
+                <button class="filter-chip" data-product-filter="sales">🧂 Sales</button>
+                <button class="filter-chip" data-product-filter="blends">🥘 Blends</button>
+                <button class="filter-chip" data-product-filter="vital">💚 Vital</button>
+                <button class="filter-chip" data-product-filter="pimientas">🌶️ Pimientas</button>
+                <button class="filter-chip" data-product-filter="tes">🍵 Tés</button>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </main>
+
+        <main id="screen-explore" class="screen">
+            <div class="screen-header">
+                <h2 class="screen-title">Diseñá tu Blend</h2>
+                <p class="screen-subtitle">Seleccioná los ingredientes base y nosotros calculamos la proporción perfecta para tu uso.</p>
+            </div>
+            <div class="profile-grid" id="filtersRow">
+                <div class="profile-card active" data-filter="todos"><div class="profile-icon">👁️</div><span>Todos</span></div>
+                <div class="profile-card" data-filter="terroso"><img src="images/perfiles/perfil_terroso_1780445191889.png" alt="Terroso"><span>Terroso</span></div>
+                <div class="profile-card" data-filter="floral"><img src="images/perfiles/perfil_floral_1780445204796.png" alt="Floral"><span>Floral</span></div>
+                <div class="profile-card" data-filter="citrico"><img src="images/perfiles/perfil_citrico_1780445217224.png" alt="Cítrico"><span>Cítrico</span></div>
+                <div class="profile-card" data-filter="picante"><img src="images/perfiles/perfil_picante_1780445229534.png" alt="Picante"><span>Picante</span></div>
+                <div class="profile-card" data-filter="ahumado"><img src="images/perfiles/perfil_ahumado_1780445250943.png" alt="Ahumado"><span>Ahumado</span></div>
+                <div class="profile-card" data-filter="dulce"><img src="images/perfiles/perfil_dulce_1780445262229.png" alt="Dulce"><span>Dulce</span></div>
+            </div>
+            <div class="ingredients-grid" id="ingredientsGrid"></div>
+            <button class="btn-primary floating-bottom-btn" id="btnGoToBlendReview" style="display:none;">Ver mi mezcla elegida <span id="blendBadge" class="cart-badge" style="display:none;">0</span></button>
+        </main>
+
+        <main id="screen-about" class="screen">
+            <div class="screen-header"><h2 class="screen-title">Nuestra Historia</h2></div>
+            <div class="about-content">
+                <h3>El Origen: Traslasierra, Córdoba</h3>
+                <p>Rojo Malbec nace en el corazón del Valle de Traslasierra, rodeado de montes puros y naturaleza intacta. Aquí, lejos del ruido industrial, encontramos la inspiración para volver a lo esencial. Nuestra marca es un tributo a la paciencia, al fuego lento y a los sabores honestos que la tierra nos regala.</p>
+                <h3>El Fuego y el Vino</h3>
+                <p>Nuestra historia comenzó con una obsesión: lograr que un cristal de sal marina capture verdaderamente el alma de un buen vino Malbec mendocino. A partir de esa primera "Sal al Malbec", entendimos que el mercado estaba lleno de condimentos artificiales y vacíos de vida. Decidimos cambiar eso. Hoy, diseñamos blends de autor estudiando cómo cada botánico, resina o especia reacciona ante las brasas y las sartenes.</p>
+                <h3>La Etiqueta Limpia</h3>
+                <p>Nuestro compromiso es innegociable. No vas a encontrar antiaglutinantes químicos, colorantes artificiales ni extensores en nuestros frascos. Lo que ves y lo que hueles es pura naturaleza, respetada y tratada con técnicas de molienda artesanales.</p>
+            </div>
+        </main>
+
+        <main id="screen-blog" class="screen">
+            <div class="screen-header">
+                <h2 class="screen-title">El Blog de Rojo Malbec</h2>
+                <p class="screen-subtitle">Recetas, tips de cocción y novedades desde las Sierras.</p>
+            </div>
+            <div class="blog-grid" id="blogGrid"></div>
+        </main>
+
+        <main id="screen-post" class="screen">
+            <div class="screen-header">
+                <button class="btn-back" id="btnBackFromPost">⬅️ Volver al Blog</button>
+            </div>
+            <article class="post-full" id="postFullContainer"></article>
+        </main>
+
+        <main id="screen-blend" class="screen">
+            <div class="screen-header">
+                <button class="btn-back" id="btnBackFromBlend">⬅️ Volver</button>
+                <h2 class="screen-title">Revisar Mi Blend</h2>
+            </div>
+            <div class="blend-container">
+                <div class="blend-empty" id="blendEmpty">
+                    <div style="font-size:3rem; margin-bottom:15px;">🌿</div>
+                    <h3>Tu blend está vacío</h3>
+                    <p style="color:var(--text-light); margin-bottom:20px;">Vuelve a la selección y elige los ingredientes que más te gusten.</p>
+                    <button class="btn-primary" id="btnGoExplore" style="margin: 0 auto;">Ir a ingredientes</button>
+                </div>
+                <div class="blend-list" id="blendList"></div>
+                <div class="blend-summary" id="blendSummary" style="display:none;">
+                    <div class="summary-title">Perfil de tu Blend</div>
+                    <div class="summary-tags" id="profileTags"></div>
+                    <div class="summary-stats">Ingredientes elegidos: <span id="ingredientCount">0</span>/8</div>
+                    <button class="btn-secondary" id="btnAddMoreIngredients" style="width:100%; margin-top:15px; margin-bottom:15px;">+ Agregar más ingredientes</button>
+                </div>
+                <button class="btn-primary" id="btnOrder" style="display:none; width: 100%; justify-content:center; align-items:center; gap:10px;">Continuar y Preparar Pedido</button>
+            </div>
+        </main>
+
+        <main id="screen-order" class="screen">
+            <div class="screen-header">
+                <button class="btn-back" id="btnBackFromOrder">⬅️ Volver</button>
+                <h2 class="screen-title">Finalizar Pedido de Blend</h2>
+            </div>
+            <form class="order-form" id="orderForm">
+                <div class="order-summary-box">
+                    <h3 style="margin-top:0; font-family:var(--font-title); font-size:1.1rem; color:var(--wine); border-bottom:1px solid #eee; padding-bottom:10px;">Tu Mezcla Exclusiva</h3>
+                    <div id="selectedList" style="margin-top:10px; font-size:0.9rem;"></div>
+                </div>
+                <div class="form-group">
+                    <label>Nombre de tu Blend (Aparecerá en la etiqueta)</label>
+                    <input type="text" id="inputLabelName" class="form-control" placeholder="Ej: Fuego Patagónico, Asado de la Abuela" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label>Nombre del Creador (Opcional)</label>
+                    <input type="text" id="inputLabelCreator" class="form-control" placeholder="Ej: Chef Martín, Familia López" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label>Tu Nombre para el pedido *</label>
+                    <input type="text" id="inputName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>¿Para qué tipo de comidas lo vas a usar? *</label>
+                    <input type="text" id="inputUso" class="form-control" placeholder="Ej: Carnes rojas, pollo, verduras..." required>
+                </div>
+                <div class="form-group">
+                    <label>Cantidad aproximada (Frascos de 100g) *</label>
+                    <select id="inputCantidad" class="form-control" required>
+                        <option value="1 Frasco (100g)">1 Frasco (100g)</option>
+                        <option value="2 Frascos (200g)">2 Frascos (200g)</option>
+                        <option value="3 Frascos (300g)">3 Frascos (300g)</option>
+                        <option value="Medio Kilo (Bolsa 500g)">Medio Kilo (Bolsa 500g)</option>
+                        <option value="Un Kilo (Bolsa 1Kg)">Un Kilo (Bolsa 1Kg)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>¿Querés que algún ingrediente resalte más?</label>
+                    <input type="text" id="inputProtagonistas" class="form-control" placeholder="Ej: Mucho ajo, poco picante">
+                </div>
+                <div class="form-group">
+                    <label>Alergias o ingredientes a evitar estrictamente</label>
+                    <input type="text" id="inputAlergias" class="form-control" placeholder="Ej: Cero gluten, sin pimienta negra">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top:20px;">
+                    Enviar Pedido por WhatsApp
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="ingredientModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✖</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon"></div>
+                <h3 class="modal-title" id="modalTitle"></h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tags" id="modalTags"></div>
+                <p class="modal-desc" id="modalDesc"></p>
+                <div class="modal-maridaje" id="modalMaridaje"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="modal-close" id="productModalClose">✖</button>
+            <div class="modal-header" style="flex-direction: column; align-items: center; text-align: center;">
+                <div class="modal-icon" id="productModalIcon" style="font-size: 3rem; margin-bottom: 10px;"></div>
+                <h3 class="modal-title" id="productModalTitle" style="color:var(--wine); margin-bottom: 5px;"></h3>
+                <p id="productModalTagline" style="font-size: 0.9rem; font-style: italic; color: #666; margin-top: 0;"></p>
+                <div id="productModalVitalBadge" style="display:none; margin-top:10px;"><span class="vital-indicator">💚 0% Sodio</span></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-section">
+                    <div class="modal-label">Descripción</div>
+                    <p class="modal-desc" id="productModalDescripcion" style="margin-top:5px;"></p>
+                </div>
+                <div class="modal-info-section">
+                    <div class="modal-label">Ingredientes</div>
+                    <p class="modal-desc" id="productModalIngredientes" style="margin-top:5px; font-weight: 500;"></p>
+                </div>
+                <div class="modal-info-section">
+                    <div class="modal-label">Ideal para</div>
+                    <p class="modal-desc" id="productModalMaridaje" style="margin-top:5px; color:var(--wine-light);"></p>
+                </div>
+                <button class="btn-primary modal-add" id="btnAddToCart" style="width:100%; margin-top:20px;">
+                    🛒 Agregar al Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button class="btn-close-cart" id="btnCloseCart">✖</button>
+        </div>
+        <div class="cart-items" id="globalCartItems">
+            <div class="cart-empty-msg">Tu carrito está vacío.</div>
+        </div>
+        <div class="cart-footer">
+            <p class="cart-disclaimer">El pago y envío se coordina de manera directa y segura con nosotros vía WhatsApp.</p>
+            <button class="btn-whatsapp" id="btnCheckoutGlobal">Terminar Compra (WhatsApp)</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Rojo Malbec</strong></p>
+            <p>Valle de Traslasierra, Córdoba, Argentina</p>
+            <p class="copyright">© 2026 Rojo Malbec. Marca Registrada. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js" defer></script>
+    <script>
+// productos.js - Catálogo Reducido Rojo Malbec (16 productos)
+
+const productos = [
+    {
+        id: 1,
+        nombre: "Sal al Malbec",
+        categoria: "sales",
+        emoji: "🍷",
+        imagen: "products/sal al malbec.jpg",
+        tagline: "El alma de Mendoza en cada cristal",
+        descripcion: `🔥 Sal Marina al Malbec | La Sangre de la Tierra en tu Asado
+
+Esta es nuestra razón de ser. No es solo sal, es la fusión de dos pasiones: el fuego y el vino. Es llevar el viñedo y la montaña directamente a tu tabla.
+
+🍇 Origen y Color Natural
+
+Olvidate de los colorantes. Estos cristales de sal marina patagónica han sido infusionados lentamente en auténtico vino Malbec mendocino.
+
+El resultado es ese color rubí intenso y vibrante que ves en la foto, y un aroma sutil a frutos rojos y madera que se despierta con el calor.
+
+🥩 El Maridaje Perfecto para Carnes Rojas
+
+Fue diseñada pensando en el fuego:
+
+Sal de Terminación: Espolvoreala sobre un Ojo de Bife, Entraña o Vacío justo antes de servir. El contraste del cristal rojo sobre la carne dorada es espectacular.
+
+Textura y Sabor: Aportan una crocancia única y una complejidad de sabor que realza la carne sin invadirla.
+
+🍷 La Experiencia Completa
+
+No hay mejor compañía que una copa de tu Malbec favorito y las brasas ardiendo.
+
+No es para cualquier asado. Es para cuando querés lucirte. Pedí tu lata y dale el toque maestro a tu próxima carne.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, vino Malbec",
+        maridaje: "Bife de chorizo, tabla de quesos, carpaccio de carne"
+    },
+
+    {
+        id: 2,
+        nombre: "Sal British",
+        categoria: "sales",
+        emoji: "🇬🇧",
+        imagen: "products/Sal British.png",
+        tagline: "La herencia de las cocinas británicas, con alma argentina.",
+        descripcion: `🍺 Sal Marina Tipo British | La Experiencia del Pub en tu Casa
+
+Si alguna vez probaste esas papas fritas adictivas con el toque justo de vinagre y sal, sabés de qué hablamos. Pero esta no es una sal común: es una versión de autor que captura la esencia de la malta y el lúpulo.
+
+🇬🇧 El Secreto del Sabor
+
+Olvidate de los saborizantes artificiales. Nuestra Sal British pasa por un complejo proceso artesanal de doble impregnación donde los cristales de sal marina absorben notas profundas de cerveza negra, la acidez justa del vinagre y un blend secreto de hierbas y especias.
+
+El resultado es un cristal de color ámbar, crujiente y con un perfil de sabor que no vas a encontrar en ningún otro lado.
+
+🍟 ¿En qué usarla? (Va con todo)
+
+Es el toque final que transforma lo simple en algo gourmet:
+
+Papas: Fritas, al horno, rústicas o en puré. El calor despierta el aroma a malta al instante.
+
+Snacks: Probá espolvorear un poco sobre pochoclos (palomitas) o nachos. Es un viaje de ida.
+
+Frituras de Mar: Rabas, cornalitos o el clásico Fish & Chips. La acidez corta la grasa y levanta el sabor.
+
+🍻 El Maridaje Ideal
+
+Está diseñada para acompañar tu cerveza favorita. Una pinta fría, una buena picada y el toque mágico de Rojo Malbec.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, vinagre de alcohol, cerveza negra porter, romero, tomillo, albahaca, cebolla en escama, ajo granulado, pimienta negra en grano",
+        maridaje: "Pollo asado, pescados al horno, papas rústicas, vegetales grillados"
+    },
+
+    {
+        id: 4,
+        nombre: "Sal de Limón y Chile",
+        categoria: "sales",
+        emoji: "🍋",
+        imagen: "products/Sal de limon y chile.png",
+        tagline: "Cítricos del Mediterráneo con el fuego latinoamericano.",
+        descripcion: `🍋 SAL MARINA CON LIMÓN & CHILE — Sal Saborizada de Autor · Edición Sales Gourmet · Rojo Malbec
+
+La chispa exacta que le faltaba a tus platos. Un blend vibrante donde la pureza crujiente de la sal marina se combina con la frescura ácida de la cáscara de limón deshidratada y el golpe de calor justo del chile triturado.
+
+⚠️ NO ES PICANTE. El chile está tratado para aportar solo sabor y color, sin generar ardor. Es apta para todo público.
+
+El resultado: un perfil estimulante y adictivo. El cítrico despierta inmediatamente el paladar, mientras que el calor sutil del chile prolonga el sabor. Fresco, picante y salado en un solo grano.
+
+Sugerencias: Ideal para pescados a la parrilla, mariscos, pollo asado, paltas, ensaladas frescas, o incluso para hacer el clásico "escarchado" (borde de sal) en las copas de coctelería y Margaritas.
+
+Tip del blender: Usala tambien como "sal de acabado" (finish salt) al momento de servir en la mesa. Si la usás durante la cocción de la olla, el limón puede perder su golpe aromático fresco.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, cascara de limon deshidratada, chile triturado",
+        maridaje: "Ceviche, pescados a la plancha, tacos, aguachile"
+    },
+
+    {
+        id: 5,
+        nombre: "Sal de Rosas y Romero",
+        categoria: "sales",
+        emoji: "🌹",
+        imagen: "products/sal marina de rosas y romero.jpg",
+        tagline: "Romance aromático en estado puro.",
+        descripcion: `🌹 Sal de Pétalos de Rosas y Romero – Edición Alquimia
+
+El perfume en un cristal de sal. En Rojo Malbec no solo creamos condimentos, diseñamos experiencias sensoriales. Nuestra Sal de Rosas y Romero es el equilibrio perfecto entre la fuerza silvestre del monte y la elegancia sutil del jardín.
+
+El Aroma: El romero aporta notas amaderadas y frescas.
+
+La Textura: Pétalos de rosa deshidratados que se funden con los cristales de sal, aportando un matiz floral único.
+
+El Color: Un espectáculo visual de tonos rosados y verdes secos que elevan cualquier presentación.
+
+🍴 ¿Cómo usarla en tu cocina?
+
+Esta es una sal de finalización. El toque final que transforma un plato común en una obra de autor:
+
+Ensaladas Gourmet: Elevá una mezcla de rúcula, queso de cabra y nueces.
+
+Panadería Artesanal: Espolvoreala sobre una focaccia recién salida del horno.
+
+Carnes Blancas: Perfecta para pescados a la plancha o pollos al limón.
+
+El Secreto del Chef: Probala sobre un trozo de chocolate amargo o una ganache de chocolate. El contraste te va a volar la cabeza.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, petalos de rosas, romero, pimienta rosa",
+        maridaje: "Cordero, ensaladas gourmet, quesos de cabra, postres con frutas rojas"
+    },
+
+    {
+        id: 6,
+        nombre: "Sal del Desierto",
+        categoria: "sales",
+        emoji: "🏜️",
+        imagen: "products/sal_del_desierto.png",
+        tagline: "Los secretos del Medio Oriente en tu cocina.",
+        descripcion: `🏜️ Sal del Desierto | Blend Exótico & Ahumado
+
+¿A qué sabe una tormenta de arena y especias? Este no es un salado común. Es un blend de terminación (finishing salt) inspirado en los aromas de Medio Oriente, diseñado para aportar complejidad, acidez y un toque ahumado a tus platos.
+
+✨ El Secreto del Blend: Combinamos la textura crujiente de la Sal Marina con tres joyas de la cocina antigua:
+
+🔴 Sumac: Aporta una acidez cítrica y frutal (sin ser limón).
+
+🔥 Cardamomo Negro: Notas profundas de humo, alcanfor y resina.
+
+🌶️ Pimienta Larga: Un picor dulce y complejo, muy diferente a la pimienta negra.
+
+🍽️ Usalo para elevar:
+
+Carnes: Ideal para Cordero, Bondiola de cerdo o Carnes de caza.
+
+Fuego: Berenjenas asadas, Calabazas al rescoldo o Vegetales grillados.
+
+Toque Gourmet: Espolvorealo sobre Hummus, Babaganoush o incluso en el borde de un trago (Michelada/Bloody Mary).
+
+👨🍳 Tip de Chef: Usala al final de la cocción, justo antes de servir. La acidez del Sumac corta la grasa y limpia el paladar, mientras que el Cardamomo Negro deja un retrogusto ahumado inolvidable.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, sumac, cardamomo negro, pimienta larga",
+        maridaje: "Kebabs, hummus, carnes de caza, preparaciones árabes"
+    },
+
+    {
+        id: 7,
+        nombre: "Sal Negra Tipo Hawaiana",
+        categoria: "sales",
+        emoji: "🖤",
+        imagen: "products/sal-negra-hawaiana.png",
+        tagline: "Dramatismo visual, sutileza en el paladar.",
+        descripcion: `🧂Sal Negra Tipo Hawaiana – La alquimia de Rojo Malbec
+
+Hay productos que se ven bien, y hay productos que cambian las reglas del juego. Nuestra nueva Sal Negra es el equilibrio perfecto entre estética volcánica y un perfil de sabor que no vas a encontrar en ninguna otra parte del país.
+
+🌑 El Secreto del Color: Cristales de sal marina de máxima pureza, tratados artesanalmente con carbón activado y nuestra harina de vino para lograr ese negro mineral profundo que ves en la foto.
+
+✨ La Estrella Exclusiva: Pimienta Larga. No es una pimienta cualquiera. Traemos a las sierras esta especia milenaria, casi inexistente en el mercado argentino. Su forma de espiga y su aroma complejo —que recuerda a la canela, la nuez moscada y el calor del bosque— es lo que realmente le da alma a este blend. Se huele antes de probarla y se siente en el retrogusto, elevando el plato a otra categoría.
+
+🍳 ¿Cómo usarla? Es una sal de finalización. Dejala caer con los dedos (o con pinza, como un profesional) sobre:
+
+Un huevo poché (mirá ese contraste de la yema con el negro absoluto).
+
+Un carpaccio de salmón o lomo.
+
+Una palta con buen aceite de oliva.
+
+Carnes blancas o mariscos que busquen un perfil exótico y elegante.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, carbon activado, harina de vino Malbec, pimienta larga",
+        maridaje: "Sushi, aguacate, huevos benedictinos, carnes premium"
+    },
+
+    {
+        id: 8,
+        nombre: "Sal Esvanetian",
+        categoria: "sales",
+        emoji: "🏔️",
+        imagen: "products/sal tipo svanetian.png",
+        tagline: "El tesoro oculto del Cáucaso georgiano.",
+        descripcion: `🏔️ Sal Svanetian | Sazonador Ancestral
+
+¿Salaste o condimentaste?
+
+Esta no es una sal para decorar. Es una herramienta de cocina. Una mezcla robusta y seca, donde el ajo y las especias ya están curados dentro del cristal, lista para soportar altas temperaturas y transmitir sabor profundo desde el inicio de la cocción.
+
+✨ El Secreto: Potencia Integrada
+
+Al estar madurada, esta Sal Marina no se quema ni pierde fuerza. Funciona como un fondo de cocción sólido:
+
+Ajo Curado: Aporta un sabor redondo y dulce, sin la agresividad del ajo crudo.
+
+Especias de Montaña: Liberan sus aceites al entrar en contacto con el calor o los jugos de la carne.
+
+🍽️ Usalo para cocinar:
+
+Adobos & Rubs: Frotala en carnes rojas, cerdos o pollos antes de que toquen el fuego. La sal penetra y sazona la fibra desde adentro.
+
+Guisos y Estofados: Usala en el sofrito base. Levanta el sabor de todo lo que agregues después.
+
+Masas: Integrala en la masa de un pan de campo o una focaccia para un sabor rústico en cada bocado.
+
+👨🍳 Tip de Chef:
+
+Trátala como un ingrediente más, no solo como sal. Si vas a hacer un pollo al horno, mézclala con un poco de aceite y pinta la pieza antes de cocinar. El resultado es una piel dorada y llena de sabor.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, ajo granulado, cebolla en escama, coriandro, pimienta negra en grano, aji molido, curcuma en raiz, semillas de hinojo, semillas de apio, azafran en polvo",
+        maridaje: "Khachapuri, carnes estofadas, vegetales asados, sopas"
+    },
+
+    {
+        id: 11,
+        nombre: "Ajo a las Hierbas Gourmet",
+        categoria: "blends",
+        emoji: "🧄",
+        imagen: "products/ajo a las hierbas.png",
+        tagline: "Ajo elevado a la máxima expresión.",
+        descripcion: `🧄 Blend de Ajo & Hierbas | Perfil Provence
+
+Más que un condimento, un perfume para tu cocina.
+
+Olvídate del ajo en polvo industrial. Este es un blend de autor diseñado con 14 ingredientes seleccionados para crear capas de sabor. Una base de ajo y cebolla potentes, equilibrados con notas cítricas y un bouquet de hierbas finas.
+
+✨ La Diferencia Gourmet:
+
+Lo que lo hace único es su complejidad aromática:
+
+Notas Florales y Anisadas: El toque sutil de Lavanda, Estragón e Hinojo eleva el perfil, aportando frescura y elegancia.
+
+Textura Real: Las hierbas (Romero, Tomillo, Mejorana) no están pulverizadas; se ven y se sienten.
+
+Dorado Perfecto: Gracias a una pizca de Azúcar Mascabo y Limón, este blend carameliza suavemente al cocinar, creando una costra deliciosa.
+
+🍽️ Ideal para:
+
+Mantecas Aromatizadas: Mézclalo con manteca pomada para untar en pan de campo o derretir sobre un bife.
+
+Panadería: El secreto para focaccias, panes de ajo y grisines de otro nivel.
+
+Carnes Blancas: Frota pollo, cerdo o pescado antes de hornear.
+
+👨🍳 Tip de Cocinero:
+
+Hidrátalo con un poco de aceite de oliva unos minutos antes de usar. Esto despierta el limón y las hierbas secas, recuperando la frescura original del "jardín" antes de cocinar.
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Ajo granulado, semillas de hinojo, romero, tomillo, albahaca, mejorana, estragon, cebolla en escama, cascara de limon deshidratada, azucar mascabo, pimienta negra en grano, semillas de apio, flor de lavanda",
+        maridaje: "Pan de ajo, pastas, carnes, mantecas saborizadas, vegetales asados"
+    },
+
+    {
+        id: 13,
+        nombre: "BBQ Rojo Malbec",
+        categoria: "blends",
+        emoji: "🔥",
+        imagen: "products/barbacoa rub.png",
+        tagline: "El arte del asado, perfeccionado.",
+        descripcion: `🔥 Barbacoa Rub | Fuego, Humo y Pasión
+
+¿Por qué tus costillas no se ven como las de las revistas?
+
+El secreto no es la carne, es lo que le ponés antes de que toque el fuego. Presentamos nuestro Rub de Autor, diseñado para crear esa costra roja, caramelizada y llena de sabor que diferencia a un aficionado de un asador experto.
+
+🥩 La Alquimia del "Dry Rub"
+
+Olvidate de marinar con líquidos. Este polvo rojo intenso es una mezcla compleja de pimentones ahumados, especias cálidas y un toque justo de dulzor.
+
+Al contacto con el calor: Los azúcares se caramelizan sellando los jugos.
+
+El Sabor: Notas profundas de humo, madera y un picor muy suave que despierta el paladar sin invadir.
+
+🍽️ ¿En qué usarlo? (Va con todo)
+
+Cerdo: Es el rey de las Ribs (costillitas) y el Bondiola.
+
+Vaca: Masajealo sobre una tapa de asado o un vacío para darle un toque "American BBQ".
+
+Pollo: Transformá unas alitas o muslos simples en un manjar dorado.
+
+Vegetales: Probá espolvorear unas batatas o choclos antes de asarlos.
+
+👨🍳 Tip de Cocinero:
+
+¡Ensuciarse las manos! Este producto se llama "Rub" (frotar) por algo. Secá bien la carne, cubrila generosamente con el polvo y masajeá para que se adhiera bien. Dejalo reposar 20 minutos antes de cocinar. Eso crea la magia.
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Tomate deshidratado, pimenton español (ahumado), ajo granulado, cebolla en escama, azucar mascabo, hongo shitake, sal marina, levadura nutricional, cafe tostado, canela quebrada, pimienta blanca en grano, cascarilla de cafe, cayena roja, merken chileno, jengibre en polvo, enebro, coriandro, semillas de apio, laurel, mejorana",
+        maridaje: "Costillas, brisket, pulled pork, alitas de pollo, vegetales ahumados"
+    },
+
+    {
+        id: 15,
+        nombre: "Curry Colombo",
+        categoria: "blends",
+        emoji: "🏝️",
+        imagen: "products/Curry Colombo.png",
+        tagline: "El Caribe francés en estado puro.",
+        descripcion: `🌴 CURRY COLOMBO — Las Antillas Francesas Sabores del Caribe · Rojo Malbec
+
+¿Qué es el Colombo? Es EL curry del Caribe francés. Nació en Martinica y Guadalupe, traído por inmigrantes de Sri Lanka, y se convirtió en el plato nacional de las Antillas. No es un curry indio: es más fresco, más tropical, con coco y cítricos.
+
+Nuestro blend artesanal lleva coriandro, cúrcuma, sumac, arroz tostado, leche de coco, comino, ajo, mostaza, fenogreco, limón marroquí, pimienta blanca, ají y clavo de olor. Cremoso, tostado y equilibrado.
+
+Modo de uso: Disolver en leche de coco o caldos para crear salsas caribeñas vibrantes.
+
+Ideal para: Pollo, cabra, pescados, langostinos, vegetales tropicales.
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Coriandro, curcuma en raiz, arroz parborizado, leche de coco, sumac, ajo granulado, comino en grano, fenogreco, mostaza amarilla, pimienta blanca en grano, azucar mascabo, aji molido, clavo de olor",
+        maridaje: "Pollo, pescados, mariscos, arroz, vegetales tropicales"
+    },
+
+    {
+        id: 19,
+        nombre: "Nanami Tōgarashi",
+        categoria: "blends",
+        emoji: "🇯🇵",
+        imagen: "products/nanami torigashi final.jpg",
+        tagline: "Los siete sabores de Japón.",
+        descripcion: `🌶️ Nanami Tōgarashi | Condimento Japonés de Autor - Rojo Malbec 🇯🇵
+
+¡Llevá la auténtica experiencia de la cocina japonesa a tu mesa!. Este blend tradicional es el secreto milenario para darle un toque intenso, aromático y picante a tus comidas.
+
+🍜 ¿Cómo usarlo? Es súper versátil:
+
+Sopas y fideos: El toque maestro para espolvorear sobre tu Ramen.
+
+Pescados y Carnes: Realza sushi, pescados, pollo, cerdo y ternera a la parrilla.
+
+Arroces y Verduras: Perfecto para woks, donburis, ensaladas y vegetales asados.
+
+Snacks: ¡Dale un giro único a tus pochoclos, frutos secos o chips!
+
+🌿 Sabor y bienestar en un solo frasco: Además de ser delicioso, sus ingredientes naturales (como el jengibre, el sésamo y la mandarina) aportan antioxidantes y ayudan a estimular la digestión.
+
+⚠️ Tip de uso: Agregalo al final de tus preparaciones. ¡Usalo con moderación para disfrutar su toque picante sin tapar el sabor de tus platos!
+
+👇 ¡Sumalo a tu pedido y descubrí el verdadero sabor de Japón!
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Pimiento gochigaru, cayena roja, semillas de sesamo blanco, semillas de sesamo negro, cascara de mandarina deshidratada, jengibre raiz, semillas de amapola, pimienta de sichuan, alga kombu",
+        maridaje: "Ramen, udon, arroz, gyozas, tempura, aguacate"
+    },
+
+    {
+        id: 24,
+        nombre: "Za'atar Rojo Malbec",
+        categoria: "blends",
+        emoji: "🌿",
+        imagen: "products/Za,atar.png",
+        tagline: "El perfume del Levante.",
+        descripcion: `🌿 Za'atar  | Blend Auténtico & Vibrante
+
+¿A qué sabe un atardecer en el Mediterráneo? Este no es un condimento más. Es el alma de Medio Oriente, un blend tradicional y equilibrado donde la acidez cítrica profunda se encuentra con el tostado cálido y la frescura de las hierbas salvajes.
+
+✨ El Secreto del Blend: Combinamos la textura de la sal marina con una selección meticulosa de botánicos para lograr un perfil vibrante y aromático:
+
+🔴 Sumac (Zumaque): El corazón absoluto del blend. Aporta una acidez frutal intensa, terrosa y un color rojizo inconfundible.
+
+🌾 Sésamo Blanco Tostado: Brinda un perfil almendrado, cálido y el "crunch" esencial en cada bocado.
+
+🌿 Trilogía de Hierbas (Tomillo, Mejorana y Orégano): Notas terrosas, mentoladas y frescas que abren el paladar y aportan el carácter verde del levante.
+
+🌱 Un toque de Ajwain: El secreto de autor. Una nota herbácea con un carácter ligeramente picante que eleva la complejidad del tomillo.
+
+🍽️ Usalo para elevar:
+
+Clásicos de Medio Oriente: La experiencia definitiva: mezclalo con un buen aceite de oliva en un cuenco de barro para untar pan pita caliente. Espolvorealo sobre Hummus, Labneh o Babaganoush.
+
+Fuego y Horno: Ideal para marinar pollo, frotar sobre pescados blancos antes de asar, o realzar coliflor y zanahorias al horno.
+
+Toque Fresco: Espolvorealo sobre tomates reliquia con oliva, ensaladas de pepino, palta o queso feta.
+
+👨🍳 Tip de Chef: Si lo vas a usar como "dip" para el pan pita, hidratá el Za'atar con abundante aceite de oliva de buena calidad y dejalo reposar unos 10 a 15 minutos. Esto permite que el zumaque y las hierbas liberen todos sus aceites esenciales en el medio graso, logrando una pasta oscura, untuosa y llena de sabor.
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sumac, semillas de sesamo blanco, tomillo, oregano, mejorana, sal marina, ajwain",
+        maridaje: "Hummus, labneh, pita, huevos, ensaladas, aceite de oliva"
+    },
+
+    {
+        id: 26,
+        nombre: "Sloopy Joe",
+        categoria: "blends",
+        emoji: "🍔",
+        imagen: "products/sloppy_joe_v2.png",
+        tagline: "El clásico americano hecho polvo mágico",
+        descripcion: `🍔 SLOPPY JOE — Salsa Deshidratada Estilo USA Tradicional Americano · Rojo Malbec
+
+¿Qué es un Sloppy Joe? Es EL sándwich americano por excelencia: carne molida en una salsa dulce, ahumada y especiada, servida en un pan brioche. "Sloppy" porque se desborda gloriosamente. Nació en los años '30 en USA y es ícono de la cocina casera americana.
+
+Nuestro blend artesanal tiene todo para prepararlo: pimentón, cebolla, pimiento verde, mascabo, mostaza, ajo, pimentón ahumado, cayena, apio, clavo y un toque cítrico. Perfil dulce, tomate y ahumado.
+
+Modo de uso: Dorar carne molida en un sartén con un poco de aceite de oliva, incorporar dos cucharadas de Sloppy Joe y mezclar, agregar caldo o agua hasta reducir.... tostar pan brioche o pan de hamburguesa incorporar el preparado con una feta de queso cheddar o cual te guste.....listo
+
+Ideal para: Sándwiches, hot dogs, carnes desmenuzadas, hamburguesas, nachos.
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Tomate deshidratado, cebolla en escama, pimenton nacional (dulce), azucar mascabo, mostaza amarilla, harina de arroz, ajo granulado, pimenton español (ahumado), pimiento verde deshidratado, levadura nutricional, sal marina, cayena roja, semillas de apio, acido citrico, oregano, clavo de olor",
+        maridaje: "Sandwiches, hot dogs, carnes desmenuzadas"
+    },
+
+    {
+        id: 50,
+        nombre: "Glühwein",
+        categoria: "blends",
+        emoji: "🍷",
+        imagen: "products/gluhwein.png",
+        tagline: "Blend para Vino Caliente Especiado",
+        descripcion: `🍷 GLÜHWEIN — Blend para Vino Caliente Especiado · Edición Blends de Autor · Rojo Malbec
+
+El espíritu de los mercados de invierno europeos en una taza. Un blend reconfortante y festivo que combina la calidez rústica de la canela y el clavo de olor, la elegancia del anís estrellado, toques de cardamomo y la frescura dulce de cáscaras de cítricos deshidratadas.
+
+El resultado: un perfil profundamente aromático, dulce y especiado. Llena el ambiente con un perfume mágico y envuelve el paladar con un calor reconfortante.
+
+Sugerencias: Ideal para preparar el tradicional vino caliente (¡un buen Malbec joven es perfecto!). También es excelente para tus peras al vino , infusionar sidra caliente, jugo de manzana especiado, o para darle un toque invernal a mermeladas y almíbares.
+
+Tip del blender: Calentar el vino con el blend a fuego muy lento (idealmente a 70°C) y apagar antes de que rompa el hervor. Dejar reposar 15 minutos. Si hierve, el alcohol se evapora y las especias pueden amargar la bebida. Paras tus Peras al Vino agrega azucar al vinoa tu gusto.
+
+📦 Envase 50g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Canela quebrada, manzana deshidrata en cubos, cascara de naranja deshidratada, anis estrellado partido, pimienta de jamaica, jengibre raiz, cardamomo, clavo de olor, miel en polvo, cascara de limon deshidratada",
+        maridaje: "Vino tinto, sidra, pera al vino, mermeladas"
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // 💚 LÍNEA VITAL - 0% SODIO (7 productos)
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: 31,
+        nombre: "Vital Caldo",
+        categoria: "vital",
+        emoji: "🍵",
+        imagen: "products/vital_caldo_v2.png",
+        tagline: "Base umami 0% sodio",
+        descripcion: `🍄 VITAL CALDO — Base Umami Sin Sodio Línea Vital · 0% Sodio · Rojo Malbec
+
+¿Cansado de los caldos industriales llenos de sodio y químicos? Vital Caldo es un potenciador de sabor 100% natural y 0% sodio. Su secreto: levadura nutricional, hongos shiitake y hongos de pino que aportan umami real — ese sabor profundo  que hace que todo sepa mejor.
+
+Ingredientes: Levadura nutricional, hongos shiitake, hongos de pino, cebolla, ajo, semillas de apio y perejil. Nada más. Sin sal, sin conservantes, sin aditivos.
+
+Modo de uso: Espolvorear sobre vegetales al vapor, agregar a guisos, sopas, arroces o fondos. El calor activa el aroma del hongo de pino y los aceites del apio.
+
+Ideal para: Cocciones largas, fondos, guisos de legumbres, arroces, salteados de vegetales, platos con leche de coco.
+
+📦 Envase 50g · 100% natural · 0% sodio · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Levadura nutricional, hongo shitake (tallos), hongos de pino, cebolla en escama, ajo granulado, perejil, zanahoria deshidratada, semillas de apio, cascara de limon deshidratada",
+        maridaje: "Arroces, guisos, sopas, vegetales al vapor",
+        sinSodio: true
+    },
+
+    {
+        id: 16,
+        nombre: "Pimienta Roja & Larga",
+        categoria: "pimientas",
+        emoji: "🌶️",
+        imagen: "products/Pimienta Roja y Pimienta Larga.png",
+        tagline: "Fuego suave y dulzura especiada",
+        descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición Pimientas · Rojo Malbec
+
+Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja verdadera (la baya madura del Piper nigrum), pimienta larga (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), cáscara de mandarina deshidratada, nibs de cacao, pimienta negra y pimienta de Jamaica.
+
+El resultado: un perfil complejo de calor frutal, cítricos, notas de chocolate amargo y una calidez envolvente. No es picante — es profundo.
+
+Sugerencias: Bondiola laqueada, pollo dorado, calabaza, batata, reducciones de vino o aceto, repostería con chocolate amargo, trufas y espresso.
+
+Tip del blender: Moler en el momento sobre el plato terminado. El calor residual libera los aceites esenciales de la mandarina y el cacao.
+
+📦 Envase 40g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Pimienta roja, pimienta larga, cascara de mandarina deshidratada, nibs de cacao, pimienta negra en grano, pimienta de jamaica",
+        maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
+    }
+];
+
+// Categorías con sus detalles
+const categorias = {
+    sales: { nombre: "Sales Gourmet", icono: "🧂", color: "#f5f5f5" },
+    blends: { nombre: "Blends de Especias", icono: "🌶️", color: "#fff3e0" },
+    vital: { nombre: "Línea Vital (0% Sodio)", icono: "💚", color: "#e8f5e9" },
+    pimientas: { nombre: "Pimientas de Autor", icono: "🌶️", color: "#ffebee" },
+    mocktails: { nombre: "Bases Mocktails", icono: "🍹", color: "#e3f2fd" },
+    tes: { nombre: "Tés de Autor", icono: "🍵", color: "#fce4ec" }
+};
+</script>
+    <script>
+// Datos de ingredientes exportados del diccionario BOTANICA
+// Total: 60 ingredientes
+const INGREDIENTES = [
+  {
+    "id": 1,
+    "nombre": "Sal Marina Liberato Entrefina",
+    "icono": "🧂",
+    "imagen": "images/ingredientes/cuenco_sal_marina_1780444990248.png",
+    "familia": "Mineral",
+    "origen": "Salinas Españolas",
+    "descripcion": "Cristales de sal marina obtenidos por evaporación solar. Rica en oligoelementos.",
+    "perfiles": [
+      "neutro"
+    ],
+    "categoria": "sales"
+  },
+  {
+    "id": 2,
+    "nombre": "Sumac",
+    "icono": "🫐",
+    "imagen": "images/ingredientes/cuenco_sumac_1780447893911.png",
+    "familia": "Anacardiaceae",
+    "origen": "Levante Mediterráneo, Irán",
+    "descripcion": "Bayas secas con sabor ácido-afrutado con notas de limón y frambuesa.",
+    "perfiles": [
+      "citrico",
+      "acido"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 3,
+    "nombre": "Cardamomo",
+    "icono": "💚",
+    "imagen": "images/ingredientes/cuenco_cardamomo_1780447650513.png",
+    "familia": "Zingiberaceae",
+    "origen": "Montes Ghats, India",
+    "descripcion": "La 'Reina de las Especias'. Perfil eucaliptado, mentolado y cítrico.",
+    "perfiles": [
+      "citrico"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 4,
+    "nombre": "Cardamomo Negro",
+    "icono": "💚",
+    "familia": "Zingiberaceae",
+    "origen": "Himalaya, Nepal",
+    "descripcion": "Cápsulas ahumadas sobre fuego de madera. Perfil intensamente ahumado.",
+    "perfiles": [
+      "ahumado",
+      "terroso"
+    ],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 5,
+    "nombre": "Pimienta Larga",
+    "icono": "⚫",
+    "imagen": "images/ingredientes/cuenco_pimienta_larga_1780447659747.png",
+    "familia": "Piperaceae",
+    "origen": "India, Indonesia",
+    "descripcion": "Predecesora de la pimienta negra. Sabor picante-dulce, notas de canela.",
+    "perfiles": [
+      "picante",
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 6,
+    "nombre": "Cúrcuma en Polvo",
+    "icono": "🫚",
+    "imagen": "images/ingredientes/cuenco_curcuma_1780447905955.png",
+    "familia": "Zingiberaceae",
+    "origen": "Sur de Asia",
+    "descripcion": "Rizoma dorado. Sabor terroso con notas de jengibre. Antiinflamatorio.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 7,
+    "nombre": "Coriandro",
+    "icono": "🪴",
+    "imagen": "images/ingredientes/cuenco_coriandro_1780447918163.png",
+    "familia": "Apiaceae",
+    "origen": "Mediterráneo Oriental",
+    "descripcion": "Semillas con perfil cítrico-floral y notas de naranja.",
+    "perfiles": [
+      "floral",
+      "citrico"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 8,
+    "nombre": "Comino en Grano",
+    "icono": "🌰",
+    "familia": "Apiaceae",
+    "origen": "Levante, Egipto",
+    "descripcion": "Semillas con aroma terroso-cálido. Esencial en cocina del Medio Oriente.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 9,
+    "nombre": "Canela en Polvo",
+    "icono": "🍂",
+    "familia": "Lauraceae",
+    "origen": "Sri Lanka (Ceilán)",
+    "descripcion": "Corteza del árbol de canela. Perfil dulce-especiado.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 10,
+    "nombre": "Pétalos de Rosas",
+    "icono": "🌹",
+    "familia": "Rosaceae",
+    "origen": "Bulgaria/Irán",
+    "descripcion": "Pétalos de rosa de Damasco. Perfil floral intenso con notas de miel.",
+    "perfiles": [
+      "floral",
+      "dulce"
+    ],
+    "categoria": "flores"
+  },
+  {
+    "id": 11,
+    "nombre": "Romero",
+    "icono": "🌿",
+    "imagen": "images/ingredientes/cuenco_romero_1780447670584.png",
+    "familia": "Lamiaceae",
+    "origen": "Cuenca Mediterránea",
+    "descripcion": "Hojas con aroma alcanforado-resinoso. 'Rocío del mar'.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 12,
+    "nombre": "Tomillo",
+    "icono": "🌿",
+    "familia": "Lamiaceae",
+    "origen": "Región Mediterránea",
+    "descripcion": "Hojas con perfil herbáceo-terroso y notas de clavo.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 13,
+    "nombre": "Albahaca",
+    "icono": "🌿",
+    "familia": "Lamiaceae",
+    "origen": "India, África tropical",
+    "descripcion": "Hojas con perfil dulce-anisado. 'Hierba real' en griego.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 14,
+    "nombre": "Pimentón Español (Dulce)",
+    "icono": "🔴",
+    "imagen": "images/ingredientes/cuenco_pimenton_1780445005613.png",
+    "familia": "Solanaceae",
+    "origen": "La Vera, Extremadura",
+    "descripcion": "Pimientos secos con perfil dulce-ahumado. DOP La Vera.",
+    "perfiles": [
+      "ahumado",
+      "dulce"
+    ],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 15,
+    "nombre": "Ajo Granulado",
+    "icono": "🧄",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Bulbo deshidratado. Perfil pungente-sulfuroso con notas dulces.",
+    "perfiles": [
+      "picante",
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 16,
+    "nombre": "Jengibre en Polvo",
+    "icono": "🫚",
+    "familia": "Zingiberaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Rizoma con perfil picante-cálido con notas cítricas.",
+    "perfiles": [
+      "citrico",
+      "picante",
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 17,
+    "nombre": "Nuez Moscada",
+    "icono": "🥜",
+    "familia": "Myristicaceae",
+    "origen": "Islas Banda, Indonesia",
+    "descripcion": "Semilla con perfil cálido-dulce con notas de madera.",
+    "perfiles": [
+      "terroso",
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 18,
+    "nombre": "Fenogreco",
+    "icono": "🌱",
+    "familia": "Fabaceae",
+    "origen": "Mediterráneo Oriental",
+    "descripcion": "Semillas con perfil de maple y curry.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 19,
+    "nombre": "Azafrán en Polvo",
+    "icono": "🧡",
+    "familia": "Iridaceae",
+    "origen": "Irán, Cachemira",
+    "descripcion": "La especia más cara del mundo. Perfil floral-metálico con miel.",
+    "perfiles": [
+      "floral",
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 20,
+    "nombre": "Flor de Caléndula",
+    "icono": "🌼",
+    "familia": "Asteraceae",
+    "origen": "Región Mediterránea",
+    "descripcion": "Pétalos dorados. 'Oro de María'. Colorante natural.",
+    "perfiles": [
+      "floral"
+    ],
+    "categoria": "flores"
+  },
+  {
+    "id": 21,
+    "nombre": "Semillas de Hinojo",
+    "icono": "🌱",
+    "familia": "Apiaceae",
+    "origen": "Cuenca Mediterránea",
+    "descripcion": "Semillas con perfil anisado-dulce. Digestivo tradicional.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 22,
+    "nombre": "Mejorana",
+    "icono": "🌿",
+    "familia": "Lamiaceae",
+    "origen": "Chipre, Turquía",
+    "descripcion": "Prima dulce del orégano. Perfil floral-balsámico.",
+    "perfiles": [
+      "floral",
+      "dulce"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 23,
+    "nombre": "Clavo de Olor",
+    "icono": "🪵",
+    "familia": "Myrtaceae",
+    "origen": "Islas Molucas, Indonesia",
+    "descripcion": "Botones florales. Perfil intenso, cálido-dulce. Antiséptico.",
+    "perfiles": [
+      "floral",
+      "terroso",
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 24,
+    "nombre": "Pimienta Negra en Grano",
+    "icono": "⚫",
+    "familia": "Piperaceae",
+    "origen": "Costa Malabar, India",
+    "descripcion": "'Oro negro'. El rey de las especias. Picante característico.",
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 25,
+    "nombre": "Semillas de Sésamo Blanco",
+    "icono": "🌱",
+    "familia": "Pedaliaceae",
+    "origen": "África, India",
+    "descripcion": "'Ábrete Sésamo'. Sabor nuez-dulce. Aceites omega-6.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 26,
+    "nombre": "Panko",
+    "icono": "🌱",
+    "familia": "Producto procesado",
+    "origen": "Japón",
+    "descripcion": "Pan rallado japonés. Textura aireada y crujiente.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 27,
+    "nombre": "Orégano",
+    "icono": "🌿",
+    "imagen": "images/ingredientes/cuenco_oregano_1780447684897.png",
+    "familia": "Lamiaceae",
+    "origen": "Colinas del Mediterráneo",
+    "descripcion": "Hojas con perfil intenso, terroso-picante. 'Alegría de la montaña'.",
+    "perfiles": [
+      "picante",
+      "terroso"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 28,
+    "nombre": "Perejil",
+    "icono": "🌱",
+    "familia": "Apiaceae",
+    "origen": "Mediterráneo Central",
+    "descripcion": "Hojas herbáceas con notas de anís. Purificador del aliento.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 29,
+    "nombre": "Cebolla en Escama",
+    "icono": "🌱",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Bulbo deshidratado. Dulzor concentrado. Base aromática universal.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 30,
+    "nombre": "Tomate Deshidratado",
+    "icono": "🌱",
+    "familia": "Solanaceae",
+    "origen": "América del Sur",
+    "descripcion": "Umami intenso. Glutamato natural concentrado.",
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 31,
+    "nombre": "Levadura Nutricional",
+    "icono": "🌱",
+    "familia": "Saccharomyces",
+    "origen": "Producción controlada",
+    "descripcion": "Sabor umami-queso sin lácteos. Rica en vitaminas B.",
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 32,
+    "nombre": "Pistacho Partido",
+    "icono": "🌱",
+    "familia": "Anacardiaceae",
+    "origen": "Irán, Sicilia",
+    "descripcion": "Nuez verde esmeralda. Sabor dulce-terroso. 'Nuez sonriente'.",
+    "perfiles": [
+      "terroso",
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 33,
+    "nombre": "Harina de Vino",
+    "icono": "🌱",
+    "familia": "Producto artesanal",
+    "origen": "Traslasierra, Córdoba",
+    "descripcion": "Orujo de Malbec. Polifenoles y antocianos. Sabor tánico.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 34,
+    "nombre": "Carbón Activado",
+    "icono": "🌱",
+    "familia": "Carbono procesado",
+    "origen": "Cáscara de coco",
+    "descripcion": "Color negro intenso sin alterar sabor. Purificación ancestral.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 35,
+    "nombre": "Achiote",
+    "icono": "🌱",
+    "familia": "Bixaceae",
+    "origen": "Amazonía, Centroamérica",
+    "descripcion": "Semillas rojas. Colorante y sabor terroso-pimienta. Maya.",
+    "perfiles": [
+      "picante",
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 36,
+    "nombre": "Pimiento Gochugaru",
+    "icono": "🌱",
+    "familia": "Solanaceae",
+    "origen": "Corea",
+    "descripcion": "Chile coreano. Picante moderado con dulzor frutal. Esencial kimchi.",
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 37,
+    "nombre": "Pimienta de Sichuan",
+    "icono": "⚫",
+    "familia": "Rutaceae",
+    "origen": "Sichuan, China",
+    "descripcion": "Sensación de hormigueo. Cítrica-floral, efecto anestésico.",
+    "perfiles": [
+      "floral",
+      "citrico"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 38,
+    "nombre": "Alga Kombu",
+    "icono": "🌱",
+    "familia": "Laminariaceae",
+    "origen": "Mares de Japón",
+    "descripcion": "Umami natural. Base del dashi japonés.",
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 39,
+    "nombre": "Mostaza Amarilla",
+    "icono": "🌱",
+    "familia": "Brassicaceae",
+    "origen": "Cuenca Mediterránea",
+    "descripcion": "Semillas suaves con picante moderado. Mustum ardens.",
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 40,
+    "nombre": "Mostaza Negra",
+    "icono": "🌱",
+    "familia": "Brassicaceae",
+    "origen": "Sur de Asia",
+    "descripcion": "Más picante que la amarilla. Esencial en tadka indio.",
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 41,
+    "nombre": "Ajedrea",
+    "icono": "🌿",
+    "familia": "Lamiaceae",
+    "origen": "Mediterráneo, Cáucaso",
+    "descripcion": "Hierba de los sátiros. Perfil picante-herbáceo.",
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 42,
+    "nombre": "Estragón",
+    "icono": "🌱",
+    "familia": "Asteraceae",
+    "origen": "Siberia, Asia Central",
+    "descripcion": "'Pequeño dragón'. Perfil anisado-licorizado. Finas hierbas.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 43,
+    "nombre": "Semillas de Eneldo",
+    "icono": "🌱",
+    "familia": "Apiaceae",
+    "origen": "Mediterráneo Oriental",
+    "descripcion": "Perfil anisado-alcanforado. 'Dilla' = calmar.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 44,
+    "nombre": "Semillas de Amapola",
+    "icono": "🌱",
+    "familia": "Papaveraceae",
+    "origen": "Mediterráneo Oriental",
+    "descripcion": "Semillas con sabor nuez-dulce. Panadería centroeuropea.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 45,
+    "nombre": "Flor de Lavanda",
+    "icono": "💜",
+    "familia": "Lamiaceae",
+    "origen": "Provenza, Francia",
+    "descripcion": "Flores púrpuras. Perfil floral-alcanforado. 'Lavare'.",
+    "perfiles": [
+      "floral"
+    ],
+    "categoria": "flores"
+  },
+  {
+    "id": 46,
+    "nombre": "Cáscara de Limón Deshidratada",
+    "icono": "🍋",
+    "familia": "Rutaceae",
+    "origen": "Asia, Mediterráneo",
+    "descripcion": "Zeste seco. Perfil cítrico intenso. Contra el escorbuto.",
+    "perfiles": [
+      "citrico"
+    ],
+    "categoria": "citricos"
+  },
+  {
+    "id": 47,
+    "nombre": "Cáscara de Mandarina Deshidratada",
+    "icono": "🍊",
+    "familia": "Rutaceae",
+    "origen": "China",
+    "descripcion": "Chen pi medicinal. Más dulce y floral que limón.",
+    "perfiles": [
+      "floral",
+      "citrico",
+      "dulce"
+    ],
+    "categoria": "citricos"
+  },
+  {
+    "id": 48,
+    "nombre": "Limón Marroquí Deshidratado",
+    "icono": "🍋",
+    "familia": "Rutaceae",
+    "origen": "Marruecos",
+    "descripcion": "Limones fermentados en sal. Sabor umami-cítrico. Tagines.",
+    "perfiles": [
+      "citrico",
+      "umami"
+    ],
+    "categoria": "citricos"
+  },
+  {
+    "id": 49,
+    "nombre": "Café Tostado",
+    "icono": "☕",
+    "familia": "Rubiaceae",
+    "origen": "Etiopía, Yemen",
+    "descripcion": "Perfil amargo-caramelizado. 800+ compuestos aromáticos.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 50,
+    "nombre": "Cascarilla de Café",
+    "icono": "☕",
+    "familia": "Rubiaceae",
+    "origen": "Fincas de café",
+    "descripcion": "Cascara. Sabor dulce-afrutado con notas de hibisco.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 51,
+    "nombre": "Hongos Shiitake (Tallos)",
+    "icono": "🌱",
+    "familia": "Omphalotaceae",
+    "origen": "Japón, China",
+    "descripcion": "Umami concentrado. 'Seta del árbol shii'. Nobleza china.",
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 52,
+    "nombre": "Merkén Chileno",
+    "icono": "🌶️",
+    "familia": "Solanaceae",
+    "origen": "Araucanía, Chile",
+    "descripcion": "Ají ahumado Mapuche. Patrimonio cultural de Chile.",
+    "perfiles": [
+      "picante",
+      "ahumado"
+    ],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 53,
+    "nombre": "Enebro",
+    "icono": "🌱",
+    "familia": "Cupressaceae",
+    "origen": "Hemisferio Norte",
+    "descripcion": "Bayas resinosas-pino. Base de la ginebra.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 54,
+    "nombre": "Puerro Deshidratado",
+    "icono": "🌱",
+    "familia": "Amaryllidaceae",
+    "origen": "Mediterráneo Oriental",
+    "descripcion": "Allium suave. Perfil cebolla-dulce. Símbolo de Gales.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 55,
+    "nombre": "Pimienta Blanca en Grano",
+    "icono": "⚫",
+    "familia": "Piperaceae",
+    "origen": "Costa Malabar, India",
+    "descripcion": "Pimienta sin cáscara. Más suave y terrosa.",
+    "perfiles": [
+      "floral",
+      "picante",
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 56,
+    "nombre": "Pimienta Verde",
+    "icono": "⚫",
+    "familia": "Piperaceae",
+    "origen": "India, Camboya",
+    "descripcion": "Bayas inmaduras. Frescura herbácea. Cocina francesa.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 57,
+    "nombre": "Menta",
+    "icono": "🌿",
+    "familia": "Lamiaceae",
+    "origen": "Europa, Asia",
+    "descripcion": "Hojas refrescantes. Efecto mentolado. Digestivo.",
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 58,
+    "nombre": "Flor de Hibiscus",
+    "icono": "🌺",
+    "familia": "Malvaceae",
+    "origen": "Asia, África",
+    "descripcion": "Flores rojas. Sabor ácido-afrutado. Rica en vitamina C.",
+    "perfiles": [
+      "acido"
+    ],
+    "categoria": "flores"
+  },
+  {
+    "id": 59,
+    "nombre": "Cayena",
+    "icono": "🌱",
+    "familia": "Solanaceae",
+    "origen": "América Central",
+    "descripcion": "Chile muy picante. Activa la termogénesis.",
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 60,
+    "nombre": "Cacao en Polvo",
+    "icono": "🌱",
+    "familia": "Malvaceae",
+    "origen": "América Central",
+    "descripcion": "Alimento de los dioses. Perfil amargo-dulce.",
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias"
+  },
+  {
+    "id": 61,
+    "nombre": "Ají Molido",
+    "icono": "🌶️",
+    "familia": "Solanaceae",
+    "origen": "América del Sur",
+    "descripcion": "Chile molido con picante moderado. Base de muchas cocinas latinas.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 62,
+    "nombre": "Ajo en Escama",
+    "icono": "🧄",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Láminas de ajo deshidratado. Sabor más suave que el granulado.",
+    "perfiles": ["picante", "dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 63,
+    "nombre": "Anís",
+    "icono": "🌱",
+    "familia": "Apiaceae",
+    "origen": "Mediterráneo Oriental",
+    "descripcion": "Semillas con sabor dulce-licorizado. Digestivo tradicional.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 64,
+    "nombre": "Anís Estrellado",
+    "icono": "⭐",
+    "familia": "Schisandraceae",
+    "origen": "China, Vietnam",
+    "descripcion": "Fruto en forma de estrella. Perfil anisado intenso. Esencial en pho.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 65,
+    "nombre": "Azafrán en Hebras",
+    "icono": "🧡",
+    "familia": "Iridaceae",
+    "origen": "Irán, Cachemira",
+    "descripcion": "Estigmas enteros de crocus. La especia más cara del mundo.",
+    "perfiles": ["floral", "dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 66,
+    "nombre": "Azúcar Mascabo",
+    "icono": "🍯",
+    "familia": "Producto procesado",
+    "origen": "India, América",
+    "descripcion": "Azúcar integral sin refinar. Notas de caramelo y melaza.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 67,
+    "nombre": "Canela Entera",
+    "icono": "🍂",
+    "familia": "Lauraceae",
+    "origen": "Sri Lanka",
+    "descripcion": "Ramas de canela de Ceilán. Perfil dulce-especiado suave.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 68,
+    "nombre": "Canela Quebrada",
+    "icono": "🍂",
+    "familia": "Lauraceae",
+    "origen": "Sri Lanka",
+    "descripcion": "Trozos de canela para infusiones y guisos prolongados.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 69,
+    "nombre": "Cáscara de Naranja Deshidratada",
+    "icono": "🍊",
+    "familia": "Rutaceae",
+    "origen": "Asia, Mediterráneo",
+    "descripcion": "Zeste de naranja seco. Perfil cítrico-dulce.",
+    "perfiles": ["citrico", "dulce"],
+    "categoria": "citricos"
+  },
+  {
+    "id": 70,
+    "nombre": "Cáscara de Pomelo Glasé",
+    "icono": "🍊",
+    "familia": "Rutaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Cáscara confitada con notas amargas y dulces.",
+    "perfiles": ["citrico", "dulce"],
+    "categoria": "citricos"
+  },
+  {
+    "id": 71,
+    "nombre": "Cascarilla de Cacao",
+    "icono": "🍫",
+    "familia": "Malvaceae",
+    "origen": "América Central",
+    "descripcion": "Cáscara del grano de cacao. Perfil chocolate suave.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 72,
+    "nombre": "Cayena Amarilla",
+    "icono": "🌶️",
+    "familia": "Solanaceae",
+    "origen": "América Central",
+    "descripcion": "Variedad de cayena menos picante, más frutal.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 73,
+    "nombre": "Cayena Roja",
+    "icono": "🌶️",
+    "familia": "Solanaceae",
+    "origen": "América Central",
+    "descripcion": "Chile muy picante. Activa la termogénesis.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 74,
+    "nombre": "Cebolla en Polvo",
+    "icono": "🧅",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Cebolla finamente molida. Se integra en mezclas homogéneas.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 75,
+    "nombre": "Cebolla Crispy",
+    "icono": "🧅",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Cebolla frita deshidratada. Textura crujiente.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 76,
+    "nombre": "Cebolla de Verdeo",
+    "icono": "🧅",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia",
+    "descripcion": "Cebollín deshidratado. Perfil suave y fresco.",
+    "perfiles": ["terroso"],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 77,
+    "nombre": "Chimichurri Parrillero",
+    "icono": "🌿",
+    "familia": "Mezcla",
+    "origen": "Argentina",
+    "descripcion": "Blend de hierbas para carnes asadas.",
+    "perfiles": ["terroso", "picante"],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 78,
+    "nombre": "Comino Molido",
+    "icono": "🌰",
+    "familia": "Apiaceae",
+    "origen": "Levante, Egipto",
+    "descripcion": "Comino en polvo. Aroma más intenso que en grano.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 79,
+    "nombre": "Comino Negro",
+    "icono": "🌰",
+    "familia": "Ranunculaceae",
+    "origen": "Asia Occidental",
+    "descripcion": "Nigella sativa. Sabor a nuez con notas de orégano.",
+    "perfiles": ["terroso", "picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 80,
+    "nombre": "Cúrcuma en Raíz",
+    "icono": "🌟",
+    "familia": "Zingiberaceae",
+    "origen": "Sur de Asia",
+    "descripcion": "Rizoma entero de cúrcuma. Sabor más fresco que el polvo.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 81,
+    "nombre": "Espinaca Deshidratada",
+    "icono": "🥬",
+    "familia": "Amaranthaceae",
+    "origen": "Persia",
+    "descripcion": "Hojas de espinaca deshidratadas. Rica en hierro.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 82,
+    "nombre": "Jengibre Raíz",
+    "icono": "🫚",
+    "familia": "Zingiberaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Rizoma entero deshidratado. Más aromático que el polvo.",
+    "perfiles": ["citrico", "picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 83,
+    "nombre": "Jengibre Glasé",
+    "icono": "🫚",
+    "familia": "Zingiberaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Jengibre confitado. Perfil dulce-picante.",
+    "perfiles": ["dulce", "picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 84,
+    "nombre": "Kümmel",
+    "icono": "🌱",
+    "familia": "Apiaceae",
+    "origen": "Europa",
+    "descripcion": "Semillas de alcaravea. Sabor anisado-terroso.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 85,
+    "nombre": "Laurel",
+    "icono": "🌿",
+    "familia": "Lauraceae",
+    "origen": "Mediterráneo",
+    "descripcion": "Hojas aromáticas para guisos y caldos.",
+    "perfiles": ["terroso"],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 86,
+    "nombre": "Mix de Pimientas",
+    "icono": "⚫",
+    "familia": "Piperaceae",
+    "origen": "Varios",
+    "descripcion": "Mezcla de pimientas negra, blanca, verde y rosa.",
+    "perfiles": ["picante", "floral"],
+    "categoria": "especias"
+  },
+  {
+    "id": 87,
+    "nombre": "Morrón Rojo Deshidratado",
+    "icono": "🌶️",
+    "familia": "Solanaceae",
+    "origen": "América",
+    "descripcion": "Pimiento rojo dulce deshidratado. Notas dulces.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 88,
+    "nombre": "Morrón Verde Deshidratado",
+    "icono": "🫑",
+    "familia": "Solanaceae",
+    "origen": "América",
+    "descripcion": "Pimiento verde deshidratado. Sabor más vegetal.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 89,
+    "nombre": "Nibs de Cacao",
+    "icono": "🍫",
+    "familia": "Malvaceae",
+    "origen": "América Central",
+    "descripcion": "Trozos de grano de cacao tostado. Sabor intenso.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 90,
+    "nombre": "Nuez Moscada Molida",
+    "icono": "🥜",
+    "familia": "Myristicaceae",
+    "origen": "Islas Banda",
+    "descripcion": "Nuez moscada en polvo. Lista para usar.",
+    "perfiles": ["terroso", "dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 91,
+    "nombre": "Pepino en Polvo",
+    "icono": "🥒",
+    "familia": "Cucurbitaceae",
+    "origen": "India",
+    "descripcion": "Pepino deshidratado molido. Sabor fresco.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 92,
+    "nombre": "Pimentón Nacional Dulce",
+    "icono": "🔴",
+    "familia": "Solanaceae",
+    "origen": "Argentina",
+    "descripcion": "Pimiento dulce argentino. Color rojo intenso.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 93,
+    "nombre": "Pimentón Nacional Picante",
+    "icono": "🔴",
+    "familia": "Solanaceae",
+    "origen": "Argentina",
+    "descripcion": "Pimiento picante argentino.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 94,
+    "nombre": "Pimentón Nacional Ahumado",
+    "icono": "🔴",
+    "familia": "Solanaceae",
+    "origen": "Argentina",
+    "descripcion": "Pimiento ahumado argentino.",
+    "perfiles": ["ahumado"],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 95,
+    "nombre": "Pimentón Español Picante",
+    "icono": "🔴",
+    "familia": "Solanaceae",
+    "origen": "La Vera, España",
+    "descripcion": "Pimentón de la Vera picante. DOP.",
+    "perfiles": ["picante", "ahumado"],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 96,
+    "nombre": "Pimentón Español Ahumado",
+    "icono": "🔴",
+    "familia": "Solanaceae",
+    "origen": "La Vera, España",
+    "descripcion": "Pimentón de la Vera ahumado. DOP.",
+    "perfiles": ["ahumado"],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 97,
+    "nombre": "Pimienta Blanca Molida",
+    "icono": "⚪",
+    "familia": "Piperaceae",
+    "origen": "India",
+    "descripcion": "Pimienta blanca en polvo. Más suave.",
+    "perfiles": ["picante", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 98,
+    "nombre": "Pimienta de Jamaica",
+    "icono": "⚫",
+    "familia": "Myrtaceae",
+    "origen": "Caribe",
+    "descripcion": "Allspice. Sabor a clavo, canela y nuez moscada.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 99,
+    "nombre": "Pimienta Negra Molida",
+    "icono": "⚫",
+    "familia": "Piperaceae",
+    "origen": "India",
+    "descripcion": "Pimienta negra en polvo. Lista para usar.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 100,
+    "nombre": "Pimienta Roja",
+    "icono": "🔴",
+    "familia": "Piperaceae",
+    "origen": "Brasil",
+    "descripcion": "Bayas de Schinus. Sabor dulce-picante.",
+    "perfiles": ["picante", "dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 101,
+    "nombre": "Poleo",
+    "icono": "🌿",
+    "familia": "Lamiaceae",
+    "origen": "Mediterráneo",
+    "descripcion": "Hierba mentolada para infusiones. Digestivo.",
+    "perfiles": ["terroso"],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 102,
+    "nombre": "Remolacha en Polvo",
+    "icono": "🔴",
+    "familia": "Amaranthaceae",
+    "origen": "Europa",
+    "descripcion": "Colorante natural. Sabor dulce-terroso.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 103,
+    "nombre": "Rooibos",
+    "icono": "🍵",
+    "familia": "Fabaceae",
+    "origen": "Sudáfrica",
+    "descripcion": "Té rojo sudafricano sin cafeína. Dulce y suave.",
+    "perfiles": ["dulce"],
+    "categoria": "tes"
+  },
+  {
+    "id": 104,
+    "nombre": "Ruibarbo",
+    "icono": "🌱",
+    "familia": "Polygonaceae",
+    "origen": "Asia",
+    "descripcion": "Tallos ácidos-dulces. Usado en postres y bebidas.",
+    "perfiles": ["acido", "dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 105,
+    "nombre": "Sal Marina Fina",
+    "icono": "🧂",
+    "familia": "Mineral",
+    "origen": "Salinas del Atlántico",
+    "descripcion": "Cristales finos de sal marina.",
+    "perfiles": ["neutro"],
+    "categoria": "sales"
+  },
+  {
+    "id": 106,
+    "nombre": "Sal Marina Gruesa",
+    "icono": "🧂",
+    "familia": "Mineral",
+    "origen": "Salinas del Atlántico",
+    "descripcion": "Cristales gruesos para molinillo o finishing.",
+    "perfiles": ["neutro"],
+    "categoria": "sales"
+  },
+  {
+    "id": 107,
+    "nombre": "Semillas de Sésamo Negro",
+    "icono": "⚫",
+    "familia": "Pedaliaceae",
+    "origen": "África, Asia",
+    "descripcion": "Sésamo negro con sabor más intenso y terroso.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 108,
+    "nombre": "Semillas de Apio",
+    "icono": "🌱",
+    "familia": "Apiaceae",
+    "origen": "Mediterráneo",
+    "descripcion": "Sabor intenso a apio concentrado.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 109,
+    "nombre": "Semillas de Girasol",
+    "icono": "🌻",
+    "familia": "Asteraceae",
+    "origen": "América del Norte",
+    "descripcion": "Semillas nutritivas con sabor a nuez.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 110,
+    "nombre": "Semillas de Lino",
+    "icono": "🌱",
+    "familia": "Linaceae",
+    "origen": "Mesopotamia",
+    "descripcion": "Ricas en omega-3. Sabor a nuez suave.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 111,
+    "nombre": "Semillas de Zapallo",
+    "icono": "🎃",
+    "familia": "Cucurbitaceae",
+    "origen": "América",
+    "descripcion": "Pepitas de calabaza. Sabor dulce-terroso.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 112,
+    "nombre": "Semillas de Chía",
+    "icono": "🌱",
+    "familia": "Lamiaceae",
+    "origen": "México",
+    "descripcion": "Superalimento rico en omega-3 y fibra.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 113,
+    "nombre": "Té Negro Nacional",
+    "icono": "🍵",
+    "familia": "Theaceae",
+    "origen": "Misiones, Argentina",
+    "descripcion": "Té negro argentino. Sabor robusto y maltoso.",
+    "perfiles": ["terroso"],
+    "categoria": "tes"
+  },
+  {
+    "id": 114,
+    "nombre": "Té Rojo Nacional",
+    "icono": "🍵",
+    "familia": "Theaceae",
+    "origen": "Misiones, Argentina",
+    "descripcion": "Té rojo argentino. Sabor suave y afrutado.",
+    "perfiles": ["dulce"],
+    "categoria": "tes"
+  },
+  {
+    "id": 115,
+    "nombre": "Té Verde Nacional",
+    "icono": "🍵",
+    "familia": "Theaceae",
+    "origen": "Misiones, Argentina",
+    "descripcion": "Té verde argentino. Fresco y vegetal.",
+    "perfiles": ["terroso"],
+    "categoria": "tes"
+  },
+  {
+    "id": 116,
+    "nombre": "Zanahoria Deshidratada",
+    "icono": "🥕",
+    "familia": "Apiaceae",
+    "origen": "Afganistán",
+    "descripcion": "Zanahoria seca. Dulzor natural concentrado.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 117,
+    "nombre": "Zapallo Deshidratado",
+    "icono": "🎃",
+    "familia": "Cucurbitaceae",
+    "origen": "América",
+    "descripcion": "Calabaza deshidratada. Sabor dulce-terroso.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 118,
+    "nombre": "Algas Nori",
+    "icono": "🌊",
+    "familia": "Bangiaceae",
+    "origen": "Japón",
+    "descripcion": "Alga para sushi. Sabor marino umami.",
+    "perfiles": ["umami"],
+    "categoria": "especias"
+  },
+  {
+    "id": 119,
+    "nombre": "Hondashi",
+    "icono": "🐟",
+    "familia": "Producto procesado",
+    "origen": "Japón",
+    "descripcion": "Caldo de bonito en polvo. Base del dashi.",
+    "perfiles": ["umami"],
+    "categoria": "especias"
+  },
+  {
+    "id": 120,
+    "nombre": "Ají Chaotián",
+    "icono": "🌶️",
+    "familia": "Solanaceae",
+    "origen": "China",
+    "descripcion": "Chile chino pequeño y muy picante.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 121,
+    "nombre": "Hojas de Hinojo",
+    "icono": "🌿",
+    "familia": "Apiaceae",
+    "origen": "Mediterráneo",
+    "descripcion": "Frondas de hinojo. Sabor anisado suave.",
+    "perfiles": ["dulce"],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 122,
+    "nombre": "Ajo Fresco",
+    "icono": "🧄",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Ajo fresco deshidratado. Sabor más intenso.",
+    "perfiles": ["picante"],
+    "categoria": "especias"
+  },
+  {
+    "id": 123,
+    "nombre": "Cebolla Quemada Deshidratada",
+    "icono": "🧅",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Cebolla caramelizada y deshidratada. Sabor ahumado-dulce.",
+    "perfiles": ["ahumado", "dulce"],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 124,
+    "nombre": "Miel en Polvo",
+    "icono": "🍯",
+    "familia": "Producto procesado",
+    "origen": "Varios",
+    "descripcion": "Miel deshidratada. Dulzor natural para mezclas secas.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 125,
+    "nombre": "Cebolla Morada en Polvo",
+    "icono": "🧅",
+    "familia": "Amaryllidaceae",
+    "origen": "Asia Central",
+    "descripcion": "Cebolla morada molida. Más dulce que la blanca.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 126,
+    "nombre": "Leche de Coco en Polvo",
+    "icono": "🥥",
+    "familia": "Arecaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Leche de coco deshidratada. Cremosidad tropical.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 127,
+    "nombre": "Coco Rallado",
+    "icono": "🥥",
+    "familia": "Arecaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Pulpa de coco deshidratada. Textura y dulzor.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 128,
+    "nombre": "Hongos de Pino",
+    "icono": "🍄",
+    "familia": "Suillaceae",
+    "origen": "Patagonia",
+    "descripcion": "Hongos silvestres de bosques de pino. Sabor terroso.",
+    "perfiles": ["umami", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 129,
+    "nombre": "Pistacho Entero",
+    "icono": "🌱",
+    "familia": "Anacardiaceae",
+    "origen": "Irán, Sicilia",
+    "descripcion": "Pistachos enteros con cáscara.",
+    "perfiles": ["dulce", "terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 130,
+    "nombre": "Lemon Grass",
+    "icono": "🌿",
+    "familia": "Poaceae",
+    "origen": "Sudeste Asiático",
+    "descripcion": "Hierba limón. Perfil cítrico-floral intenso.",
+    "perfiles": ["citrico", "floral"],
+    "categoria": "hierbas"
+  },
+  {
+    "id": 131,
+    "nombre": "Durazno en Escamas",
+    "icono": "🍑",
+    "familia": "Rosaceae",
+    "origen": "China",
+    "descripcion": "Durazno deshidratado. Dulce y afrutado.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 132,
+    "nombre": "Arándanos Deshidratados",
+    "icono": "🫐",
+    "familia": "Ericaceae",
+    "origen": "América del Norte",
+    "descripcion": "Berries secos. Ácido-dulce con antioxidantes.",
+    "perfiles": ["dulce", "acido"],
+    "categoria": "especias"
+  },
+  {
+    "id": 133,
+    "nombre": "Rosa Mosqueta Fruto",
+    "icono": "🌹",
+    "familia": "Rosaceae",
+    "origen": "Patagonia",
+    "descripcion": "Fruto silvestre. Rico en vitamina C. Sabor ácido.",
+    "perfiles": ["acido"],
+    "categoria": "flores"
+  },
+  {
+    "id": 134,
+    "nombre": "Té Verde Importado Pekoe",
+    "icono": "🍵",
+    "familia": "Theaceae",
+    "origen": "China, Sri Lanka",
+    "descripcion": "Té verde de hojas selectas. Delicado y vegetal.",
+    "perfiles": ["terroso", "floral"],
+    "categoria": "tes"
+  },
+  {
+    "id": 135,
+    "nombre": "Manzanilla",
+    "icono": "🌼",
+    "familia": "Asteraceae",
+    "origen": "Europa",
+    "descripcion": "Flores para infusión. Relajante y digestiva.",
+    "perfiles": ["floral", "dulce"],
+    "categoria": "tes"
+  },
+  {
+    "id": 136,
+    "nombre": "Ñaco",
+    "icono": "🌾",
+    "familia": "Poaceae",
+    "origen": "Chile, Argentina",
+    "descripcion": "Harina tostada de trigo. Tradición mapuche.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 137,
+    "nombre": "Té Negro Premium",
+    "icono": "🍵",
+    "familia": "Theaceae",
+    "origen": "Misiones, Argentina",
+    "descripcion": "Té negro de alta calidad. Hojas enteras.",
+    "perfiles": ["terroso"],
+    "categoria": "tes"
+  },
+  {
+    "id": 138,
+    "nombre": "Humo en Polvo",
+    "icono": "💨",
+    "familia": "Producto procesado",
+    "origen": "España",
+    "descripcion": "Aroma de humo concentrado para ahumar en frío.",
+    "perfiles": ["ahumado"],
+    "categoria": "ahumados"
+  },
+  {
+    "id": 139,
+    "nombre": "Pimiento Verde Deshidratado",
+    "icono": "🫑",
+    "familia": "Solanaceae",
+    "origen": "América",
+    "descripcion": "Pimiento verde seco. Sabor vegetal intenso.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 140,
+    "nombre": "Cáscara de Naranja Amarga",
+    "icono": "🍊",
+    "familia": "Rutaceae",
+    "origen": "Mediterráneo",
+    "descripcion": "Zeste de naranja amarga. Perfil intenso-amargo.",
+    "perfiles": ["citrico"],
+    "categoria": "citricos"
+  },
+  {
+    "id": 141,
+    "nombre": "Manzana Deshidratada",
+    "icono": "🍎",
+    "familia": "Rosaceae",
+    "origen": "Asia Central",
+    "descripcion": "Chips de manzana. Dulzor natural concentrado.",
+    "perfiles": ["dulce"],
+    "categoria": "especias"
+  },
+  {
+    "id": 142,
+    "nombre": "Flor de Saúco",
+    "icono": "🌸",
+    "familia": "Adoxaceae",
+    "origen": "Europa",
+    "descripcion": "Flores aromáticas para infusiones. Delicado y floral.",
+    "perfiles": ["floral"],
+    "categoria": "flores"
+  },
+  {
+    "id": 143,
+    "nombre": "Genciana Raíz",
+    "icono": "🌱",
+    "familia": "Gentianaceae",
+    "origen": "Alpes",
+    "descripcion": "Raíz amarga. Base de aperitivos y digestivos.",
+    "perfiles": ["terroso"],
+    "categoria": "especias"
+  },
+  {
+    "id": 144,
+    "nombre": "Té Rojo Pu-Erh",
+    "icono": "🍵",
+    "familia": "Theaceae",
+    "origen": "Yunnan, China",
+    "descripcion": "Té fermentado y añejado. Sabor terroso profundo.",
+    "perfiles": ["terroso"],
+    "categoria": "tes"
+  },
+  {
+    "id": 145,
+    "nombre": "Hongo Shiitake Entero",
+    "icono": "🍄",
+    "familia": "Omphalotaceae",
+    "origen": "Japón, China",
+    "descripcion": "Setas shiitake enteras deshidratadas.",
+    "perfiles": ["umami"],
+    "categoria": "especias"
+  }
+];
+
+// Mapeo de perfiles a emojis para display
+const PERFIL_ICONS = {
+  "terroso": "🌍",
+  "floral": "🌸",
+  "citrico": "🍋",
+  "picante": "🔥",
+  "ahumado": "💨",
+  "dulce": "🍯",
+  "acido": "🍋",
+  "neutro": "⚪",
+  "umami": "🍄",
+  "mineral": "💎"
+};
+
+</script>
+    <script>
+/* ============================================
+   ROJO MALBEC E-COMMERCE - APP LOGIC
+   ============================================ */
+
+const state = {
+    currentScreen: 'home',
+    selectedIngredients: [],
+    currentFilter: 'todos',
+    currentIngredient: null,
+    cart: []
+};
+
+const WHATSAPP_NUMBER = '5493544308380';
+
+const screens = {
+    home: document.getElementById('screen-home'),
+    explore: document.getElementById('screen-explore'),
+    blend: document.getElementById('screen-blend'),
+    order: document.getElementById('screen-order'),
+    products: document.getElementById('screen-products'),
+    about: document.getElementById('screen-about'),
+    blog: document.getElementById('screen-blog'),
+    post: document.getElementById('screen-post')
+};
+
+const elements = {
+    ingredientsGrid: document.getElementById('ingredientsGrid'),
+    blendList: document.getElementById('blendList'),
+    blendEmpty: document.getElementById('blendEmpty'),
+    blendSummary: document.getElementById('blendSummary'),
+    btnOrder: document.getElementById('btnOrder'),
+    ingredientCount: document.getElementById('ingredientCount'),
+    profileTags: document.getElementById('profileTags'),
+    selectedList: document.getElementById('selectedList'),
+    ingredientModal: document.getElementById('ingredientModal'),
+    productModal: document.getElementById('productModal'),
+    cartSidebar: document.getElementById('cartSidebar'),
+    cartOverlay: document.getElementById('cartOverlay'),
+    globalCartItems: document.getElementById('globalCartItems'),
+    cartBadgeGlobal: document.getElementById('cartBadgeGlobal'),
+    btnAddToCart: document.getElementById('btnAddToCart')
+};
+
+function safeBind(id, ev, cb) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener(ev, cb);
+}
+
+function navigateTo(screenName) {
+    if (!screens[screenName]) return;
+
+    Object.keys(screens).forEach(key => {
+        if(screens[key]) screens[key].classList.remove('active');
+    });
+    screens[screenName].classList.add('active');
+
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+    for (let i = 0; i < navLinks.length; i++) {
+        const item = navLinks[i];
+        if (item.dataset.target === screenName) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    }
+
+    state.currentScreen = screenName;
+    window.scrollTo(0, 0);
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+
+    if (screenName === 'explore') renderIngredients();
+    if (screenName === 'blend') renderBlend();
+    if (screenName === 'order') renderOrderSummary();
+    if (screenName === 'blog') renderBlog();
+    if (screenName === 'products') renderProducts();
+}
+
+const navLinksInit = document.querySelectorAll('.nav-link, .mobile-link');
+for (let i = 0; i < navLinksInit.length; i++) {
+    const item = navLinksInit[i];
+    item.addEventListener('click', () => navigateTo(item.dataset.target));
+}
+
+safeBind('btnMobileMenu', 'click', () => {
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) mobileMenu.classList.toggle('open');
+});
+
+safeBind('btnStartBlend', 'click', () => navigateTo('explore'));
+safeBind('btnGoToProducts', 'click', () => navigateTo('products'));
+safeBind('btnHeroGoToProducts', 'click', () => navigateTo('products'));
+
+/* ============================================
+   CART SYSTEM
+   ============================================ */
+function loadCart() {
+    try {
+        const saved = localStorage.getItem('rojoMalbecCart');
+        if (saved) {
+            state.cart = JSON.parse(saved);
+        }
+    } catch(e) { 
+        state.cart = []; 
+    }
+    updateCartUI();
+}
+
+function saveCart() {
+    try {
+        localStorage.setItem('rojoMalbecCart', JSON.stringify(state.cart));
+    } catch (e) {}
+    updateCartUI();
+}
+
+function addToCart(product) {
+    let existing = null;
+    for (let i = 0; i < state.cart.length; i++) {
+        if (state.cart[i].id === product.id && state.cart[i].type === 'product') {
+            existing = state.cart[i];
+            break;
+        }
+    }
+    
+    if (existing) {
+        existing.qty = (existing.qty || 1) + 1;
+    } else {
+        const newItem = Object.assign({}, product, { type: 'product', qty: 1 });
+        state.cart.push(newItem);
+    }
+    saveCart();
+    openCartSidebar();
+}
+
+function removeFromCart(index) {
+    state.cart.splice(index, 1);
+    saveCart();
+}
+
+function updateCartUI() {
+    let totalItems = 0;
+    for (let i = 0; i < state.cart.length; i++) {
+        totalItems += (state.cart[i].qty || 1);
+    }
+    
+    if (elements.cartBadgeGlobal) {
+        elements.cartBadgeGlobal.textContent = totalItems;
+        elements.cartBadgeGlobal.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+    
+    if (elements.globalCartItems) {
+        if (state.cart.length === 0) {
+            elements.globalCartItems.innerHTML = '<div class="cart-empty-msg">Tu carrito está vacío.</div>';
+        } else {
+            const htmlArray = [];
+            for (let i = 0; i < state.cart.length; i++) {
+                const item = state.cart[i];
+                const imgSrc = item.imagen ? encodeURI(item.imagen) : '';
+                const imgHtml = imgSrc ? `<img src="${imgSrc}" class="cart-item-img">` : `<div class="cart-item-img" style="display:flex;align-items:center;justify-content:center;background:white;font-size:1.5rem;">${item.emoji||'🛒'}</div>`;
+                htmlArray.push(`
+                <div class="cart-item">
+                    ${imgHtml}
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.nombre}</div>
+                        <div style="font-size:0.8rem; color:#666;">Cant: ${item.qty || 1}</div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${i})">✖</button>
+                </div>
+                `);
+            }
+            elements.globalCartItems.innerHTML = htmlArray.join('');
+        }
+    }
+}
+
+function openCartSidebar() {
+    if (elements.cartSidebar) elements.cartSidebar.classList.add('open');
+    if (elements.cartOverlay) elements.cartOverlay.classList.add('open');
+}
+
+function closeCartSidebar() {
+    if (elements.cartSidebar) elements.cartSidebar.classList.remove('open');
+    if (elements.cartOverlay) elements.cartOverlay.classList.remove('open');
+}
+
+safeBind('btnOpenCart', 'click', openCartSidebar);
+safeBind('btnCloseCart', 'click', closeCartSidebar);
+safeBind('cartOverlay', 'click', closeCartSidebar);
+
+safeBind('btnCheckoutGlobal', 'click', () => {
+    if (state.cart.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+    }
+    const itemsText = state.cart.map(i => `• ${i.qty || 1}x ${i.nombre}`).join('\n');
+    const mensaje = `Hola Rojo Malbec! 👋\n\nQuiero realizar el siguiente pedido del catálogo:\n\n${itemsText}\n\nPor favor indíquenme disponibilidad y medios de pago. ¡Gracias!`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+});
+
+/* ============================================
+   PRODUCT CATALOG
+   ============================================ */
+let currentProductFilter = 'todos';
+
+function renderProducts() {
+    const grid = document.getElementById('productsGrid');
+    if (!grid || typeof productos === 'undefined') return;
+
+    let filtered = productos;
+    if (currentProductFilter !== 'todos') {
+        filtered = productos.filter(p => p.categoria === currentProductFilter);
+    }
+
+    const htmlArray = [];
+    for (let i = 0; i < filtered.length; i++) {
+        const prod = filtered[i];
+        const vitalBadge = prod.sinSodio ? '<span class="vital-indicator">💚 0% Sodio</span>' : '';
+        const encodedPath = prod.imagen ? encodeURI(prod.imagen) : '';
+        const imageHtml = prod.imagen 
+            ? `<img src="${encodedPath}" alt="${prod.nombre}" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'">` 
+            : '';
+        const emojiStyle = prod.imagen ? 'style="display:none;"' : '';
+
+        htmlArray.push(`
+        <div class="product-card" onclick="openProductModal(${prod.id})">
+            <div class="product-image-container">
+                ${imageHtml}
+                <div class="product-emoji-fallback" ${emojiStyle}>${prod.emoji || '🧂'}</div>
+                ${vitalBadge}
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">${prod.nombre}</h3>
+                <p class="product-tagline">${prod.tagline || ''}</p>
+                <button class="btn-primary" style="width:100%; margin-top:10px;" onclick="event.stopPropagation(); openProductModal(${prod.id})">Ver detalle</button>
+            </div>
+        </div>
+        `);
+    }
+    grid.innerHTML = htmlArray.join('');
+}
+
+const filterChips = document.querySelectorAll('.filter-chip');
+for (let i = 0; i < filterChips.length; i++) {
+    filterChips[i].addEventListener('click', (e) => {
+        const allChips = document.querySelectorAll('.filter-chip');
+        for (let j = 0; j < allChips.length; j++) {
+            allChips[j].classList.remove('active');
+        }
+        e.target.classList.add('active');
+        currentProductFilter = e.target.dataset.productFilter;
+        renderProducts();
+    });
+}
+
+let selectedProductForCart = null;
+
+function openProductModal(id) {
+    if (typeof productos === 'undefined') return;
+    let prod = null;
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i].id === id) {
+            prod = productos[i];
+            break;
+        }
+    }
+    if (!prod) return;
+
+    selectedProductForCart = prod;
+    document.getElementById('productModalTitle').textContent = prod.nombre;
+    document.getElementById('productModalTagline').textContent = prod.tagline || '';
+    document.getElementById('productModalDescripcion').textContent = prod.descripcion || '';
+    document.getElementById('productModalIngredientes').textContent = prod.ingredientes || '';
+    document.getElementById('productModalMaridaje').textContent = prod.maridaje || '';
+    
+    const modalIcon = document.getElementById('productModalIcon');
+    if (modalIcon) modalIcon.textContent = prod.emoji || '🧂';
+
+    const vitalBadge = document.getElementById('productModalVitalBadge');
+    if (vitalBadge) vitalBadge.style.display = prod.sinSodio ? 'block' : 'none';
+
+    if (elements.productModal) elements.productModal.classList.add('active');
+}
+
+function closeProductModal() {
+    if (elements.productModal) elements.productModal.classList.remove('active');
+    selectedProductForCart = null;
+}
+
+safeBind('productModalClose', 'click', closeProductModal);
+if (elements.btnAddToCart) {
+    elements.btnAddToCart.addEventListener('click', () => {
+        if (selectedProductForCart) {
+            addToCart(selectedProductForCart);
+            closeProductModal();
+        }
+    });
+}
+
+/* ============================================
+   BLEND BUILDER
+   ============================================ */
+safeBind('filtersRow', 'click', (e) => {
+    const card = e.target.closest('.profile-card');
+    if (!card) return;
+    const cards = document.querySelectorAll('.profile-card');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.remove('active');
+    }
+    card.classList.add('active');
+    state.currentFilter = card.dataset.filter;
+    renderIngredients();
+});
+
+
+
+function renderIngredients() {
+    const grid = elements.ingredientsGrid;
+    if (!grid || typeof ingredientes === 'undefined') return;
+
+    let filtered = ingredientes;
+    if (state.currentFilter !== 'todos') {
+        filtered = [];
+        for (let i = 0; i < ingredientes.length; i++) {
+            if (ingredientes[i].perfiles.indexOf(state.currentFilter) !== -1) {
+                filtered.push(ingredientes[i]);
+            }
+        }
+    }
+
+    const htmlArray = [];
+    for (let i = 0; i < filtered.length; i++) {
+        const ing = filtered[i];
+        let isSelected = false;
+        for (let j = 0; j < state.selectedIngredients.length; j++) {
+            if (state.selectedIngredients[j].id === ing.id) {
+                isSelected = true;
+                break;
+            }
+        }
+        
+        const tags = ing.perfiles.map(p => 
+            `<span class="tag" style="font-size:0.7rem; padding:2px 6px; background:#f0f0f0; border-radius:4px; margin-right:4px;">${PERFIL_ICONS[p] || ''} ${p}</span>`
+        ).join('');
+
+        const imageUrl = ing.imagen ? encodeURI(ing.imagen) : '';
+        const imageHtml = imageUrl ? `<img src="${imageUrl}" alt="${ing.nombre}">` : '';
+
+        htmlArray.push(`
+        <div class="ingredient-card ${isSelected ? 'selected' : ''}">
+            <button class="info-btn" onclick="openIngredientInfo(${ing.id})">ℹ️</button>
+            <div class="ingredient-image" onclick="toggleIngredient(${ing.id})">
+                ${imageHtml}
+                <div class="ingredient-emoji" style="${imageUrl ? 'display:none;' : ''}">${ing.icono}</div>
+            </div>
+            <div class="ingredient-info" onclick="toggleIngredient(${ing.id})">
+                <div class="ingredient-name">${ing.nombre}</div>
+                <div style="margin-top:5px;">${tags}</div>
+            </div>
+            ${isSelected ? '<div class="selected-badge">✓</div>' : ''}
+        </div>
+        `);
+    }
+    grid.innerHTML = htmlArray.join('');
+}
+
+function openIngredientInfo(id) {
+    if (typeof ingredientes === 'undefined') return;
+    let ing = null;
+    for (let i = 0; i < ingredientes.length; i++) {
+        if (ingredientes[i].id === id) {
+            ing = ingredientes[i];
+            break;
+        }
+    }
+    if (!ing) return;
+    
+    document.getElementById('modalTitle').textContent = ing.nombre;
+    document.getElementById('modalIcon').textContent = ing.icono;
+    document.getElementById('modalDesc').textContent = ing.descripcion;
+    document.getElementById('modalMaridaje').innerHTML = `<strong>Ideal para:</strong> ${ing.maridaje}`;
+    document.getElementById('modalTags').innerHTML = ing.perfiles.map(p => `<span class="profile-tag">${PERFIL_ICONS[p] || ''} ${p}</span>`).join('');
+    if (elements.ingredientModal) elements.ingredientModal.classList.add('active');
+}
+
+function closeIngredientInfo() {
+    if (elements.ingredientModal) elements.ingredientModal.classList.remove('active');
+}
+
+safeBind('modalClose', 'click', closeIngredientInfo);
+
+function toggleIngredient(id) {
+    if (typeof ingredientes === 'undefined') return;
+    let ing = null;
+    for (let i = 0; i < ingredientes.length; i++) {
+        if (ingredientes[i].id === id) {
+            ing = ingredientes[i];
+            break;
+        }
+    }
+    if (!ing) return;
+
+    let index = -1;
+    for (let i = 0; i < state.selectedIngredients.length; i++) {
+        if (state.selectedIngredients[i].id === id) {
+            index = i;
+            break;
+        }
+    }
+    
+    if (index === -1) {
+        if (state.selectedIngredients.length >= 8) {
+            alert('¡Máximo 8 ingredientes por blend para mantener el equilibrio!');
+            return;
+        }
+        state.selectedIngredients.push(ing);
+    } else {
+        state.selectedIngredients.splice(index, 1);
+    }
+    updateBlendBadge();
+    renderIngredients();
+}
+
+function removeFromBlend(id) {
+    let index = -1;
+    for (let i = 0; i < state.selectedIngredients.length; i++) {
+        if (state.selectedIngredients[i].id === id) {
+            index = i;
+            break;
+        }
+    }
+    if (index !== -1) {
+        state.selectedIngredients.splice(index, 1);
+        updateBlendBadge();
+        renderBlend();
+    }
+}
+
+function updateBlendBadge() {
+    const count = state.selectedIngredients.length;
+    const badge = document.getElementById('blendBadge');
+    const btn = document.getElementById('btnGoToBlendReview');
+    if (count > 0) {
+        if(btn) btn.style.display = 'block';
+        if(badge) {
+            badge.style.display = 'inline-flex';
+            badge.textContent = count;
+        }
+    } else {
+        if(btn) btn.style.display = 'none';
+        if(badge) badge.style.display = 'none';
+    }
+}
+
+safeBind('btnGoToBlendReview', 'click', () => navigateTo('blend'));
+safeBind('btnGoExplore', 'click', () => navigateTo('explore'));
+
+function renderBlend() {
+    const list = elements.blendList;
+    const empty = elements.blendEmpty;
+    const summary = elements.blendSummary;
+    const btnOrder = elements.btnOrder;
+    const btnAddMore = document.getElementById('btnAddMoreIngredients');
+
+    if (state.selectedIngredients.length === 0) {
+        if(empty) empty.style.display = 'block';
+        if(list) list.innerHTML = '';
+        if(summary) summary.style.display = 'none';
+        if(btnOrder) btnOrder.style.display = 'none';
+        if (btnAddMore) btnAddMore.style.display = 'none';
+        return;
+    }
+
+    if(empty) empty.style.display = 'none';
+    if(summary) summary.style.display = 'block';
+    if(btnOrder) btnOrder.style.display = 'flex';
+    if (btnAddMore) btnAddMore.style.display = 'block';
+
+    if(list) {
+        list.innerHTML = state.selectedIngredients.map(ing => `
+            <div class="blend-item">
+                <div class="blend-item-icon">${ing.icono}</div>
+                <div class="blend-item-name">${ing.nombre}</div>
+                <button class="blend-item-remove" onclick="removeFromBlend(${ing.id})">✖</button>
+            </div>
+        `).join('');
+    }
+
+    if(elements.ingredientCount) elements.ingredientCount.textContent = state.selectedIngredients.length;
+    
+    const profilesDict = {};
+    for (let i = 0; i < state.selectedIngredients.length; i++) {
+        const perfiles = state.selectedIngredients[i].perfiles;
+        for (let j = 0; j < perfiles.length; j++) {
+            profilesDict[perfiles[j]] = true;
+        }
+    }
+    const allProfiles = Object.keys(profilesDict);
+    
+    if(elements.profileTags) elements.profileTags.innerHTML = allProfiles.map(p => `<span class="profile-tag">${PERFIL_ICONS[p] || ''} ${p}</span>`).join('');
+}
+
+safeBind('btnBackFromBlend', 'click', () => navigateTo('explore'));
+safeBind('btnAddMoreIngredients', 'click', () => navigateTo('explore'));
+safeBind('btnOrder', 'click', () => {
+    renderOrderSummary();
+    navigateTo('order');
+});
+
+function renderOrderSummary() {
+    if(elements.selectedList) {
+        elements.selectedList.innerHTML = state.selectedIngredients.map(ing =>
+            `<span style="display:inline-block;margin:3px;padding:3px 8px;background:white;border-radius:8px;">${ing.icono} ${ing.nombre}</span>`
+        ).join('');
+    }
+}
+
+safeBind('orderForm', 'submit', (e) => {
+    e.preventDefault();
+    const elNombre = document.getElementById('inputName');
+    const elUso = document.getElementById('inputUso');
+    const elCant = document.getElementById('inputCantidad');
+    const elProt = document.getElementById('inputProtagonistas');
+    const elAlerg = document.getElementById('inputAlergias');
+    const elLabelName = document.getElementById('inputLabelName');
+    const elLabelCreator = document.getElementById('inputLabelCreator');
+    
+    const nombre = elNombre ? elNombre.value : '';
+    const uso = elUso ? elUso.value : '';
+    const cantidad = elCant ? elCant.value : '';
+    const protagonistas = elProt ? elProt.value : '';
+    const alergias = elAlerg ? elAlerg.value : '';
+    const nombreBlend = elLabelName ? elLabelName.value : '';
+    const creadoPor = elLabelCreator ? elLabelCreator.value : '';
+
+    const ingredientesTexto = state.selectedIngredients.map(i => `• ${i.nombre}`).join('\n');
+    let etiquetaTexto = '';
+    if (nombreBlend || creadoPor) {
+        etiquetaTexto = `\n\n🏷️ *ETIQUETA PERSONALIZADA:*\n🏷️ Nombre del Blend: ${nombreBlend || '(no especificado)'}\n👨‍🍳 Creado por: ${creadoPor || '(no especificado)'}`;
+    }
+
+    const mensaje = `🛍️ *PEDIDO BLEND PERSONALIZADO*\n📝\n👤 *Cliente:* ${nombre}\n🍳 *Uso:* ${uso}\n📦 *Cantidad:* ${cantidad}\n\n🥗 *Ingredientes seleccionados:*\n${ingredientesTexto}${etiquetaTexto}\n\n⭐ *Ingredientes protagonistas:* ${protagonistas || 'A criterio del blender'}\n🚫 *Alergias/Evitar:* ${alergias || 'Ninguna'}\n📝\n_Enviado desde Rojo Malbec_`;
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, '_blank');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadCart();
+    updateBlendBadge();
+    navigateTo('home');
+});
+
+/* ============================================
+   FIREBASE BLOG INTEGRATION
+   ============================================ */
+const firebaseConfig = {
+    apiKey: "AIzaSyAeG2KlxPx_NVDHXC6NTSLvf_Y7EUAjYR4",
+    authDomain: "rojo-malbec-blog.firebaseapp.com",
+    projectId: "rojo-malbec-blog",
+    storageBucket: "rojo-malbec-blog.firebasestorage.app",
+    messagingSenderId: "202946932681",
+    appId: "1:202946932681:web:1c1c8b5b445587f8f34218"
+};
+
+if (typeof firebase !== 'undefined') {
+    if (firebase.apps && !firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+}
+
+async function renderBlog() {
+    const blogGrid = document.getElementById('blogGrid');
+    if (!blogGrid) return;
+    
+    if (typeof firebase === 'undefined') {
+        blogGrid.innerHTML = '<div style="text-align:center; grid-column:1/-1; padding:40px; color:#666;">Error: Firebase no está cargado. Revisa tu conexión.</div>';
+        return;
+    }
+
+    const db = firebase.firestore();
+    blogGrid.innerHTML = '<div style="text-align:center; grid-column:1/-1; padding:40px; color:#666;">Cargando artículos del blog...</div>';
+
+    try {
+        const snapshot = await db.collection('blog_posts').orderBy('createdAt', 'desc').get();
+        if (snapshot.empty) {
+            blogGrid.innerHTML = '<div style="text-align:center; grid-column:1/-1; padding:40px; color:#666;">Aún no hay artículos publicados. ¡Pronto habrá novedades!</div>';
+            return;
+        }
+
+        blogGrid.innerHTML = '';
+        snapshot.forEach(doc => {
+            const post = doc.data();
+            const dateStr = post.createdAt ? new Date(post.createdAt.toDate()).toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Reciente';
+            
+            const imageHtml = (post.image && post.image.startsWith('http'))
+                ? `<img src="${post.image}" alt="${post.title}" style="width:100%; height:100%; object-fit:cover;">`
+                : `<div class="blog-image placeholder-image">📸</div>`;
+
+            const article = document.createElement('article');
+            article.className = 'blog-card';
+            article.innerHTML = `
+                <div class="blog-image">
+                    ${imageHtml}
+                </div>
+                <div class="blog-info">
+                    <span class="blog-date">${dateStr}</span>
+                    <h4 class="blog-title">${post.title}</h4>
+                    <p class="blog-excerpt">${post.excerpt}</p>
+                    <button class="btn-secondary btn-small" onclick="openPost('${doc.id}')">Leer más</button>
+                </div>
+            `;
+            blogGrid.appendChild(article);
+        });
+    } catch (error) {
+        console.error("Error cargando blog:", error);
+        blogGrid.innerHTML = '<div style="text-align:center; grid-column:1/-1; padding:40px; color:#666;">Hubo un error cargando el blog.</div>';
+    }
+}
+
+async function openPost(postId) {
+    if (typeof firebase === 'undefined') return;
+    const db = firebase.firestore();
+
+    try {
+        const doc = await db.collection('blog_posts').doc(postId).get();
+        if (!doc.exists) {
+            alert('El artículo no existe.');
+            return;
+        }
+        
+        const post = doc.data();
+        const dateStr = post.createdAt ? new Date(post.createdAt.toDate()).toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Reciente';
+        
+        const imageHtml = (post.image && post.image.startsWith('http'))
+            ? `<img src="${post.image}" alt="${post.title}" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:20px;">`
+            : ``;
+
+        document.getElementById('postFullContainer').innerHTML = `
+            ${imageHtml}
+            <span class="blog-date" style="display:block; margin-bottom:10px;">${dateStr}</span>
+            <h2 style="color:var(--wine); margin-top:0;">${post.title}</h2>
+            <div style="font-size:1.1rem; line-height:1.6; color:#444; margin-top:20px;">
+                ${post.content.replace(/\n/g, '<br>')}
+            </div>
+        `;
+        
+        navigateTo('post');
+    } catch (e) {
+        console.error("Error abriendo post:", e);
+        alert('Hubo un error al abrir el artículo.');
+    }
+}
+
+safeBind('btnBackFromPost', 'click', () => navigateTo('blog'));
+
+</script>
+</body>
+</html>

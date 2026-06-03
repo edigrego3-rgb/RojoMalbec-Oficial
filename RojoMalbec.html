@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#722F37">
+    <title>Rojo Malbec - Blends de Especias y Tés</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/logo1.jpg" alt="Rojo Malbec Logo" class="nav-logo" id="headerLogo" onerror="this.style.display='none'">
+                <h1 class="nav-title">Rojo Malbec</h1>
+            </div>
+            
+            <nav class="nav-links">
+                <button class="nav-link active" data-target="home">Inicio</button>
+                <button class="nav-link" data-target="products">Productos</button>
+                <button class="nav-link" data-target="explore">Creá tu Blend</button>
+                <button class="nav-link" data-target="about">Nosotros</button>
+                <button class="nav-link" data-target="blog">Blog</button>
+            </nav>
+
+            <div class="nav-cart" id="btnOpenCart">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-badge" id="cartBadgeGlobal" style="display:none;">0</span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="btnMobileMenu">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-link active" data-target="home">Inicio</button>
+        <button class="mobile-link" data-target="products">Productos</button>
+        <button class="mobile-link" data-target="explore">Creá tu Blend</button>
+        <button class="mobile-link" data-target="about">Nosotros</button>
+        <button class="mobile-link" data-target="blog">Blog</button>
+    </div>
+
+    <div id="app">
+        <main id="screen-home" class="screen active">
+            <section class="hero-section">
+                <div class="hero-overlay">
+                    <h2 class="hero-title">Rojo Malbec</h2>
+                    <p class="hero-subtitle">La esencia de Traslasierra en cada cristal. Sabores puros, sin aditivos ni conservantes.</p>
+                    <button class="btn-primary hero-btn" id="btnHeroGoToProducts">Descubrir el Catálogo</button>
+                </div>
+            </section>
+
+            <div class="welcome-section">
+                <h3 class="section-title">El Arte del Diseño de Especias</h3>
+                <p class="welcome-text">No vendemos condimentos industriales. Diseñamos blends de autor entendiendo el comportamiento térmico y químico de cada especia frente a los fuegos. Una experiencia culinaria pura, pensada para quienes respetan el ritual de la cocina y el asado.</p>
+            </div>
+
+            <div class="home-actions">
+                <button class="btn-primary" id="btnStartBlend">✨ Creá tu propio Blend Personalizado</button>
+                <button class="btn-secondary" id="btnGoToProducts">👀 Ver Catálogo de Productos</button>
+            </div>
+        </main>
+
+        <main id="screen-products" class="screen">
+            <div class="screen-header">
+                <h2 class="screen-title">Nuestros Productos</h2>
+            </div>
+            <div class="filters-row" id="productFiltersRow">
+                <button class="filter-chip active" data-product-filter="todos">Todos</button>
+                <button class="filter-chip" data-product-filter="sales">🧂 Sales</button>
+                <button class="filter-chip" data-product-filter="blends">🥘 Blends</button>
+                <button class="filter-chip" data-product-filter="vital">💚 Vital</button>
+                <button class="filter-chip" data-product-filter="pimientas">🌶️ Pimientas</button>
+                <button class="filter-chip" data-product-filter="tes">🍵 Tés</button>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </main>
+
+        <main id="screen-explore" class="screen">
+            <div class="screen-header">
+                <h2 class="screen-title">Diseñá tu Blend</h2>
+                <p class="screen-subtitle">Seleccioná los ingredientes base y nosotros calculamos la proporción perfecta para tu uso.</p>
+            </div>
+            <div class="profile-grid" id="filtersRow">
+                <div class="profile-card active" data-filter="todos"><div class="profile-icon">👁️</div><span>Todos</span></div>
+                <div class="profile-card" data-filter="terroso"><img src="images/perfiles/perfil_terroso_1780445191889.png" alt="Terroso"><span>Terroso</span></div>
+                <div class="profile-card" data-filter="floral"><img src="images/perfiles/perfil_floral_1780445204796.png" alt="Floral"><span>Floral</span></div>
+                <div class="profile-card" data-filter="citrico"><img src="images/perfiles/perfil_citrico_1780445217224.png" alt="Cítrico"><span>Cítrico</span></div>
+                <div class="profile-card" data-filter="picante"><img src="images/perfiles/perfil_picante_1780445229534.png" alt="Picante"><span>Picante</span></div>
+                <div class="profile-card" data-filter="ahumado"><img src="images/perfiles/perfil_ahumado_1780445250943.png" alt="Ahumado"><span>Ahumado</span></div>
+                <div class="profile-card" data-filter="dulce"><img src="images/perfiles/perfil_dulce_1780445262229.png" alt="Dulce"><span>Dulce</span></div>
+            </div>
+            <div class="ingredients-grid" id="ingredientsGrid"></div>
+            <button class="btn-primary floating-bottom-btn" id="btnGoToBlendReview" style="display:none;">Ver mi mezcla elegida <span id="blendBadge" class="cart-badge" style="display:none;">0</span></button>
+        </main>
+
+        <main id="screen-about" class="screen">
+            <div class="screen-header"><h2 class="screen-title">Nuestra Historia</h2></div>
+            <div class="about-content">
+                <h3>El Origen: Traslasierra, Córdoba</h3>
+                <p>Rojo Malbec nace en el corazón del Valle de Traslasierra, rodeado de montes puros y naturaleza intacta. Aquí, lejos del ruido industrial, encontramos la inspiración para volver a lo esencial. Nuestra marca es un tributo a la paciencia, al fuego lento y a los sabores honestos que la tierra nos regala.</p>
+                <h3>El Fuego y el Vino</h3>
+                <p>Nuestra historia comenzó con una obsesión: lograr que un cristal de sal marina capture verdaderamente el alma de un buen vino Malbec mendocino. A partir de esa primera "Sal al Malbec", entendimos que el mercado estaba lleno de condimentos artificiales y vacíos de vida. Decidimos cambiar eso. Hoy, diseñamos blends de autor estudiando cómo cada botánico, resina o especia reacciona ante las brasas y las sartenes.</p>
+                <h3>La Etiqueta Limpia</h3>
+                <p>Nuestro compromiso es innegociable. No vas a encontrar antiaglutinantes químicos, colorantes artificiales ni extensores en nuestros frascos. Lo que ves y lo que hueles es pura naturaleza, respetada y tratada con técnicas de molienda artesanales.</p>
+            </div>
+        </main>
+
+        <main id="screen-blog" class="screen">
+            <div class="screen-header">
+                <h2 class="screen-title">El Blog de Rojo Malbec</h2>
+                <p class="screen-subtitle">Recetas, tips de cocción y novedades desde las Sierras.</p>
+            </div>
+            <div class="blog-grid" id="blogGrid"></div>
+        </main>
+
+        <main id="screen-post" class="screen">
+            <div class="screen-header">
+                <button class="btn-back" id="btnBackFromPost">⬅️ Volver al Blog</button>
+            </div>
+            <article class="post-full" id="postFullContainer"></article>
+        </main>
+
+        <main id="screen-blend" class="screen">
+            <div class="screen-header">
+                <button class="btn-back" id="btnBackFromBlend">⬅️ Volver</button>
+                <h2 class="screen-title">Revisar Mi Blend</h2>
+            </div>
+            <div class="blend-container">
+                <div class="blend-empty" id="blendEmpty">
+                    <div style="font-size:3rem; margin-bottom:15px;">🌿</div>
+                    <h3>Tu blend está vacío</h3>
+                    <p style="color:var(--text-light); margin-bottom:20px;">Vuelve a la selección y elige los ingredientes que más te gusten.</p>
+                    <button class="btn-primary" id="btnGoExplore" style="margin: 0 auto;">Ir a ingredientes</button>
+                </div>
+                <div class="blend-list" id="blendList"></div>
+                <div class="blend-summary" id="blendSummary" style="display:none;">
+                    <div class="summary-title">Perfil de tu Blend</div>
+                    <div class="summary-tags" id="profileTags"></div>
+                    <div class="summary-stats">Ingredientes elegidos: <span id="ingredientCount">0</span>/8</div>
+                    <button class="btn-secondary" id="btnAddMoreIngredients" style="width:100%; margin-top:15px; margin-bottom:15px;">+ Agregar más ingredientes</button>
+                </div>
+                <button class="btn-primary" id="btnOrder" style="display:none; width: 100%; justify-content:center; align-items:center; gap:10px;">Continuar y Preparar Pedido</button>
+            </div>
+        </main>
+
+        <main id="screen-order" class="screen">
+            <div class="screen-header">
+                <button class="btn-back" id="btnBackFromOrder">⬅️ Volver</button>
+                <h2 class="screen-title">Finalizar Pedido de Blend</h2>
+            </div>
+            <form class="order-form" id="orderForm">
+                <div class="order-summary-box">
+                    <h3 style="margin-top:0; font-family:var(--font-title); font-size:1.1rem; color:var(--wine); border-bottom:1px solid #eee; padding-bottom:10px;">Tu Mezcla Exclusiva</h3>
+                    <div id="selectedList" style="margin-top:10px; font-size:0.9rem;"></div>
+                </div>
+                <div class="form-group">
+                    <label>Nombre de tu Blend (Aparecerá en la etiqueta)</label>
+                    <input type="text" id="inputLabelName" class="form-control" placeholder="Ej: Fuego Patagónico, Asado de la Abuela" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label>Nombre del Creador (Opcional)</label>
+                    <input type="text" id="inputLabelCreator" class="form-control" placeholder="Ej: Chef Martín, Familia López" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label>Tu Nombre para el pedido *</label>
+                    <input type="text" id="inputName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>¿Para qué tipo de comidas lo vas a usar? *</label>
+                    <input type="text" id="inputUso" class="form-control" placeholder="Ej: Carnes rojas, pollo, verduras..." required>
+                </div>
+                <div class="form-group">
+                    <label>Cantidad aproximada (Frascos de 100g) *</label>
+                    <select id="inputCantidad" class="form-control" required>
+                        <option value="1 Frasco (100g)">1 Frasco (100g)</option>
+                        <option value="2 Frascos (200g)">2 Frascos (200g)</option>
+                        <option value="3 Frascos (300g)">3 Frascos (300g)</option>
+                        <option value="Medio Kilo (Bolsa 500g)">Medio Kilo (Bolsa 500g)</option>
+                        <option value="Un Kilo (Bolsa 1Kg)">Un Kilo (Bolsa 1Kg)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>¿Querés que algún ingrediente resalte más?</label>
+                    <input type="text" id="inputProtagonistas" class="form-control" placeholder="Ej: Mucho ajo, poco picante">
+                </div>
+                <div class="form-group">
+                    <label>Alergias o ingredientes a evitar estrictamente</label>
+                    <input type="text" id="inputAlergias" class="form-control" placeholder="Ej: Cero gluten, sin pimienta negra">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top:20px;">
+                    Enviar Pedido por WhatsApp
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="ingredientModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✖</button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon"></div>
+                <h3 class="modal-title" id="modalTitle"></h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tags" id="modalTags"></div>
+                <p class="modal-desc" id="modalDesc"></p>
+                <div class="modal-maridaje" id="modalMaridaje"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="modal-close" id="productModalClose">✖</button>
+            <div class="modal-header" style="flex-direction: column; align-items: center; text-align: center;">
+                <div class="modal-icon" id="productModalIcon" style="font-size: 3rem; margin-bottom: 10px;"></div>
+                <h3 class="modal-title" id="productModalTitle" style="color:var(--wine); margin-bottom: 5px;"></h3>
+                <p id="productModalTagline" style="font-size: 0.9rem; font-style: italic; color: #666; margin-top: 0;"></p>
+                <div id="productModalVitalBadge" style="display:none; margin-top:10px;"><span class="vital-indicator">💚 0% Sodio</span></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-section">
+                    <div class="modal-label">Descripción</div>
+                    <p class="modal-desc" id="productModalDescripcion" style="margin-top:5px;"></p>
+                </div>
+                <div class="modal-info-section">
+                    <div class="modal-label">Ingredientes</div>
+                    <p class="modal-desc" id="productModalIngredientes" style="margin-top:5px; font-weight: 500;"></p>
+                </div>
+                <div class="modal-info-section">
+                    <div class="modal-label">Ideal para</div>
+                    <p class="modal-desc" id="productModalMaridaje" style="margin-top:5px; color:var(--wine-light);"></p>
+                </div>
+                <button class="btn-primary modal-add" id="btnAddToCart" style="width:100%; margin-top:20px;">
+                    🛒 Agregar al Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button class="btn-close-cart" id="btnCloseCart">✖</button>
+        </div>
+        <div class="cart-items" id="globalCartItems">
+            <div class="cart-empty-msg">Tu carrito está vacío.</div>
+        </div>
+        <div class="cart-footer">
+            <p class="cart-disclaimer">El pago y envío se coordina de manera directa y segura con nosotros vía WhatsApp.</p>
+            <button class="btn-whatsapp" id="btnCheckoutGlobal">Terminar Compra (WhatsApp)</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>Rojo Malbec</strong></p>
+            <p>Valle de Traslasierra, Córdoba, Argentina</p>
+            <p class="copyright">© 2026 Rojo Malbec. Marca Registrada. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="data/productos.js"></script>
+    <script src="data/ingredientes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Dependencias (si usas npm en el futuro)
+node_modules/
