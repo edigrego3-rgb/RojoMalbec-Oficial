@@ -5,7 +5,7 @@ const INGREDIENTES = [
     "id": 1,
     "nombre": "Sal Marina Liberato Entrefina",
     "icono": "🧂",
-    "imagen": "images/ingredientes/cuenco_sal_marina_1780444990248.png",
+    "imagen": "images/ingredientes/sal_marina_liberato_entrefina_1780586459161.png",
     "familia": "Mineral",
     "origen": "Salinas del Litoral Atlántico",
     "descripcion": "Cristales de sal marina obtenidos por evaporación solar. Rica en oligoelementos.",
@@ -18,7 +18,7 @@ const INGREDIENTES = [
     "id": 2,
     "nombre": "Sumac",
     "icono": "🍇",
-    "imagen": "images/ingredientes/cuenco_sumac_1780447893911.png",
+    "imagen": "images/ingredientes/sumac_1780586471272.png",
     "familia": "Anacardiaceae",
     "origen": "Levante Mediterráneo, Irán",
     "descripcion": "Bayas secas con sabor ácido-afrutado con notas de limón y frambuesa.",
@@ -32,7 +32,7 @@ const INGREDIENTES = [
     "id": 3,
     "nombre": "Cardamomo",
     "icono": "💚",
-    "imagen": "images/ingredientes/cuenco_cardamomo_1780447650513.png",
+    "imagen": "images/ingredientes/cardamomo_1780586486827.png",
     "familia": "Zingiberaceae",
     "origen": "Montes Ghats, India",
     "descripcion": "La 'Reina de las Especias'. Perfil eucaliptado, mentolado y cítrico.",
@@ -52,13 +52,14 @@ const INGREDIENTES = [
       "ahumado",
       "terroso"
     ],
-    "categoria": "ahumados"
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/cardamomo_negro.png"
   },
   {
     "id": 5,
     "nombre": "Pimienta Larga",
     "icono": "⚫",
-    "imagen": "images/ingredientes/cuenco_pimienta_larga_1780447659747.png",
+    "imagen": "images/ingredientes/pimienta_larga_1780586500343.png",
     "familia": "Piperaceae",
     "origen": "India, Indonesia",
     "descripcion": "Predecesora de la pimienta negra. Sabor picante-dulce, notas de canela.",
@@ -72,7 +73,7 @@ const INGREDIENTES = [
     "id": 6,
     "nombre": "Cúrcuma en Polvo",
     "icono": "🌟",
-    "imagen": "images/ingredientes/cuenco_curcuma_1780447905955.png",
+    "imagen": "images/ingredientes/curcuma_en_polvo_1780586513089.png",
     "familia": "Zingiberaceae",
     "origen": "Sur de Asia",
     "descripcion": "Rizoma dorado. Sabor terroso con notas de jengibre. Antiinflamatorio.",
@@ -85,7 +86,7 @@ const INGREDIENTES = [
     "id": 7,
     "nombre": "Coriandro",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_coriandro_1780447918163.png",
+    "imagen": "images/ingredientes/coriandro_1780586525386.png",
     "familia": "Apiaceae",
     "origen": "Mediterráneo Oriental",
     "descripcion": "Semillas con perfil cítrico-floral y notas de naranja.",
@@ -105,13 +106,14 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/comino_grano_1780522295978.png"
   },
   {
     "id": 9,
     "nombre": "Canela en Polvo",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_canela.png",
+    "imagen": "images/ingredientes/canela_en_polvo_1780586537646.png",
     "familia": "Lauraceae",
     "origen": "Sri Lanka (Ceilán)",
     "descripcion": "Corteza del árbol de canela. Perfil dulce-especiado.",
@@ -131,13 +133,14 @@ const INGREDIENTES = [
       "floral",
       "dulce"
     ],
-    "categoria": "flores"
+    "categoria": "flores",
+    "imagen": "images/ingredientes/petalos_de_rosas.png"
   },
   {
     "id": 11,
     "nombre": "Romero",
     "icono": "🌿",
-    "imagen": "images/ingredientes/cuenco_romero_1780447670584.png",
+    "imagen": "images/ingredientes/romero_1780586550353.png",
     "familia": "Lamiaceae",
     "origen": "Cuenca Mediterránea",
     "descripcion": "Hojas con aroma alcanforado-resinoso. 'Rocío del mar'.",
@@ -156,7 +159,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "hierbas"
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/tomillo_1780522307702.png"
   },
   {
     "id": 13,
@@ -168,13 +172,14 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "hierbas"
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/albahaca_1780586563147.png"
   },
   {
     "id": 14,
     "nombre": "Pimentón Español (Dulce)",
     "icono": "🔴",
-    "imagen": "images/ingredientes/cuenco_pimenton_1780445005613.png",
+    "imagen": "images/ingredientes/pimenton_espanol_dulce_1780586575323.png",
     "familia": "Solanaceae",
     "origen": "La Vera, Extremadura",
     "descripcion": "Pimientos secos con perfil dulce-ahumado. DOP La Vera.",
@@ -188,7 +193,7 @@ const INGREDIENTES = [
     "id": 15,
     "nombre": "Ajo Granulado",
     "icono": "🧄",
-    "imagen": "images/ingredientes/cuenco_ajo_granulado.png",
+    "imagen": "images/ingredientes/ajo_granulado_1780586599699.png",
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Bulbo deshidratado. Perfil pungente-sulfuroso con notas dulces.",
@@ -202,7 +207,7 @@ const INGREDIENTES = [
     "id": 16,
     "nombre": "Jengibre en Polvo",
     "icono": "🫚",
-    "imagen": "images/ingredientes/cuenco_jengibre.png",
+    "imagen": "images/ingredientes/jengibre_en_polvo_1780586611179.png",
     "familia": "Zingiberaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Rizoma con perfil picante-cálido con notas cítricas.",
@@ -224,7 +229,8 @@ const INGREDIENTES = [
       "terroso",
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/nuez_moscada_1780522319717.png"
   },
   {
     "id": 18,
@@ -236,7 +242,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/fenogreco_1780586624892.png"
   },
   {
     "id": 19,
@@ -249,7 +256,8 @@ const INGREDIENTES = [
       "floral",
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/azafran_polvo_1780522331488.png"
   },
   {
     "id": 20,
@@ -261,7 +269,8 @@ const INGREDIENTES = [
     "perfiles": [
       "floral"
     ],
-    "categoria": "flores"
+    "categoria": "flores",
+    "imagen": "images/ingredientes/flor_calendula_1780522344672.png"
   },
   {
     "id": 21,
@@ -273,7 +282,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_hinojo_1780586638309.png"
   },
   {
     "id": 22,
@@ -286,13 +296,14 @@ const INGREDIENTES = [
       "floral",
       "dulce"
     ],
-    "categoria": "hierbas"
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/mejorana_1780586650236.png"
   },
   {
     "id": 23,
     "nombre": "Clavo de Olor",
     "icono": "🪵",
-    "imagen": "images/ingredientes/cuenco_clavo_olor.png",
+    "imagen": "images/ingredientes/clavo_de_olor_1780586666239.png",
     "familia": "Myrtaceae",
     "origen": "Islas Molucas, Indonesia",
     "descripcion": "Botones florales. Perfil intenso, cálido-dulce. Antiséptico.",
@@ -307,7 +318,7 @@ const INGREDIENTES = [
     "id": 24,
     "nombre": "Pimienta Negra en Grano",
     "icono": "⚫",
-    "imagen": "images/ingredientes/cuenco_pimienta_negra.png",
+    "imagen": "images/ingredientes/pimienta_negra_en_grano_1780607374211.png",
     "familia": "Piperaceae",
     "origen": "Costa Malabar, India",
     "descripcion": "'Oro negro'. El rey de las especias. Picante característico.",
@@ -326,7 +337,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_sesamo_blanco_1780607386308.png"
   },
   {
     "id": 26,
@@ -338,13 +350,14 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/panko_1780522357731.png"
   },
   {
     "id": 27,
     "nombre": "Orégano",
     "icono": "🌿",
-    "imagen": "images/ingredientes/cuenco_oregano_1780447684897.png",
+    "imagen": "images/ingredientes/oregano_1780607398178.png",
     "familia": "Lamiaceae",
     "origen": "Colinas del Mediterráneo",
     "descripcion": "Hojas con perfil intenso, terroso-picante. 'Alegría de la montaña'.",
@@ -364,7 +377,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/perejil_1780522369560.png"
   },
   {
     "id": 29,
@@ -376,7 +390,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cebolla_escama_1780522381262.png"
   },
   {
     "id": 30,
@@ -388,7 +403,8 @@ const INGREDIENTES = [
     "perfiles": [
       "umami"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/tomate_deshidratado_1780607411929.png"
   },
   {
     "id": 31,
@@ -400,7 +416,8 @@ const INGREDIENTES = [
     "perfiles": [
       "umami"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/levadura_nutricional_1780607545599.png"
   },
   {
     "id": 32,
@@ -413,7 +430,8 @@ const INGREDIENTES = [
       "terroso",
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pistacho_partido_1780607558393.png"
   },
   {
     "id": 33,
@@ -425,7 +443,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/harina_de_vino_1780607568568.png"
   },
   {
     "id": 34,
@@ -437,13 +456,14 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/carbon_activado_1780607580853.png"
   },
   {
     "id": 35,
     "nombre": "Achiote",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_achiote.png",
+    "imagen": "images/ingredientes/achiote_1780607593247.png",
     "familia": "Bixaceae",
     "origen": "Amazonía, Centroamérica",
     "descripcion": "Semillas rojas. Colorante y sabor terroso-pimienta. Maya.",
@@ -457,25 +477,12 @@ const INGREDIENTES = [
     "id": 36,
     "nombre": "Pimiento Gochugaru",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_gochugaru.png",
+    "imagen": "images/ingredientes/pimiento_gochugaru_1780607618849.png",
     "familia": "Solanaceae",
     "origen": "Corea",
     "descripcion": "Chile coreano. Picante moderado con dulzor frutal. Esencial kimchi.",
     "perfiles": [
       "picante"
-    ],
-    "categoria": "especias"
-  },
-  {
-    "id": 37,
-    "nombre": "Pimienta de Sichuan",
-    "icono": "⚫",
-    "familia": "Rutaceae",
-    "origen": "Sichuan, China",
-    "descripcion": "Sensación de hormigueo. Cítrica-floral, efecto anestésico.",
-    "perfiles": [
-      "floral",
-      "citrico"
     ],
     "categoria": "especias"
   },
@@ -489,13 +496,14 @@ const INGREDIENTES = [
     "perfiles": [
       "umami"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/alga_kombu_1780522405830.png"
   },
   {
     "id": 39,
     "nombre": "Mostaza Amarilla",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_mostaza_amarilla.png",
+    "imagen": "images/ingredientes/mostaza_amarilla_1780607630217.png",
     "familia": "Brassicaceae",
     "origen": "Cuenca Mediterránea",
     "descripcion": "Semillas suaves con picante moderado. Mustum ardens.",
@@ -508,7 +516,7 @@ const INGREDIENTES = [
     "id": 40,
     "nombre": "Mostaza Negra",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_mostaza_negra.png",
+    "imagen": "images/ingredientes/mostaza_negra_1780607642133.png",
     "familia": "Brassicaceae",
     "origen": "Sur de Asia",
     "descripcion": "Más picante que la amarilla. Esencial en tadka indio.",
@@ -521,7 +529,7 @@ const INGREDIENTES = [
     "id": 41,
     "nombre": "Ajedrea",
     "icono": "🌿",
-    "imagen": "images/ingredientes/cuenco_ajedrea.png",
+    "imagen": "images/ingredientes/ajedrea_1780607653163.png",
     "familia": "Lamiaceae",
     "origen": "Mediterráneo, Cáucaso",
     "descripcion": "Hierba de los sátiros. Perfil picante-herbáceo.",
@@ -540,7 +548,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/estragon_1780527004690.png"
   },
   {
     "id": 43,
@@ -552,7 +561,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_eneldo_1780527016761.png"
   },
   {
     "id": 44,
@@ -564,7 +574,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_amapola_1780527029886.png"
   },
   {
     "id": 45,
@@ -576,7 +587,8 @@ const INGREDIENTES = [
     "perfiles": [
       "floral"
     ],
-    "categoria": "flores"
+    "categoria": "flores",
+    "imagen": "images/ingredientes/flor_lavanda_1780527042904.png"
   },
   {
     "id": 46,
@@ -588,7 +600,8 @@ const INGREDIENTES = [
     "perfiles": [
       "citrico"
     ],
-    "categoria": "citricos"
+    "categoria": "citricos",
+    "imagen": "images/ingredientes/cascara_limon_1780527054606.png"
   },
   {
     "id": 47,
@@ -602,7 +615,8 @@ const INGREDIENTES = [
       "citrico",
       "dulce"
     ],
-    "categoria": "citricos"
+    "categoria": "citricos",
+    "imagen": "images/ingredientes/cascara_mandarina_1780527066746.png"
   },
   {
     "id": 48,
@@ -615,7 +629,8 @@ const INGREDIENTES = [
       "citrico",
       "umami"
     ],
-    "categoria": "citricos"
+    "categoria": "citricos",
+    "imagen": "images/ingredientes/limon_marroqui_1780527078311.png"
   },
   {
     "id": 49,
@@ -627,7 +642,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cafe_tostado_1780607664894.png"
   },
   {
     "id": 50,
@@ -639,7 +655,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cascarilla_de_cafe_1780607686807.png"
   },
   {
     "id": 51,
@@ -651,7 +668,8 @@ const INGREDIENTES = [
     "perfiles": [
       "umami"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/hongos_shiitake_tallos_1780607698173.png"
   },
   {
     "id": 52,
@@ -664,7 +682,8 @@ const INGREDIENTES = [
       "picante",
       "ahumado"
     ],
-    "categoria": "ahumados"
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/merken_chileno_1780607710108.png"
   },
   {
     "id": 53,
@@ -676,7 +695,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/enebro_1780667905409.png"
   },
   {
     "id": 54,
@@ -688,7 +708,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/puerro_deshidratado_1780667920961.png"
   },
   {
     "id": 55,
@@ -702,7 +723,8 @@ const INGREDIENTES = [
       "picante",
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimienta_blanca_en_grano_1780667934215.png"
   },
   {
     "id": 56,
@@ -714,7 +736,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimienta_verde_1780667948043.png"
   },
   {
     "id": 57,
@@ -726,7 +749,8 @@ const INGREDIENTES = [
     "perfiles": [
       "terroso"
     ],
-    "categoria": "hierbas"
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/menta_1780667963605.png"
   },
   {
     "id": 58,
@@ -738,7 +762,8 @@ const INGREDIENTES = [
     "perfiles": [
       "acido"
     ],
-    "categoria": "flores"
+    "categoria": "flores",
+    "imagen": "images/ingredientes/flor_de_hibiscus_1780667977210.png"
   },
   {
     "id": 59,
@@ -750,7 +775,8 @@ const INGREDIENTES = [
     "perfiles": [
       "picante"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cayena_1780667990956.png"
   },
   {
     "id": 60,
@@ -762,7 +788,8 @@ const INGREDIENTES = [
     "perfiles": [
       "dulce"
     ],
-    "categoria": "especias"
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cacao_en_polvo_1780668004910.png"
   },
   {
     "id": 61,
@@ -771,8 +798,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "América del Sur",
     "descripcion": "Chile molido con picante moderado. Base de muchas cocinas latinas.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/aji_molido_1780668018687.png"
   },
   {
     "id": 62,
@@ -781,8 +811,12 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Láminas de ajo deshidratado. Sabor más suave que el granulado.",
-    "perfiles": ["picante", "dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante",
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/ajo_en_escama_1780668032117.png"
   },
   {
     "id": 63,
@@ -791,18 +825,23 @@ const INGREDIENTES = [
     "familia": "Apiaceae",
     "origen": "Mediterráneo Oriental",
     "descripcion": "Semillas con sabor dulce-licorizado. Digestivo tradicional.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/anis_1780668056687.png"
   },
   {
     "id": 64,
     "nombre": "Anís Estrellado",
     "icono": "⭐",
-    "imagen": "images/ingredientes/cuenco_anis_estrellado.png",
+    "imagen": "images/ingredientes/anis_estrellado_1780668070622.png",
     "familia": "Schisandraceae",
     "origen": "China, Vietnam",
     "descripcion": "Fruto en forma de estrella. Perfil anisado intenso. Esencial en pho.",
-    "perfiles": ["dulce"],
+    "perfiles": [
+      "dulce"
+    ],
     "categoria": "especias"
   },
   {
@@ -812,8 +851,12 @@ const INGREDIENTES = [
     "familia": "Iridaceae",
     "origen": "Irán, Cachemira",
     "descripcion": "Estigmas enteros de crocus. La especia más cara del mundo.",
-    "perfiles": ["floral", "dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "floral",
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/azafran_en_hebras_1780668085187.png"
   },
   {
     "id": 66,
@@ -822,8 +865,11 @@ const INGREDIENTES = [
     "familia": "Producto procesado",
     "origen": "India, América",
     "descripcion": "Azúcar integral sin refinar. Notas de caramelo y melaza.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/azucar_mascabo_1780668099469.png"
   },
   {
     "id": 67,
@@ -832,8 +878,11 @@ const INGREDIENTES = [
     "familia": "Lauraceae",
     "origen": "Sri Lanka",
     "descripcion": "Ramas de canela de Ceilán. Perfil dulce-especiado suave.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/canela_entera_1780668113128.png"
   },
   {
     "id": 68,
@@ -842,8 +891,11 @@ const INGREDIENTES = [
     "familia": "Lauraceae",
     "origen": "Sri Lanka",
     "descripcion": "Trozos de canela para infusiones y guisos prolongados.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/canela_quebrada_1780668126510.png"
   },
   {
     "id": 69,
@@ -852,8 +904,12 @@ const INGREDIENTES = [
     "familia": "Rutaceae",
     "origen": "Asia, Mediterráneo",
     "descripcion": "Zeste de naranja seco. Perfil cítrico-dulce.",
-    "perfiles": ["citrico", "dulce"],
-    "categoria": "citricos"
+    "perfiles": [
+      "citrico",
+      "dulce"
+    ],
+    "categoria": "citricos",
+    "imagen": "images/ingredientes/cascara_de_naranja_deshidratada_1780668141302.png"
   },
   {
     "id": 70,
@@ -862,8 +918,12 @@ const INGREDIENTES = [
     "familia": "Rutaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Cáscara confitada con notas amargas y dulces.",
-    "perfiles": ["citrico", "dulce"],
-    "categoria": "citricos"
+    "perfiles": [
+      "citrico",
+      "dulce"
+    ],
+    "categoria": "citricos",
+    "imagen": "images/ingredientes/cascara_de_pomelo_glase_1780685906213.png"
   },
   {
     "id": 71,
@@ -872,8 +932,12 @@ const INGREDIENTES = [
     "familia": "Malvaceae",
     "origen": "América Central",
     "descripcion": "Cáscara del grano de cacao. Perfil chocolate suave.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cascarilla_de_cacao_1780685918632.png"
   },
   {
     "id": 72,
@@ -882,8 +946,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "América Central",
     "descripcion": "Variedad de cayena menos picante, más frutal.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cayena_amarilla_1780685930845.png"
   },
   {
     "id": 73,
@@ -892,8 +959,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "América Central",
     "descripcion": "Chile muy picante. Activa la termogénesis.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cayena_roja_1780685943181.png"
   },
   {
     "id": 74,
@@ -902,8 +972,12 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Cebolla finamente molida. Se integra en mezclas homogéneas.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cebolla_en_polvo_1780685954211.png"
   },
   {
     "id": 75,
@@ -912,8 +986,12 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Cebolla frita deshidratada. Textura crujiente.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cebolla_crispy_1780685966624.png"
   },
   {
     "id": 76,
@@ -922,8 +1000,11 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia",
     "descripcion": "Cebollín deshidratado. Perfil suave y fresco.",
-    "perfiles": ["terroso"],
-    "categoria": "hierbas"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/cebolla_de_verdeo_1780685979263.png"
   },
   {
     "id": 77,
@@ -932,18 +1013,24 @@ const INGREDIENTES = [
     "familia": "Mezcla",
     "origen": "Argentina",
     "descripcion": "Blend de hierbas para carnes asadas.",
-    "perfiles": ["terroso", "picante"],
-    "categoria": "hierbas"
+    "perfiles": [
+      "terroso",
+      "picante"
+    ],
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/chimichurri_parrillero_1780685992201.png"
   },
   {
     "id": 78,
     "nombre": "Comino Molido",
     "icono": "🌱",
-    "imagen": "images/ingredientes/cuenco_comino.png",
+    "imagen": "images/ingredientes/comino_molido_1780686004546.png",
     "familia": "Apiaceae",
     "origen": "Levante, Egipto",
     "descripcion": "Comino en polvo. Aroma más intenso que en grano.",
-    "perfiles": ["terroso"],
+    "perfiles": [
+      "terroso"
+    ],
     "categoria": "especias"
   },
   {
@@ -953,8 +1040,12 @@ const INGREDIENTES = [
     "familia": "Ranunculaceae",
     "origen": "Asia Occidental",
     "descripcion": "Nigella sativa. Sabor a nuez con notas de orégano.",
-    "perfiles": ["terroso", "picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso",
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/comino_negro_1780686017187.png"
   },
   {
     "id": 80,
@@ -963,8 +1054,11 @@ const INGREDIENTES = [
     "familia": "Zingiberaceae",
     "origen": "Sur de Asia",
     "descripcion": "Rizoma entero de cúrcuma. Sabor más fresco que el polvo.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/curcuma_en_raiz_1780686051184.png"
   },
   {
     "id": 81,
@@ -973,8 +1067,11 @@ const INGREDIENTES = [
     "familia": "Amaranthaceae",
     "origen": "Persia",
     "descripcion": "Hojas de espinaca deshidratadas. Rica en hierro.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/espinaca_deshidratada_1780686064246.png"
   },
   {
     "id": 82,
@@ -983,8 +1080,12 @@ const INGREDIENTES = [
     "familia": "Zingiberaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Rizoma entero deshidratado. Más aromático que el polvo.",
-    "perfiles": ["citrico", "picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "citrico",
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/jengibre_raiz_1780686076317.png"
   },
   {
     "id": 83,
@@ -993,8 +1094,12 @@ const INGREDIENTES = [
     "familia": "Zingiberaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Jengibre confitado. Perfil dulce-picante.",
-    "perfiles": ["dulce", "picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/jengibre_glase_1780686089178.png"
   },
   {
     "id": 84,
@@ -1003,8 +1108,11 @@ const INGREDIENTES = [
     "familia": "Apiaceae",
     "origen": "Europa",
     "descripcion": "Semillas de alcaravea. Sabor anisado-terroso.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/kummel_1780686102110.png"
   },
   {
     "id": 85,
@@ -1013,8 +1121,11 @@ const INGREDIENTES = [
     "familia": "Lauraceae",
     "origen": "Mediterráneo",
     "descripcion": "Hojas aromáticas para guisos y caldos.",
-    "perfiles": ["terroso"],
-    "categoria": "hierbas"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/laurel_1780686115362.png"
   },
   {
     "id": 86,
@@ -1023,8 +1134,12 @@ const INGREDIENTES = [
     "familia": "Piperaceae",
     "origen": "Varios",
     "descripcion": "Mezcla de pimientas negra, blanca, verde y rosa.",
-    "perfiles": ["picante", "floral"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante",
+      "floral"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/mix_de_pimientas_1780686127678.png"
   },
   {
     "id": 87,
@@ -1033,8 +1148,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "América",
     "descripcion": "Pimiento rojo dulce deshidratado. Notas dulces.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/morron_rojo_deshidratado_1780704461991.png"
   },
   {
     "id": 88,
@@ -1043,8 +1161,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "América",
     "descripcion": "Pimiento verde deshidratado. Sabor más vegetal.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/morron_verde_deshidratado_1780704473410.png"
   },
   {
     "id": 89,
@@ -1053,18 +1174,25 @@ const INGREDIENTES = [
     "familia": "Malvaceae",
     "origen": "América Central",
     "descripcion": "Trozos de grano de cacao tostado. Sabor intenso.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/nibs_de_cacao_1780704486239.png"
   },
   {
     "id": 90,
     "nombre": "Nuez Moscada Molida",
     "icono": "🌰",
-    "imagen": "images/ingredientes/cuenco_nuez_moscada.png",
+    "imagen": "images/ingredientes/nuez_moscada_molida_1780704496865.png",
     "familia": "Myristicaceae",
     "origen": "Islas Banda",
     "descripcion": "Nuez moscada en polvo. Lista para usar.",
-    "perfiles": ["terroso", "dulce"],
+    "perfiles": [
+      "terroso",
+      "dulce"
+    ],
     "categoria": "especias"
   },
   {
@@ -1074,8 +1202,11 @@ const INGREDIENTES = [
     "familia": "Cucurbitaceae",
     "origen": "India",
     "descripcion": "Pepino deshidratado molido. Sabor fresco.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pepino_en_polvo_1780704508054.png"
   },
   {
     "id": 92,
@@ -1084,8 +1215,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "Argentina",
     "descripcion": "Pimiento dulce argentino. Color rojo intenso.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimenton_nacional_dulce_1780704520676.png"
   },
   {
     "id": 93,
@@ -1094,8 +1228,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "Argentina",
     "descripcion": "Pimiento picante argentino.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimenton_nacional_picante_1780704532632.png"
   },
   {
     "id": 94,
@@ -1104,8 +1241,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "Argentina",
     "descripcion": "Pimiento ahumado argentino.",
-    "perfiles": ["ahumado"],
-    "categoria": "ahumados"
+    "perfiles": [
+      "ahumado"
+    ],
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/pimenton_nacional_ahumado_1780704545074.png"
   },
   {
     "id": 95,
@@ -1114,8 +1254,12 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "La Vera, España",
     "descripcion": "Pimentón de la Vera picante. DOP.",
-    "perfiles": ["picante", "ahumado"],
-    "categoria": "ahumados"
+    "perfiles": [
+      "picante",
+      "ahumado"
+    ],
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/pimenton_espanol_picante_1780704557291.png"
   },
   {
     "id": 96,
@@ -1124,8 +1268,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "La Vera, España",
     "descripcion": "Pimentón de la Vera ahumado. DOP.",
-    "perfiles": ["ahumado"],
-    "categoria": "ahumados"
+    "perfiles": [
+      "ahumado"
+    ],
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/pimenton_espanol_ahumado_1780704568400.png"
   },
   {
     "id": 97,
@@ -1134,8 +1281,12 @@ const INGREDIENTES = [
     "familia": "Piperaceae",
     "origen": "India",
     "descripcion": "Pimienta blanca en polvo. Más suave.",
-    "perfiles": ["picante", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimienta_blanca_molida_1780704595059.png"
   },
   {
     "id": 98,
@@ -1144,8 +1295,12 @@ const INGREDIENTES = [
     "familia": "Myrtaceae",
     "origen": "Caribe",
     "descripcion": "Allspice. Sabor a clavo, canela y nuez moscada.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimienta_de_jamaica_1780704606007.png"
   },
   {
     "id": 99,
@@ -1154,8 +1309,11 @@ const INGREDIENTES = [
     "familia": "Piperaceae",
     "origen": "India",
     "descripcion": "Pimienta negra en polvo. Lista para usar.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimienta_negra_molida_1780704617008.png"
   },
   {
     "id": 100,
@@ -1164,8 +1322,12 @@ const INGREDIENTES = [
     "familia": "Piperaceae",
     "origen": "Brasil",
     "descripcion": "Bayas de Schinus. Sabor dulce-picante.",
-    "perfiles": ["picante", "dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante",
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimienta_roja.png"
   },
   {
     "id": 101,
@@ -1174,8 +1336,11 @@ const INGREDIENTES = [
     "familia": "Lamiaceae",
     "origen": "Mediterráneo",
     "descripcion": "Hierba mentolada para infusiones. Digestivo.",
-    "perfiles": ["terroso"],
-    "categoria": "hierbas"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/poleo_1780704628208.png"
   },
   {
     "id": 102,
@@ -1184,8 +1349,12 @@ const INGREDIENTES = [
     "familia": "Amaranthaceae",
     "origen": "Europa",
     "descripcion": "Colorante natural. Sabor dulce-terroso.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/remolacha_en_polvo_1780704639438.png"
   },
   {
     "id": 103,
@@ -1194,8 +1363,11 @@ const INGREDIENTES = [
     "familia": "Fabaceae",
     "origen": "Sudáfrica",
     "descripcion": "Té rojo sudafricano sin cafeína. Dulce y suave.",
-    "perfiles": ["dulce"],
-    "categoria": "tes"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/rooibos_1780704650577.png"
   },
   {
     "id": 104,
@@ -1204,8 +1376,12 @@ const INGREDIENTES = [
     "familia": "Polygonaceae",
     "origen": "Asia",
     "descripcion": "Tallos ácidos-dulces. Usado en postres y bebidas.",
-    "perfiles": ["acido", "dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "acido",
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/ruibarbo_1780754370679.png"
   },
   {
     "id": 105,
@@ -1214,8 +1390,11 @@ const INGREDIENTES = [
     "familia": "Mineral",
     "origen": "Salinas del Atlántico",
     "descripcion": "Cristales finos de sal marina.",
-    "perfiles": ["neutro"],
-    "categoria": "sales"
+    "perfiles": [
+      "neutro"
+    ],
+    "categoria": "sales",
+    "imagen": "images/ingredientes/sal_marina_fina_1780754386582.png"
   },
   {
     "id": 106,
@@ -1224,8 +1403,11 @@ const INGREDIENTES = [
     "familia": "Mineral",
     "origen": "Salinas del Atlántico",
     "descripcion": "Cristales gruesos para molinillo o finishing.",
-    "perfiles": ["neutro"],
-    "categoria": "sales"
+    "perfiles": [
+      "neutro"
+    ],
+    "categoria": "sales",
+    "imagen": "images/ingredientes/sal_marina_gruesa_1780754401412.png"
   },
   {
     "id": 107,
@@ -1234,8 +1416,11 @@ const INGREDIENTES = [
     "familia": "Pedaliaceae",
     "origen": "África, Asia",
     "descripcion": "Sésamo negro con sabor más intenso y terroso.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_sesamo_negro_1780754414780.png"
   },
   {
     "id": 108,
@@ -1244,8 +1429,11 @@ const INGREDIENTES = [
     "familia": "Apiaceae",
     "origen": "Mediterráneo",
     "descripcion": "Sabor intenso a apio concentrado.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_apio_1780754428911.png"
   },
   {
     "id": 109,
@@ -1254,8 +1442,11 @@ const INGREDIENTES = [
     "familia": "Asteraceae",
     "origen": "América del Norte",
     "descripcion": "Semillas nutritivas con sabor a nuez.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_girasol_1780754443315.png"
   },
   {
     "id": 110,
@@ -1264,8 +1455,11 @@ const INGREDIENTES = [
     "familia": "Linaceae",
     "origen": "Mesopotamia",
     "descripcion": "Ricas en omega-3. Sabor a nuez suave.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_lino_1780754457554.png"
   },
   {
     "id": 111,
@@ -1274,8 +1468,12 @@ const INGREDIENTES = [
     "familia": "Cucurbitaceae",
     "origen": "América",
     "descripcion": "Pepitas de calabaza. Sabor dulce-terroso.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_zapallo_1780754470544.png"
   },
   {
     "id": 112,
@@ -1284,8 +1482,11 @@ const INGREDIENTES = [
     "familia": "Lamiaceae",
     "origen": "México",
     "descripcion": "Superalimento rico en omega-3 y fibra.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/semillas_de_chia_1780754484603.png"
   },
   {
     "id": 113,
@@ -1294,8 +1495,11 @@ const INGREDIENTES = [
     "familia": "Theaceae",
     "origen": "Misiones, Argentina",
     "descripcion": "Té negro argentino. Sabor robusto y maltoso.",
-    "perfiles": ["terroso"],
-    "categoria": "tes"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/te_negro_nacional_1780754497579.png"
   },
   {
     "id": 114,
@@ -1304,8 +1508,11 @@ const INGREDIENTES = [
     "familia": "Theaceae",
     "origen": "Misiones, Argentina",
     "descripcion": "Té rojo argentino. Sabor suave y afrutado.",
-    "perfiles": ["dulce"],
-    "categoria": "tes"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/te_rojo_nacional_1780754523784.png"
   },
   {
     "id": 115,
@@ -1314,8 +1521,11 @@ const INGREDIENTES = [
     "familia": "Theaceae",
     "origen": "Misiones, Argentina",
     "descripcion": "Té verde argentino. Fresco y vegetal.",
-    "perfiles": ["terroso"],
-    "categoria": "tes"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/te_verde_nacional_1780754538477.png"
   },
   {
     "id": 116,
@@ -1324,8 +1534,11 @@ const INGREDIENTES = [
     "familia": "Apiaceae",
     "origen": "Afganistán",
     "descripcion": "Zanahoria seca. Dulzor natural concentrado.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/zanahoria_deshidratada_1780754553953.png"
   },
   {
     "id": 117,
@@ -1334,8 +1547,12 @@ const INGREDIENTES = [
     "familia": "Cucurbitaceae",
     "origen": "América",
     "descripcion": "Calabaza deshidratada. Sabor dulce-terroso.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/zapallo_deshidratado_1780754567325.png"
   },
   {
     "id": 118,
@@ -1344,8 +1561,11 @@ const INGREDIENTES = [
     "familia": "Bangiaceae",
     "origen": "Japón",
     "descripcion": "Alga para sushi. Sabor marino umami.",
-    "perfiles": ["umami"],
-    "categoria": "especias"
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/algas_nori_1780754580699.png"
   },
   {
     "id": 119,
@@ -1354,8 +1574,11 @@ const INGREDIENTES = [
     "familia": "Producto procesado",
     "origen": "Japón",
     "descripcion": "Caldo de bonito en polvo. Base del dashi.",
-    "perfiles": ["umami"],
-    "categoria": "especias"
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/hondashi_1780754594657.png"
   },
   {
     "id": 120,
@@ -1364,8 +1587,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "China",
     "descripcion": "Chile chino pequeño y muy picante.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/aji_chaotian_1780780503635.png"
   },
   {
     "id": 121,
@@ -1374,8 +1600,11 @@ const INGREDIENTES = [
     "familia": "Apiaceae",
     "origen": "Mediterráneo",
     "descripcion": "Frondas de hinojo. Sabor anisado suave.",
-    "perfiles": ["dulce"],
-    "categoria": "hierbas"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/hojas_de_hinojo_1780780516778.png"
   },
   {
     "id": 122,
@@ -1384,8 +1613,11 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Ajo fresco deshidratado. Sabor más intenso.",
-    "perfiles": ["picante"],
-    "categoria": "especias"
+    "perfiles": [
+      "picante"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/ajo_fresco_1780780529099.png"
   },
   {
     "id": 123,
@@ -1394,8 +1626,12 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Cebolla caramelizada y deshidratada. Sabor ahumado-dulce.",
-    "perfiles": ["ahumado", "dulce"],
-    "categoria": "ahumados"
+    "perfiles": [
+      "ahumado",
+      "dulce"
+    ],
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/cebolla_quemada_deshidratada_1780780541423.png"
   },
   {
     "id": 124,
@@ -1404,8 +1640,11 @@ const INGREDIENTES = [
     "familia": "Producto procesado",
     "origen": "Varios",
     "descripcion": "Miel deshidratada. Dulzor natural para mezclas secas.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/miel_en_polvo_1780780556247.png"
   },
   {
     "id": 125,
@@ -1414,8 +1653,11 @@ const INGREDIENTES = [
     "familia": "Amaryllidaceae",
     "origen": "Asia Central",
     "descripcion": "Cebolla morada molida. Más dulce que la blanca.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/cebolla_morada_en_polvo_1780780568761.png"
   },
   {
     "id": 126,
@@ -1424,8 +1666,11 @@ const INGREDIENTES = [
     "familia": "Arecaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Leche de coco deshidratada. Cremosidad tropical.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/leche_de_coco_en_polvo_1780780579839.png"
   },
   {
     "id": 127,
@@ -1434,8 +1679,11 @@ const INGREDIENTES = [
     "familia": "Arecaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Pulpa de coco deshidratada. Textura y dulzor.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/coco_rallado_1780780591915.png"
   },
   {
     "id": 128,
@@ -1444,8 +1692,12 @@ const INGREDIENTES = [
     "familia": "Suillaceae",
     "origen": "Patagonia",
     "descripcion": "Hongos silvestres de bosques de pino. Sabor terroso.",
-    "perfiles": ["umami", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "umami",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/hongos_de_pino_1780780603343.png"
   },
   {
     "id": 129,
@@ -1454,8 +1706,12 @@ const INGREDIENTES = [
     "familia": "Anacardiaceae",
     "origen": "Irán, Sicilia",
     "descripcion": "Pistachos enteros con cáscara.",
-    "perfiles": ["dulce", "terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pistacho_entero_1780780613892.png"
   },
   {
     "id": 130,
@@ -1464,8 +1720,12 @@ const INGREDIENTES = [
     "familia": "Poaceae",
     "origen": "Sudeste Asiático",
     "descripcion": "Hierba limón. Perfil cítrico-floral intenso.",
-    "perfiles": ["citrico", "floral"],
-    "categoria": "hierbas"
+    "perfiles": [
+      "citrico",
+      "floral"
+    ],
+    "categoria": "hierbas",
+    "imagen": "images/ingredientes/lemon_grass_1780780625697.png"
   },
   {
     "id": 131,
@@ -1474,8 +1734,11 @@ const INGREDIENTES = [
     "familia": "Rosaceae",
     "origen": "China",
     "descripcion": "Durazno deshidratado. Dulce y afrutado.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/durazno_en_escamas_1780780638527.png"
   },
   {
     "id": 132,
@@ -1484,8 +1747,12 @@ const INGREDIENTES = [
     "familia": "Ericaceae",
     "origen": "América del Norte",
     "descripcion": "Berries secos. Ácido-dulce con antioxidantes.",
-    "perfiles": ["dulce", "acido"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce",
+      "acido"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/arandanos_deshidratados.png"
   },
   {
     "id": 133,
@@ -1494,8 +1761,11 @@ const INGREDIENTES = [
     "familia": "Rosaceae",
     "origen": "Patagonia",
     "descripcion": "Fruto silvestre. Rico en vitamina C. Sabor ácido.",
-    "perfiles": ["acido"],
-    "categoria": "flores"
+    "perfiles": [
+      "acido"
+    ],
+    "categoria": "flores",
+    "imagen": "images/ingredientes/rosa_mosqueta_fruto.png"
   },
   {
     "id": 134,
@@ -1504,8 +1774,12 @@ const INGREDIENTES = [
     "familia": "Theaceae",
     "origen": "China, Sri Lanka",
     "descripcion": "Té verde de hojas selectas. Delicado y vegetal.",
-    "perfiles": ["terroso", "floral"],
-    "categoria": "tes"
+    "perfiles": [
+      "terroso",
+      "floral"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/te_verde_importado_pekoe.png"
   },
   {
     "id": 135,
@@ -1514,8 +1788,12 @@ const INGREDIENTES = [
     "familia": "Asteraceae",
     "origen": "Europa",
     "descripcion": "Flores para infusión. Relajante y digestiva.",
-    "perfiles": ["floral", "dulce"],
-    "categoria": "tes"
+    "perfiles": [
+      "floral",
+      "dulce"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/manzanilla.png"
   },
   {
     "id": 136,
@@ -1524,8 +1802,11 @@ const INGREDIENTES = [
     "familia": "Poaceae",
     "origen": "Chile, Argentina",
     "descripcion": "Harina tostada de trigo. Tradición mapuche.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/naco.png"
   },
   {
     "id": 137,
@@ -1534,8 +1815,11 @@ const INGREDIENTES = [
     "familia": "Theaceae",
     "origen": "Misiones, Argentina",
     "descripcion": "Té negro de alta calidad. Hojas enteras.",
-    "perfiles": ["terroso"],
-    "categoria": "tes"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/te_negro_premium.png"
   },
   {
     "id": 138,
@@ -1544,8 +1828,11 @@ const INGREDIENTES = [
     "familia": "Producto procesado",
     "origen": "España",
     "descripcion": "Aroma de humo concentrado para ahumar en frío.",
-    "perfiles": ["ahumado"],
-    "categoria": "ahumados"
+    "perfiles": [
+      "ahumado"
+    ],
+    "categoria": "ahumados",
+    "imagen": "images/ingredientes/humo_en_polvo.png"
   },
   {
     "id": 139,
@@ -1554,8 +1841,11 @@ const INGREDIENTES = [
     "familia": "Solanaceae",
     "origen": "América",
     "descripcion": "Pimiento verde seco. Sabor vegetal intenso.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/pimiento_verde_deshidratado.png"
   },
   {
     "id": 140,
@@ -1564,8 +1854,11 @@ const INGREDIENTES = [
     "familia": "Rutaceae",
     "origen": "Mediterráneo",
     "descripcion": "Zeste de naranja amarga. Perfil intenso-amargo.",
-    "perfiles": ["citrico"],
-    "categoria": "citricos"
+    "perfiles": [
+      "citrico"
+    ],
+    "categoria": "citricos",
+    "imagen": "images/ingredientes/cascara_de_naranja_amarga.png"
   },
   {
     "id": 141,
@@ -1574,8 +1867,11 @@ const INGREDIENTES = [
     "familia": "Rosaceae",
     "origen": "Asia Central",
     "descripcion": "Chips de manzana. Dulzor natural concentrado.",
-    "perfiles": ["dulce"],
-    "categoria": "especias"
+    "perfiles": [
+      "dulce"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/manzana_deshidratada.png"
   },
   {
     "id": 142,
@@ -1584,8 +1880,11 @@ const INGREDIENTES = [
     "familia": "Adoxaceae",
     "origen": "Europa",
     "descripcion": "Flores aromáticas para infusiones. Delicado y floral.",
-    "perfiles": ["floral"],
-    "categoria": "flores"
+    "perfiles": [
+      "floral"
+    ],
+    "categoria": "flores",
+    "imagen": "images/ingredientes/flor_de_sauco.png"
   },
   {
     "id": 143,
@@ -1594,8 +1893,11 @@ const INGREDIENTES = [
     "familia": "Gentianaceae",
     "origen": "Alpes",
     "descripcion": "Raíz amarga. Base de aperitivos y digestivos.",
-    "perfiles": ["terroso"],
-    "categoria": "especias"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/genciana_raiz.png"
   },
   {
     "id": 144,
@@ -1604,8 +1906,11 @@ const INGREDIENTES = [
     "familia": "Theaceae",
     "origen": "Yunnan, China",
     "descripcion": "Té fermentado y añejado. Sabor terroso profundo.",
-    "perfiles": ["terroso"],
-    "categoria": "tes"
+    "perfiles": [
+      "terroso"
+    ],
+    "categoria": "tes",
+    "imagen": "images/ingredientes/te_rojo_pu_erh.png"
   },
   {
     "id": 145,
@@ -1614,8 +1919,11 @@ const INGREDIENTES = [
     "familia": "Omphalotaceae",
     "origen": "Japón, China",
     "descripcion": "Setas shiitake enteras deshidratadas.",
-    "perfiles": ["umami"],
-    "categoria": "especias"
+    "perfiles": [
+      "umami"
+    ],
+    "categoria": "especias",
+    "imagen": "images/ingredientes/hongo_shiitake_entero.png"
   }
 ];
 
