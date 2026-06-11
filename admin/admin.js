@@ -12,6 +12,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+let currentEditId = null;
+let postsData = {};
+
+
 document.getElementById('btnPublish').addEventListener('click', async () => {
     const title = document.getElementById('postTitle').value.trim();
     const excerpt = document.getElementById('postExcerpt').value.trim();
@@ -29,22 +33,37 @@ document.getElementById('btnPublish').addEventListener('click', async () => {
         document.getElementById('btnPublish').disabled = true;
         document.getElementById('btnPublish').textContent = 'Guardando...';
 
-        // Guardar en la colección 'blog_posts' de Firestore
-        await db.collection('blog_posts').add({
-            title: title,
-            excerpt: excerpt,
-            image: image,
-            content: content,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
+        if (currentEditId) {
+            // Actualizar artículo existente
+            await db.collection('blog_posts').doc(currentEditId).update({
+                title: title,
+                excerpt: excerpt,
+                image: image,
+                content: content
+            });
+            currentEditId = null;
+            showStatus('¡Artículo actualizado con éxito!', 'success');
+        } else {
+            // Guardar nuevo artículo
+            await db.collection('blog_posts').add({
+                title: title,
+                excerpt: excerpt,
+                image: image,
+                content: content,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            showStatus('¡Artículo publicado con éxito! Ya se puede ver en la página web.', 'success');
+        }
+
+        // Restaurar botón a estado original
+        const btn = document.getElementById('btnPublish');
+        btn.style.backgroundColor = 'var(--wine)';
 
         // Limpiar el formulario
         document.getElementById('postTitle').value = '';
         document.getElementById('postExcerpt').value = '';
         document.getElementById('postImage').value = '';
         document.getElementById('postContent').value = '';
-
-        showStatus('¡Artículo publicado con éxito! Ya se puede ver en la página web.', 'success');
 
         // Generar Ficha para WhatsApp
         const whatsappText = `*¡Nuevo Artículo del Maestro Blender!* 🔪🍷\n\n*${title}*\n_${excerpt}_\n\n👉 Leé la nota completa acá:\nhttps://www.rojomalbec.com.ar/\n\n¡Te esperamos en el laboratorio!`;
@@ -83,6 +102,7 @@ function loadPosts() {
     db.collection('blog_posts').orderBy('createdAt', 'desc').onSnapshot(snapshot => {
         const postsList = document.getElementById('postsList');
         postsList.innerHTML = '';
+        postsData = {};
         
         if (snapshot.empty) {
             postsList.innerHTML = '<p>No hay artículos publicados.</p>';
@@ -91,6 +111,7 @@ function loadPosts() {
 
         snapshot.forEach(doc => {
             const post = doc.data();
+            postsData[doc.id] = post;
             const div = document.createElement('div');
             div.style.border = '1px solid #ccc';
             div.style.padding = '15px';
@@ -105,7 +126,10 @@ function loadPosts() {
                     <h3 style="margin: 0 0 5px 0;">${post.title}</h3>
                     <small style="color: #666;">${post.excerpt}</small>
                 </div>
-                <button onclick="deletePost('${doc.id}')" style="background-color: #dc3545; width: auto; padding: 10px 15px; margin-left: 15px;">🗑️ Borrar</button>
+                <div>
+                    <button onclick="editPost('${doc.id}')" style="background-color: #ff9800; width: auto; padding: 10px 15px; margin-left: 10px;">✏️ Editar</button>
+                    <button onclick="deletePost('${doc.id}')" style="background-color: #dc3545; width: auto; padding: 10px 15px; margin-left: 10px;">🗑️ Borrar</button>
+                </div>
             `;
             postsList.appendChild(div);
         });
@@ -126,6 +150,26 @@ window.deletePost = async function(id) {
             showStatus('Error al borrar: ' + error.message, 'error');
         }
     }
+};
+
+// Preparar formulario para editar
+window.editPost = function(id) {
+    const post = postsData[id];
+    if (!post) return;
+
+    document.getElementById('postTitle').value = post.title || '';
+    document.getElementById('postExcerpt').value = post.excerpt || '';
+    document.getElementById('postImage').value = post.image || '';
+    document.getElementById('postContent').value = post.content || '';
+    
+    currentEditId = id;
+    
+    const btn = document.getElementById('btnPublish');
+    btn.textContent = 'Actualizar Artículo';
+    btn.style.backgroundColor = '#ff9800'; // Color naranja para edición
+    
+    // Scrollear hacia arriba suavemente
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 // Cargar los posts apenas entramos al panel
