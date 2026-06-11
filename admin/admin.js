@@ -45,13 +45,29 @@ document.getElementById('btnPublish').addEventListener('click', async () => {
         document.getElementById('postContent').value = '';
 
         showStatus('¡Artículo publicado con éxito! Ya se puede ver en la página web.', 'success');
+
+        // Generar Ficha para WhatsApp
+        const whatsappText = `*¡Nuevo Artículo del Maestro Blender!* 🔪🍷\n\n*${title}*\n_${excerpt}_\n\n👉 Leé la nota completa acá:\nhttps://www.rojomalbec.com.ar/\n\n¡Te esperamos en el laboratorio!`;
+        document.getElementById('whatsappText').value = whatsappText;
+        document.getElementById('whatsappCard').style.display = 'block';
+
     } catch (error) {
         console.error("Error al guardar: ", error);
         showStatus('Hubo un error al guardar: ' + error.message, 'error');
     } finally {
-        document.getElementById('btnPublish').disabled = false;
+    document.getElementById('btnPublish').disabled = false;
         document.getElementById('btnPublish').textContent = 'Publicar Artículo';
     }
+});
+
+// Botón para copiar WhatsApp
+document.getElementById('btnCopyWhatsapp').addEventListener('click', () => {
+    const textToCopy = document.getElementById('whatsappText').value;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const btn = document.getElementById('btnCopyWhatsapp');
+        btn.textContent = '¡Copiado! ✓';
+        setTimeout(() => { btn.textContent = '📋 Copiar Ficha'; }, 3000);
+    });
 });
 
 function showStatus(message, type) {
