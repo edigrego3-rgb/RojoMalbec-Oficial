@@ -61,3 +61,56 @@ function showStatus(message, type) {
     el.style.display = 'block';
     setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
+
+// Cargar y mostrar artículos existentes
+function loadPosts() {
+    db.collection('blog_posts').orderBy('createdAt', 'desc').onSnapshot(snapshot => {
+        const postsList = document.getElementById('postsList');
+        postsList.innerHTML = '';
+        
+        if (snapshot.empty) {
+            postsList.innerHTML = '<p>No hay artículos publicados.</p>';
+            return;
+        }
+
+        snapshot.forEach(doc => {
+            const post = doc.data();
+            const div = document.createElement('div');
+            div.style.border = '1px solid #ccc';
+            div.style.padding = '15px';
+            div.style.marginBottom = '10px';
+            div.style.borderRadius = '8px';
+            div.style.display = 'flex';
+            div.style.justifyContent = 'space-between';
+            div.style.alignItems = 'center';
+            
+            div.innerHTML = `
+                <div>
+                    <h3 style="margin: 0 0 5px 0;">${post.title}</h3>
+                    <small style="color: #666;">${post.excerpt}</small>
+                </div>
+                <button onclick="deletePost('${doc.id}')" style="background-color: #dc3545; width: auto; padding: 10px 15px; margin-left: 15px;">🗑️ Borrar</button>
+            `;
+            postsList.appendChild(div);
+        });
+    }, error => {
+        console.error("Error al cargar posts:", error);
+        document.getElementById('postsList').innerHTML = '<p style="color:red">Error al cargar artículos.</p>';
+    });
+}
+
+// Borrar un artículo
+window.deletePost = async function(id) {
+    if(confirm('¿Estás seguro de que querés borrar este artículo de la página?')) {
+        try {
+            await db.collection('blog_posts').doc(id).delete();
+            showStatus('Artículo borrado exitosamente.', 'success');
+        } catch(error) {
+            console.error("Error borrando documento: ", error);
+            showStatus('Error al borrar: ' + error.message, 'error');
+        }
+    }
+};
+
+// Cargar los posts apenas entramos al panel
+loadPosts();
