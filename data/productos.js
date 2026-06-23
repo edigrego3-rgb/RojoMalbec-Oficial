@@ -494,6 +494,34 @@ Tip del blender: Moler en el momento sobre el plato terminado. El calor residual
 📦 Envase 40g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
         ingredientes: "Pimienta roja, pimienta larga, cascara de mandarina deshidratada, nibs de cacao, pimienta negra en grano, pimienta de jamaica",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
+    },
+    {
+        id: 17,
+        nombre: "Panch Phoron",
+        categoria: "blends",
+        emoji: "🇮🇳",
+        imagen: "products/panch-phoron.jpg",
+        tagline: "Las 5 Semillas de Bengala - Mezcla Entera para Tadka",
+        descripcion: `🇮🇳 Panch Phoron - Mezcla de 5 Semillas Enteras
+No es una sal, es un viaje de ida. El secreto mejor guardado de la cocina de la India Oriental, elaborado artesanalmente en las sierras para transformar tus comidas de todos los días.
+¿Qué es? 
+Una alquimia perfecta y equilibrada de 5 semillas enteras crudas: Comino, Hinojo, Mostaza, Fenogreco y Nigella (comino negro). Al no estar molidas, conservan todos sus aceites esenciales intactos en el envase, esperando que vos los liberes en la sartén. Tiene un perfil terroso, profundo, ligeramente dulzón y súper aromático.
+👨‍🍳 El Secreto del Chef (Cómo se usa):
+Esta es una verdadera herramienta de cocina. No se espolvorea cruda sobre el plato terminado. La magia ocurre con la técnica del "Tadka" (tostado):
+1. Calentá un poco de aceite de oliva, manteca o ghee en una sartén u olla.
+2. Agregá una cucharadita de Panch Phoron y dejá que las semillas se tuesten por 30 o 40 segundos hasta que empiecen a "saltar" y liberar su perfume.
+3. ¡Listo! Sobre ese aceite aromatizado, tirás tus ingredientes y cocinás tu plato.
+🔥 Ideal para "El Puente Criollo" (Usos recomendados):
+Animate a salir de lo clásico y dale un toque de autor a tus comidas de siempre:
+- Vegetales asados: Papas rústicas, batatas o zapallo plomo al hierro (salteados en el aceite perfumado con la mezcla).
+- Guisos y Estofados: Usalo para arrancar el sofrito (cebolla y morrón) de un buen guiso de lentejas o una carne a la olla.
+- Picadas: Tostá una pizca y mezclalo con queso crema o hummus para un dip premium e inolvidable.
+- Rellenos: El toque secreto para el relleno de unas empanadas de pollo.
+📝 INGREDIENTES Y ALÉRGENOS:
+Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco.
+*CONTIENE MOSTAZA. Producto Vegano.*`,
+        ingredientes: "Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco",
+        maridaje: "Lentejas, vegetales asados, pollo, hummus, chutneys"
     }
 ];
 
