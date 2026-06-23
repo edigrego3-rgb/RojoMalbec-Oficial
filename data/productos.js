@@ -522,9 +522,38 @@ Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco.
 *CONTIENE MOSTAZA. Producto Vegano.*`,
         ingredientes: "Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco",
         maridaje: "Lentejas, vegetales asados, pollo, hummus, chutneys"
+    },
+    {
+id: 18,
+        nombre: "Té Pu-Erh Rojo Malbec",
+        categoria: "tes",
+        emoji: "🍂",
+        imagen: "products/te-puerh.jpg",
+        tagline: "El Té que Envejece como un Buen Vino",
+        descripcion: `🍂 Té Pu-Erh Rojo Malbec — El Té que Envejece como un Buen Vino
+No es solo un té. Es tradición milenaria.
+¿Qué es?
+Este blend nace inspirado en uno de los maridajes más antiguos del mundo del té: el Pu-erh y los cítricos. En China, esta combinación se practica desde hace siglos bajo el nombre de Chenpi Pu-erh (陳皮普洱). Nosotros tomamos esa inspiración y la trajimos a nuestro taller, usando mandarina deshidratada natural para aportar un brillo cítrico dulce que ilumina la profundidad terrosa del Pu-erh, y lo completamos con jengibre y canela de Ceilán verdadera para darle calidez y redondez.
+Solo cuatro ingredientes reales. Sin aromas artificiales, sin rellenos, sin atajos.
+🌿 La Base: Pu-Erh Shou (Té Rojo Fermentado) — 80%
+El Pu-erh es un té único en el mundo. A diferencia de todos los demás, pasa por una post-fermentación controlada que transforma la hoja verde en algo completamente diferente: una infusión oscura como el café, aterciopelada, con notas profundas a tierra húmeda después de la lluvia, madera noble y un dulzor natural que recuerda al cacao amargo. Y tiene una propiedad que ningún otro té posee: mejora con el tiempo, como un gran vino o un whisky añejado en barrica.
+🍊 El Brillo: Mandarina Deshidratada Natural — 10%
+¿Por qué mandarina y no naranja? Porque sus aceites esenciales son más dulces, más resinosos y menos ácidos. No atacan al paladar: lo envuelven. Se funden con la tierra del Pu-erh creando un perfil aterciopelado y cálido que transforma la taza en algo completamente distinto a cualquier "té con cáscara de naranja" que hayas probado antes.
+🔥 La Chispa: Jengibre & Canela de Ceilán — 5% + 5%
+Un toque preciso de jengibre deshidratado aporta un calor sutil que se siente en la garganta. La canela de Ceilán verdadera (Cinnamomum verum, no la Cassia común de supermercado) cierra con un abrazo dulce y especiado que se queda largo rato en el paladar. Ambas especias están calibradas al mínimo necesario para acompañar sin tapar: el Pu-erh siempre es el protagonista.
+☕ En Tu Taza
+Color ámbar oscuro, casi tinto, profundo y limpio. Un aroma que mezcla tierra mojada, mandarina confitada y un hilo sutil de canela y jengibre. En boca es suave, sin astringencia, con cuerpo medio-alto y un final largo y reconfortante. Es el té perfecto para las tardes de otoño, para cerrar una comida, o para ese momento del día en que necesitás frenar, respirar y volver a vos.
+👨‍🍳 Modo de Preparación
+Temperatura: 95-100°C (este té aguanta y pide agua bien caliente).
+Cantidad: 1 cucharada colmada por taza (250 ml).
+Tiempo: 4-5 minutos.
+Rinde 2 a 3 infusiones: No tires las hebras después de la primera taza. La primera infusión te entrega el blend completo con toda su complejidad; las siguientes van revelando la profundidad pura del Pu-erh, más limpio y terroso con cada pasada. Cada taza es una experiencia distinta.
+📝 INGREDIENTES:
+Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum). 100% natural. Sin aromas artificiales.`,
+        ingredientes: "Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum)",
+        maridaje: "Postres de chocolate, quesos azules, tardes de otoño, sobremesa"
     }
 ];
-
 // Categorías con sus detalles
 const categorias = {
     sales: { nombre: "Sales Gourmet", icono: "🧂", color: "#f5f5f5" },
