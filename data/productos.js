@@ -500,7 +500,7 @@ Tip del blender: Moler en el momento sobre el plato terminado. El calor residual
         nombre: "Panch Phoron",
         categoria: "blends",
         emoji: "🇮🇳",
-        imagen: "products/panch-phoron.jpg",
+        imagen: "products/panch-phoron.png",
         tagline: "Las 5 Semillas de Bengala - Mezcla Entera para Tadka",
         descripcion: `🇮🇳 Panch Phoron - Mezcla de 5 Semillas Enteras
 No es una sal, es un viaje de ida. El secreto mejor guardado de la cocina de la India Oriental, elaborado artesanalmente en las sierras para transformar tus comidas de todos los días.
