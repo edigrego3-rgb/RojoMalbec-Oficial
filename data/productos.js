@@ -600,6 +600,28 @@ Arroz Mexicano: Sofreí el arroz con una cucharada del blend antes de agregar el
 ⚠️ CONTIENE GLUTEN (trigo) y SÉSAMO. NO APTO PARA CELÍACOS.`,
         ingredientes: "Pimentón dulce extra (200 ASTA), cacao amargo alcalinizado, ñaco tostado (harina de trigo), ajonjolí tostado, azúcar mascabo, cebolla en polvo, pimentón ahumado, ajo en polvo, canela de Ceilán (Cinnamomum verum), achiote molido, pimienta de Jamaica, comino, orégano, clavo de olor. ⚠️ CONTIENE GLUTEN (trigo) y SÉSAMO.",
         maridaje: "Pollo, cerdo, costillas, enchiladas, tacos, arroz, vegetales asados"
+    },
+    {
+        id: 22,
+        nombre: "España Profunda",
+        categoria: "blends",
+        emoji: "🥘",
+        imagen: "products/espana-profunda.png", 
+        tagline: "El Secreto del Maestro Arrocero",
+        descripcion: `🥘 España Profunda — El Secreto del Maestro Arrocero
+No es solo para la paella. Es el perfil Mediterráneo Umami definitivo, 100% Plant-Based.
+¿Qué es?
+Nuestra Fórmula Maestra para arroces y paellas, diseñada para replicar el fondo de cocción tradicional español pero en formato vegetal. El secreto está en la sinergia: la base profunda del Tomate deshidratado y el Pimentón Dulce 200 ASTA de España, activados con el umami natural de la levadura nutricional y coronados con la magia indiscutida del Azafrán.
+🍅 Umami Vegetal: 23% de tomate deshidratado y levadura nutricional que imitan el sabor de un fondo de cocción profundo, sin ingredientes animales.
+🌶️ Pimentón Español 200 ASTA: Estructura, color rojo intenso y base de sabor mediterráneo.
+✨ Azafrán Integrado: El "Hero ingredient" de la fórmula. Aporta ese color dorado único y el inconfundible aroma a safranal que eleva cualquier plato.
+🔥 Aromáticos precisos: Ajo tostado, cebolla, cúrcuma premium y un toque de cáscara de limón para el brillo cítrico final.
+🍽️ ¿Cómo Usarlo?
+Paellas y Arroces: 15g por cada 250g de arroz crudo. IMPORTANTE: Disolvé el blend en el caldo caliente antes de volcarlo al arroz para activar el color del azafrán.
+Rubs para Pesca o Pollo: Frotar 10g por pieza, dejar reposar 20 min y a la plancha.
+Fondo Vegetal: 10g por litro de agua. Hervor lento para un caldo instantáneo espectacular.`,
+        ingredientes: "Pimentón dulce extra (200 ASTA, España), tomate deshidratado, cebolla en polvo, levadura nutricional, ajo granulado tostado, pimentón ahumado, azúcar mascabo, romero pulverizado, cúrcuma, azafrán molido, fosfato tricálcico (E341), cáscara de limón en polvo, pimienta blanca. SIN SAL AGREGADA. 100% VEGETAL.",
+        maridaje: "Paellas, arroces caldosos, pescados blancos, pollo, marinadas de vegetales, salsas de tomate"
     }
 ];
 // Categorías con sus detalles
