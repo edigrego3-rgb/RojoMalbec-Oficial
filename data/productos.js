@@ -575,9 +575,33 @@ Tiempo: 5-7 minutos. Al no tener taninos, no hay riesgo de sobreinfusión; podé
 Rinde varias infusiones: Al igual que el buen té, podés reinfusionar las mismas hebras obteniendo una taza muy aromática en la segunda pasada.`,
         ingredientes: "Rooibos (Aspalathus linearis), rosa mosqueta deshidratada, jengibre deshidratado, cáscara de naranja deshidratada, cáscara de limón deshidratada, flores de hibisco, miel en polvo, aroma de vainilla",
         maridaje: "Postres de vainilla, budines cítricos, frutos secos, lectura nocturna"
+     },
+    {
+        id: 21,
+        nombre: "Mole Mexicano de Autor",
+        categoria: "blends",
+        emoji: "🇲🇽",
+        imagen: "products/mole-mexicano.png",
+        tagline: "La Ruta Ancestral del Cacao y los Chiles",
+        descripcion: `🇲🇽 Mole Mexicano de Autor — La Ruta Ancestral del Cacao y los Chiles
+No es un condimento. Es el plato más sagrado de México, convertido en polvo mágico.
+¿Qué es?
+Nuestra versión de autor del Mole: la receta ancestral que las cocineras de Oaxaca y Puebla molían durante horas sobre piedra volcánica. Un polvo borgoña profundo con destellos dorados de sésamo entero, que esconde capas de sabor que se van revelando con el calor. No es picante. Es profundo, terroso, con cacao amargo fundiéndose con especias cálidas y un hilo de humo que se queda en la memoria.
+🍫 Cacao amargo alcalinizado: el alma del mole. Color borgoña casi negro y un amargor noble que se funde con el pimentón. El mismo principio que usaban las civilizaciones mesoamericanas hace 3.000 años.
+🌶️ Pimentón español 200 ASTA + Achiote: cuerpo rojo intenso y nota terracota. Emulan los chiles ancho y mulato del mole tradicional.
+🌾 Ñaco tostado: el ligante criollo que espesa la salsa, le da brillo y aporta ese fondo tostado que redondea todo.
+✨ Ajonjolí tostado entero: granos dorados intactos que estallan en boca con cremosidad y crunch. La firma de todo gran mole.
+🔥 Canela de Ceilán, pimienta de Jamaica, comino, clavo y orégano: en dosis mínimas pero exactas. Arquitectura aromática sin que ninguna domine.
+🍽️ ¿Cómo Usarlo?
+Dry Rub: Frotá 30-40g por kilo de carne. Reposar 30 min. Fuego medio. Se forma una costra negra caramelizada espectacular.
+Salsa Rápida: Tostá 2 cucharadas en sartén 30 seg. Desgrasá con medio pocillo de caldo. Salsa de mole en 5 minutos.
+Mole de Olla: Disolvé 60g en un litro de caldo caliente con pollo o cerdo. 30 minutos y tenés mole completo.
+Arroz Mexicano: Sofreí el arroz con una cucharada del blend antes de agregar el agua.
+⚠️ CONTIENE GLUTEN (trigo) y SÉSAMO. NO APTO PARA CELÍACOS.`,
+        ingredientes: "Pimentón dulce extra (200 ASTA), cacao amargo alcalinizado, ñaco tostado (harina de trigo), ajonjolí tostado, azúcar mascabo, cebolla en polvo, pimentón ahumado, ajo en polvo, canela de Ceilán (Cinnamomum verum), achiote molido, pimienta de Jamaica, comino, orégano, clavo de olor. ⚠️ CONTIENE GLUTEN (trigo) y SÉSAMO.",
+        maridaje: "Pollo, cerdo, costillas, enchiladas, tacos, arroz, vegetales asados"
     }
 ];
-
 // Categorías con sus detalles
 const categorias = {
     sales: { nombre: "Sales Gourmet", icono: "🧂", color: "#f5f5f5" },
@@ -587,4 +611,3 @@ const categorias = {
     mocktails: { nombre: "Bases Mocktails", icono: "🍹", color: "#e3f2fd" },
     tes: { nombre: "Tés de Autor", icono: "🍵", color: "#fce4ec" }
 };
-   
