@@ -494,7 +494,7 @@ Tip del blender: Moler en el momento sobre el plato terminado. El calor residual
 📦 Envase 40g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
         ingredientes: "Pimienta roja, pimienta larga, cascara de mandarina deshidratada, nibs de cacao, pimienta negra en grano, pimienta de jamaica",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
-    },
+    },    
     {
         id: 17,
         nombre: "Panch Phoron",
@@ -516,15 +516,12 @@ Animate a salir de lo clásico y dale un toque de autor a tus comidas de siempre
 - Vegetales asados: Papas rústicas, batatas o zapallo plomo al hierro (salteados en el aceite perfumado con la mezcla).
 - Guisos y Estofados: Usalo para arrancar el sofrito (cebolla y morrón) de un buen guiso de lentejas o una carne a la olla.
 - Picadas: Tostá una pizca y mezclalo con queso crema o hummus para un dip premium e inolvidable.
-- Rellenos: El toque secreto para el relleno de unas empanadas de pollo.
-📝 INGREDIENTES Y ALÉRGENOS:
-Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco.
-*CONTIENE MOSTAZA. Producto Vegano.*`,
-        ingredientes: "Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco",
+- Rellenos: El toque secreto para el relleno de unas empanadas de pollo.`,
+        ingredientes: "Semillas de Hinojo, Comino, Nigella (Kalonji), Mostaza (Brassica), Fenogreco. *CONTIENE MOSTAZA. Producto Vegano.*",
         maridaje: "Lentejas, vegetales asados, pollo, hummus, chutneys"
     },
     {
-id: 18,
+        id: 18,
         nombre: "Té Pu-Erh Rojo Malbec",
         categoria: "tes",
         emoji: "🍂",
@@ -547,14 +544,11 @@ Color ámbar oscuro, casi tinto, profundo y limpio. Un aroma que mezcla tierra m
 Temperatura: 95-100°C (este té aguanta y pide agua bien caliente).
 Cantidad: 1 cucharada colmada por taza (250 ml).
 Tiempo: 4-5 minutos.
-Rinde 2 a 3 infusiones: No tires las hebras después de la primera taza. La primera infusión te entrega el blend completo con toda su complejidad; las siguientes van revelando la profundidad pura del Pu-erh, más limpio y terroso con cada pasada. Cada taza es una experiencia distinta.
-📝 INGREDIENTES:
-Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum). 100% natural. Sin aromas artificiales.`,
-        ingredientes: "Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum)",
+Rinde 2 a 3 infusiones: No tires las hebras después de la primera taza. La primera infusión te entrega el blend completo con toda su complejidad; las siguientes van revelando la profundidad pura del Pu-erh, más limpio y terroso con cada pasada. Cada taza es una experiencia distinta.`,
+        ingredientes: "Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum). 100% natural, sin aromas artificiales.",
         maridaje: "Postres de chocolate, quesos azules, tardes de otoño, sobremesa"
-
- },
- {
+    },
+    {
         id: 20,
         nombre: "Rooibos Ámbar Africano",
         categoria: "tes",
@@ -578,13 +572,12 @@ Un licor de color ámbar-cobrizo brillante y límpido. Su aroma es sumamente aco
 Temperatura: 90-95°C (agua a punto de hervir).
 Cantidad: 1 cucharada colmada por taza (250 ml).
 Tiempo: 5-7 minutos. Al no tener taninos, no hay riesgo de sobreinfusión; podés dejarlo el tiempo que quieras y solo ganará en intensidad.
-Rinde varias infusiones: Al igual que el buen té, podés reinfusionar las mismas hebras obteniendo una taza muy aromática en la segunda pasada.
-📝 INGREDIENTES:
-Rooibos (Aspalathus linearis), rosa mosqueta deshidratada, jengibre deshidratado, cáscara de naranja deshidratada, cáscara de limón deshidratada, flores de hibisco, miel en polvo, aroma de vainilla.`,
+Rinde varias infusiones: Al igual que el buen té, podés reinfusionar las mismas hebras obteniendo una taza muy aromática en la segunda pasada.`,
         ingredientes: "Rooibos (Aspalathus linearis), rosa mosqueta deshidratada, jengibre deshidratado, cáscara de naranja deshidratada, cáscara de limón deshidratada, flores de hibisco, miel en polvo, aroma de vainilla",
         maridaje: "Postres de vainilla, budines cítricos, frutos secos, lectura nocturna"
     }
 ];
+
 // Categorías con sus detalles
 const categorias = {
     sales: { nombre: "Sales Gourmet", icono: "🧂", color: "#f5f5f5" },
@@ -594,3 +587,4 @@ const categorias = {
     mocktails: { nombre: "Bases Mocktails", icono: "🍹", color: "#e3f2fd" },
     tes: { nombre: "Tés de Autor", icono: "🍵", color: "#fce4ec" }
 };
+   
