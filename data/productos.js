@@ -552,6 +552,37 @@ Rinde 2 a 3 infusiones: No tires las hebras después de la primera taza. La prim
 Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum). 100% natural. Sin aromas artificiales.`,
         ingredientes: "Té Pu-erh (Camellia sinensis), cáscara de mandarina deshidratada, jengibre deshidratado, canela de Ceilán (Cinnamomum verum)",
         maridaje: "Postres de chocolate, quesos azules, tardes de otoño, sobremesa"
+
+ },
+ {
+        id: 20,
+        nombre: "Rooibos Ámbar Africano",
+        categoria: "tes",
+        emoji: "🌅",
+        imagen: "products/te-rooibos.png",
+        tagline: "El Latido Rojo de Traslasierra",
+        descripcion: `🌅 Rooibos Ámbar Africano 
+Una infusión sin teína, inspirada en la calidez del sol africano y madurada con la frescura cítrica de nuestras sierras.
+¿Qué es?
+Este blend de autor es un viaje sensorial que conecta el corazón de Sudáfrica con la mística de Traslasierra. Utiliza como base el Rooibos (Aspalathus linearis), una planta noble y naturalmente libre de cafeína, conocida por su color rojo rubí profundo y su dulzor sutil. Lo combinamos con la acidez silvestre de la rosa mosqueta, la frescura cítrica de la naranja y el limón, el golpe vibrante del jengibre, pétalos de hibisco y la caricia dulce de la miel en polvo y el aroma a vainilla.
+Un blend redondo, reconfortante y sin estimulantes, ideal para cualquier momento del día o de la noche. 100% natural, sin aditivos artificiales.
+🇿🇦 La Base: Rooibos de Sudáfrica — 70%
+El Rooibos es una joya botánica. A diferencia del té tradicional, no tiene cafeína ni astringencia, lo que significa que nunca se pone amargo por más tiempo que se deje en la taza. Ofrece un perfil de sabor reconfortante, con notas a nuez, madera dulce y miel natural. Es el compañero perfecto para quienes buscan relajarse y cuidar su cuerpo, gracias a su altísimo contenido de antioxidantes y minerales.
+🍊 El Bouquet Cítrico & Floral: Naranja, Limón & Hibisco — 15%
+Aportamos brillo y balance. La cáscara de naranja deshidratada y el flavedo de limón aportan aceites esenciales cítricos que cortan el dulzor del rooibos, mientras que los pétalos de hibisco tiñen la taza con un color ámbar rojizo aún más espectacular y añaden una acidez fresca y frutal que limpia el paladar.
+🌹 El Abrazo Dulce y Especiado: Rosa Mosqueta, Jengibre, Miel & Vainilla — 15%
+El jengibre aporta su clásica nota picante y térmica en el final de boca. La rosa mosqueta patagónica suma una acidez sutil y floral, mientras que el aroma a vainilla y la miel en polvo cierran el blend con una cremosidad cálida y dulce, convirtiendo cada taza en un postre reconfortante.
+☕ En Tu Taza
+Un licor de color ámbar-cobrizo brillante y límpido. Su aroma es sumamente acogedor: cítricos dulces en primera línea, seguidos de la calidez de la vainilla y el aroma terroso del rooibos. En boca es sedoso, dulce de forma natural, sin amargor, con un final cítrico-especiado que invita a seguir tomando. Es la infusión definitiva para la noche, perfecta para desconectar del día y conciliar un sueño reparador, o para compartir en familia.
+👨‍🍳 Modo de Preparación
+Temperatura: 90-95°C (agua a punto de hervir).
+Cantidad: 1 cucharada colmada por taza (250 ml).
+Tiempo: 5-7 minutos. Al no tener taninos, no hay riesgo de sobreinfusión; podés dejarlo el tiempo que quieras y solo ganará en intensidad.
+Rinde varias infusiones: Al igual que el buen té, podés reinfusionar las mismas hebras obteniendo una taza muy aromática en la segunda pasada.
+📝 INGREDIENTES:
+Rooibos (Aspalathus linearis), rosa mosqueta deshidratada, jengibre deshidratado, cáscara de naranja deshidratada, cáscara de limón deshidratada, flores de hibisco, miel en polvo, aroma de vainilla.`,
+        ingredientes: "Rooibos (Aspalathus linearis), rosa mosqueta deshidratada, jengibre deshidratado, cáscara de naranja deshidratada, cáscara de limón deshidratada, flores de hibisco, miel en polvo, aroma de vainilla",
+        maridaje: "Postres de vainilla, budines cítricos, frutos secos, lectura nocturna"
     }
 ];
 // Categorías con sus detalles
