@@ -640,7 +640,22 @@ El Té Verde nunca se hierve. Usá agua a 80°C y dejalo reposar solo 2.5 a 3 mi
 Ideal caliente, o filtrado sobre hielo para un Iced Tea espectacular en verano.`,
         ingredientes: "Té verde (Gunpowder o Chun Mee), menta, lemongrass, durazno deshidratado, manzana deshidratada, jengibre, cardamomo, coriandro, pétalos de rosa.",
         maridaje: "Comida especiada de medio oriente, postres con miel (baklava), atardeceres de verano"
-    }
+    },
+    {
+        id: 25, 
+        nombre: "Té Karak de Autor",
+        categoria: "tes",
+        emoji: "☕",
+        imagen: "products/te-karak.png", 
+        tagline: "El sabor fuerte y dorado del Golfo Pérsico",
+        descripcion: `☕ Té Karak de Autor — La Joya de Medio Oriente
+Olvidate del clásico Chai indio. "Karak" significa Fuerte en árabe, y es la bebida sagrada de Qatar, Kuwait y los Emiratos.
+🌿 La Regla del 10%: A diferencia del té chai común, el Karak auténtico lleva una dosis altísima de Cardamomo Verde (10%). Ese es el motor de nuestro blend, acompañado por el calor dulce de la verdadera Canela de Ceilán y un toque de Clavo de olor.
+✨ La Técnica Secreta (Azafrán Infusionado): No tiramos simplemente hebras de azafrán en la bolsa. Infusionamos azafrán puro en agua a 40°C y bañamos delicadamente una porción del té negro Assam. Luego, lo volvemos a deshidratar en total oscuridad para atrapar el color dorado (crocina) y el aroma (safranal) dentro de la hebra. Cada taza que prepares tendrá exactamente la misma magia.`,
+        uso: "👨‍🍳 EL RITUAL DEL GOLFO: Este té no se infusiona, se hierve. Poné 2 cucharadas en 250ml de agua y herví de 5 a 10 minutos. Luego agregá leche evaporada (o tu leche favorita) y volvé a hervir 2 minutos más hasta lograr un color caramelo oscuro. Endulzá a gusto (se toma dulce) y serví bien caliente en un vaso pequeño.",
+        ingredientes: "Té negro Assam infusionado con azafrán puro (Crocus sativus), cardamomo verde, canela de Ceilán (Cinnamomum verum), clavo de olor.",
+        maridaje: "Dátiles, postres árabes, baklava, o como bebida para cortar la tarde."
+    } 
 ];
 // Categorías con sus detalles
 const categorias = {
