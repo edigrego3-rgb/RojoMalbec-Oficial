@@ -657,7 +657,7 @@ Olvidate del clásico Chai indio. "Karak" significa Fuerte en árabe, y es la be
         maridaje: "Dátiles, postres árabes, baklava, o como bebida para cortar la tarde."
     },
     {
-        id: 26, 
+        id: 27, 
         nombre: "Cacao & Zest",
         categoria: "tes",
         emoji: "🧉",
