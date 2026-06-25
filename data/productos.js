@@ -655,7 +655,22 @@ Olvidate del clásico Chai indio. "Karak" significa Fuerte en árabe, y es la be
         uso: "👨‍🍳 EL RITUAL DEL GOLFO: Este té no se infusiona, se hierve. Poné 2 cucharadas en 250ml de agua y herví de 5 a 10 minutos. Luego agregá leche evaporada (o tu leche favorita) y volvé a hervir 2 minutos más hasta lograr un color caramelo oscuro. Endulzá a gusto (se toma dulce) y serví bien caliente en un vaso pequeño.",
         ingredientes: "Té negro Assam infusionado con azafrán puro (Crocus sativus), cardamomo verde, canela de Cassia (Cinnamomum aromaticum), clavo de olor.",
         maridaje: "Dátiles, postres árabes, baklava, o como bebida para cortar la tarde."
-    } 
+    },
+    {
+        id: 26, 
+        nombre: "Cacao & Zest",
+        categoria: "tes",
+        emoji: "🧉",
+        imagen: "products/cacao-zest.png", 
+        tagline: "El upgrade definitivo para tu mate",
+        descripcion: `🧉 Cacao & Zest — Blend Saborizante (Topper)
+¿Cansado de la yerba de siempre? Diseñamos este "Topper" (saborizante natural) aplicando ingeniería de sabores para transformar tu ritual matero en una experiencia de alta gama. 
+🌿 El Secreto Químico: La yerba mate tiene taninos naturales que dan amargor. Para cortarlos, tostamos escamas de coco a baja temperatura (aportan un dulzor redondo y sedoso), le sumamos Cascarilla de Cacao (notas profundas a tierra y chocolate), y coronamos con hilos puros de cáscara de mandarina deshidratada (solo el "zest" naranja, sin la parte blanca amarga) para darle un brillo cítrico espectacular.
+El resultado es un mate que no se lava rápido, con un perfume a chocolate y cítricos que invade toda la habitación.`,
+        uso: "🧉 PARA EL MATE: Agregá 1 o 2 cucharadas soperas del blend directamente sobre tu yerba mate seca en el termo o en el mate, mezclá un poco y cebá normalmente. \n☕ OTROS USOS DE AUTOR: Increíble para infusionar en leche caliente, espolvorear sobre la espuma de tu café, o agregarlo al filtro de la cafetera.",
+        ingredientes: "Cascarilla de cacao premium, escamas de coco tostado, juliana de cáscara de mandarina deshidratada (sin albedo).",
+        maridaje: "Alfajores de maicena, budines de vainilla, medialunas, o una buena charla de tarde."
+    }
 ];
 // Categorías con sus detalles
 const categorias = {
