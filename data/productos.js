@@ -622,6 +622,24 @@ Rubs para Pesca o Pollo: Frotar 10g por pieza, dejar reposar 20 min y a la planc
 Fondo Vegetal: 10g por litro de agua. Hervor lento para un caldo instantáneo espectacular.`,
         ingredientes: "Pimentón dulce extra (200 ASTA, España), tomate deshidratado, cebolla en polvo, levadura nutricional, ajo granulado tostado, pimentón ahumado, azúcar mascabo, romero pulverizado, cúrcuma, azafrán molido, fosfato tricálcico (E341), cáscara de limón en polvo, pimienta blanca. SIN SAL AGREGADA. 100% VEGETAL.",
         maridaje: "Paellas, arroces caldosos, pescados blancos, pollo, marinadas de vegetales, salsas de tomate"
+    },
+    {
+        id: 23,
+        nombre: "Té Verde del Zoco",
+        categoria: "tes",
+        emoji: "🇲🇦",
+        imagen: "products/te-zoco.png",
+        tagline: "El corazón del Magreb en tu taza",
+        descripcion: `🇲🇦 Té Verde del Zoco — Blend de Autor
+Cerrá los ojos y viajá directo a un mercado de especias en Marruecos. Tomamos la receta auténtica del té a la menta del Magreb y le dimos nuestro giro de autor.
+🌿 La Base: Té Verde Gunpowder y Menta fresca, la dupla infalible del desierto.
+🍑 El Giro Frutal: Durazno y manzana deshidratada para aportar un dulzor natural sedoso que envuelve el paladar.
+🔥 El Calor Especiado: Lemongrass brillante, jengibre y cardamomo para una profundidad exótica y vibrante.
+👨‍🍳 MODO DE PREPARACIÓN CRÍTICO:
+El Té Verde nunca se hierve. Usá agua a 80°C y dejalo reposar solo 2.5 a 3 minutos. Si el agua está más caliente, quemarás las hojas y extraerás un amargor astringente agresivo.
+Ideal caliente, o filtrado sobre hielo para un Iced Tea espectacular en verano.`,
+        ingredientes: "Té verde (Gunpowder o Chun Mee), menta, lemongrass, durazno deshidratado, manzana deshidratada, jengibre, cardamomo, coriandro, pétalos de rosa.",
+        maridaje: "Comida especiada de medio oriente, postres con miel (baklava), atardeceres de verano"
     }
 ];
 // Categorías con sus detalles
