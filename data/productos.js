@@ -483,9 +483,9 @@ Ideal para: Cocciones largas, fondos, guisos de legumbres, arroces, salteados de
         tagline: "Fuego suave y dulzura especiada",
         descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición Pimientas · Rojo Malbec
 
-Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja verdadera (la baya madura del Piper nigrum), pimienta larga (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), cáscara de mandarina deshidratada, nibs de cacao, pimienta negra y pimienta de Jamaica.
+Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja , pimienta larga (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), cáscara de mandarina deshidratada, nibs de cacao, pimienta negra y pimienta de Jamaica.
 
-El resultado: un perfil complejo de calor frutal, cítricos, notas de chocolate amargo y una calidez envolvente. No es picante — es profundo.
+El resultado: un perfil complejo de calor frutal, notas de chocolate amargo y una calidez envolvente. No es picante — es profundo.
 
 Sugerencias: Bondiola laqueada, pollo dorado, calabaza, batata, reducciones de vino o aceto, repostería con chocolate amargo, trufas y espresso.
 
