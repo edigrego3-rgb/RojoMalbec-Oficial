@@ -483,16 +483,16 @@ Ideal para: Cocciones largas, fondos, guisos de legumbres, arroces, salteados de
         tagline: "Fuego suave y dulzura especiada",
         descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición Pimientas · Rojo Malbec
 
-Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja , pimienta larga (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), cáscara de mandarina deshidratada, nibs de cacao, pimienta negra y pimienta de Jamaica.
+Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja, pimienta larga quebrada (la especia ancestral de calidez única), nibs de cacao tostados, pimienta negra y pimienta de Jamaica.
 
-El resultado: un perfil complejo de calor frutal, notas de chocolate amargo y una calidez envolvente. No es picante — es profundo.
+El resultado: un perfil complejo de calor frutal, notas de chocolate amargo, eugenol amaderado y una calidez envolvente. No es picante — es profundo.
 
 Sugerencias: Bondiola laqueada, pollo dorado, calabaza, batata, reducciones de vino o aceto, repostería con chocolate amargo, trufas y espresso.
 
-Tip del blender: Moler en el momento sobre el plato terminado. El calor residual libera los aceites esenciales de la mandarina y el cacao.
+Tip del blender: Moler en el momento sobre el plato terminado. El calor residual libera los aceites esenciales del cacao.
 
-📦 Envase 40g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
-        ingredientes: "Pimienta roja, pimienta larga, cascara de mandarina deshidratada, nibs de cacao, pimienta negra en grano, pimienta de jamaica",
+📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Pimienta roja, pimienta larga, nibs de cacao, pimienta negra en grano, pimienta de jamaica",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
     },    
     {
