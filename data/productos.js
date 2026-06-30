@@ -453,24 +453,24 @@ Tip del blender: Calentar el vino con el blend a fuego muy lento (idealmente a 7
 
     {
         id: 31,
-        nombre: "Vital Caldo",
+        nombre: "Vital Caldo Sabor Ancestral",
         categoria: "vital",
         emoji: "🍵",
         imagen: "products/vital_caldo_v2.png",
-        tagline: "Base umami 0% sodio",
-        descripcion: `🍄 VITAL CALDO — Base Umami Sin Sodio Línea Vital · 0% Sodio · Rojo Malbec
+        tagline: "Cuádruple sinergia umami 0% sodio · Fórmula mejorada v2.0",
+        descripcion: `🍄 VITAL CALDO — Sabor Ancestral Línea Vital · 0% Sodio · Rojo Malbec
 
-¿Cansado de los caldos industriales llenos de sodio y químicos? Vital Caldo es un potenciador de sabor 100% natural y 0% sodio. Su secreto: levadura nutricional, hongos shiitake y hongos de pino que aportan umami real — ese sabor profundo  que hace que todo sepa mejor.
+La evolución del caldo saludable. Un potenciador de sabor 100% natural, libre de sodio y químicos. Diseñado con una cuádruple sinergia umami (levadura nutricional, alga kombu, hongos shiitake y hongo de pino) combinada con tomate deshidratado y un ancla de sabor ácida de ácido cítrico que simula perfectamente el golpe del sodio.
 
-Ingredientes: Levadura nutricional, hongos shiitake, hongos de pino, cebolla, ajo, semillas de apio y perejil. Nada más. Sin sal, sin conservantes, sin aditivos.
+⚠️ CONTIENE APIO. Declaración obligatoria de alérgenos.
 
-Modo de uso: Espolvorear sobre vegetales al vapor, agregar a guisos, sopas, arroces o fondos. El calor activa el aroma del hongo de pino y los aceites del apio.
+Modo de uso: Caldo exprés: disolver 10-12g en 250ml de agua hirviendo y hervir 5 minutos para hidratar los hongos. Condimento: espolvorear directo sobre arroces, pastas o vegetales.
 
-Ideal para: Cocciones largas, fondos, guisos de legumbres, arroces, salteados de vegetales, platos con leche de coco.
+Ideal para: Hipertensos, dietas sin sal, deportistas y cocina plant-based de alto sabor.
 
-📦 Envase 50g · 100% natural · 0% sodio · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
-        ingredientes: "Levadura nutricional, hongo shitake (tallos), hongos de pino, cebolla en escama, ajo granulado, perejil, zanahoria deshidratada, semillas de apio, cascara de limon deshidratada",
-        maridaje: "Arroces, guisos, sopas, vegetales al vapor",
+📦 Envase 100g/200g · 100% vegetal · 0% sodio · Apto hipertensos · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Levadura nutricional, alga kombu deshidratada, shiitake deshidratado, cebolla en polvo, ajo en polvo, hongo de pino deshidratado, tomate deshidratado en polvo, zanahoria deshidratada en polvo, arroz parbolizado tostado molido, apio seco*, perejil seco, jengibre molido, cúrcuma, pimienta negra molida, ácido cítrico. (*) CONTIENE APIO.",
+        maridaje: "Arroces, guisos de legumbres, sopas base, masas y panes sin sal",
         sinSodio: true
     },
 
@@ -480,19 +480,19 @@ Ideal para: Cocciones largas, fondos, guisos de legumbres, arroces, salteados de
         categoria: "pimientas",
         emoji: "❤️",
         imagen: "products/Pimienta Roja y Pimienta Larga.png",
-        tagline: "Fuego suave y dulzura especiada",
-        descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición Pimientas · Rojo Malbec
+        tagline: "Fuego suave, cacao y dulzura de malta caramelo",
+        descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición de Autor · Rojo Malbec
 
-Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja, pimienta larga quebrada (la especia ancestral de calidez única), nibs de cacao tostados, pimienta negra y pimienta de Jamaica.
+Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja, pimienta larga quebrada (la especia ancestral de calidez única), nibs de cacao tostados, pimienta negra y granos de Malta de Cebada Caramelo 120 (que aportan notas de toffee y frutas secas).
 
-El resultado: un perfil complejo de calor frutal, notas de chocolate amargo, eugenol amaderado y una calidez envolvente. No es picante — es profundo.
+⚠️ CONTIENE GLUTEN (CEBADA).
 
-Sugerencias: Bondiola laqueada, pollo dorado, calabaza, batata, reducciones de vino o aceto, repostería con chocolate amargo, trufas y espresso.
+Sugerencias: Cerdo laqueado (bondiola), pato, calabazas asadas, repostería fina con chocolate amargo, trufas y café espresso.
 
-Tip del blender: Moler en el momento sobre el plato terminado. El calor residual libera los aceites esenciales del cacao.
+Tip del blender: Moler en el momento sobre el plato terminado. El calor residual de la comida libera los aceites esenciales del cacao y los aromas malteados.
 
 📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
-        ingredientes: "Pimienta roja, pimienta larga, nibs de cacao, pimienta negra en grano, pimienta de jamaica",
+        ingredientes: "Pimienta roja, pimienta larga, nibs de cacao, pimienta negra en grano, malta de cebada caramelo (Caramelo 120). ⚠️ CONTIENE GLUTEN.",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
     },    
     {
@@ -649,11 +649,15 @@ Ideal caliente, o filtrado sobre hielo para un Iced Tea espectacular en verano.`
         imagen: "products/te-karak.png", 
         tagline: "El sabor fuerte y dorado del Golfo Pérsico",
         descripcion: `☕ Té Karak de Autor — La Joya de Medio Oriente
+
 Olvidate del clásico Chai indio. "Karak" significa Fuerte en árabe, y es la bebida sagrada de Qatar, Kuwait y los Emiratos.
+
 🌿 La Regla del 10%: A diferencia del té chai común, el Karak auténtico lleva una dosis altísima de Cardamomo Verde (10%). Ese es el motor de nuestro blend, acompañado por el calor dulce de la verdadera Canela de Ceilán y un toque de Clavo de olor.
-✨ La Técnica Secreta (Azafrán Infusionado): No tiramos simplemente hebras de azafrán en la bolsa. Infusionamos azafrán puro en agua a 40°C y bañamos delicadamente una porción del té negro Assam. Luego, lo volvemos a deshidratar en total oscuridad para atrapar el color dorado (crocina) y el aroma (safranal) dentro de la hebra. Cada taza que prepares tendrá exactamente la misma magia.`,
-        uso: "👨‍🍳 EL RITUAL DEL GOLFO: Este té no se infusiona, se hierve. Poné 2 cucharadas en 250ml de agua y herví de 5 a 10 minutos. Luego agregá leche evaporada (o tu leche favorita) y volvé a hervir 2 minutos más hasta lograr un color caramelo oscuro. Endulzá a gusto (se toma dulce) y serví bien caliente en un vaso pequeño.",
-        ingredientes: "Té negro Assam infusionado con azafrán puro (Crocus sativus), cardamomo verde, canela de Cassia (Cinnamomum aromaticum), clavo de olor.",
+
+✨ La Técnica Secreta (Azafrán Infusionado): No tiramos simplemente hebras de azafrán en la bolsa. Infusionamos azafrán puro en agua a 40°C y bañamos delicadamente una porción del té negro Assam. Luego, lo volvemos a deshidratar en total oscuridad para atrapar el color dorado (crocina) y el aroma (safranal) dentro de la hebra. Cada taza que prepares tendrá exactamente la misma magia.
+
+👨‍🍳 EL RITUAL DEL GOLFO: Este té no se infusiona, se hierve. Poné 2 cucharadas en 250ml de agua y herví de 5 a 10 minutos. Luego agregá leche evaporada (o tu leche favorita) y volvé a hervir 2 minutos más hasta lograr un color caramelo oscuro. Endulzá a gusto (se toma dulce) y serví bien caliente en un vaso pequeño.`,
+        ingredientes: "Té negro Assam infusionado con azafrán puro (Crocus sativus), cardamomo verde, canela de Ceilán (Cinnamomum verum), clavo de olor.",
         maridaje: "Dátiles, postres árabes, baklava, o como bebida para cortar la tarde."
     },
     {
