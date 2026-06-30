@@ -461,11 +461,13 @@ const firebaseConfig = {
     projectId: "rojo-malbec-blog",
     storageBucket: "rojo-malbec-blog.firebasestorage.app",
     messagingSenderId: "202946932681",
-    appId: "1:202946932681:web:1c1c8b5b445587f8f34218"
+    appId: "1:202946932681:web:1c1c8b5b445587f8f34218",
+    measurementId: "G-ZT3QY9TQN8"
 };
 
 if (typeof firebase !== 'undefined' && !firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 }
 
 async function renderBlog() {
