@@ -153,6 +153,15 @@ elements.cartOverlay?.addEventListener('click', closeCartSidebar);
 
 document.getElementById('btnCheckoutGlobal')?.addEventListener('click', () => {
     if (state.cart.length === 0) return;
+
+    // Loguear evento de conversión en Analytics
+    if (typeof firebase !== 'undefined' && firebase.analytics) {
+        firebase.analytics().logEvent('checkout_whatsapp', {
+            items_count: state.cart.reduce((acc, item) => acc + (item.qty || 1), 0),
+            items: state.cart.map(i => `${i.qty}x ${i.nombre}`).join(', ')
+        });
+    }
+
     let itemsText = state.cart.map(i => `• ${i.qty}x ${i.nombre}`).join('\n');
     const mensaje = `Hola Rojo Malbec! 👋\n\nQuiero realizar el siguiente pedido del catálogo:\n\n${itemsText}\n\nPor favor indíquenme disponibilidad y medios de pago. ¡Gracias!`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
@@ -434,6 +443,17 @@ document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     const alergias = document.getElementById('inputAlergias').value;
     const nombreBlend = document.getElementById('inputLabelName')?.value || '';
     const creadoPor = document.getElementById('inputLabelCreator')?.value || '';
+
+    // Loguear evento de conversión de Blend de Autor
+    if (typeof firebase !== 'undefined' && firebase.analytics) {
+        firebase.analytics().logEvent('custom_blend_order', {
+            customer_name: nombre,
+            usage: uso,
+            quantity: cantidad,
+            ingredients_count: state.selectedIngredients.length,
+            ingredients: state.selectedIngredients.map(i => i.nombre).join(', ')
+        });
+    }
 
     const ingredientesTexto = state.selectedIngredients.map(i => `• ${i.nombre}`).join('\n');
     let etiquetaTexto = '';
