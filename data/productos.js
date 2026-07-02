@@ -479,22 +479,72 @@ Ideal para: Hipertensos, dietas sin sal, deportistas y cocina plant-based de alt
         nombre: "Pimienta Roja y Pimienta Larga",
         categoria: "pimientas",
         emoji: "❤️",
-        imagen: "products/Pimienta Roja y Pimienta Larga.png",
+        imagen: "products/pimienta_roja_y_larga_mockup.png",
         tagline: "Fuego suave, cacao y dulzura de malta caramelo",
         descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición de Autor · Rojo Malbec
 
-Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja, pimienta larga quebrada (la especia ancestral de calidez única), nibs de cacao tostados, pimienta negra y granos de Malta de Cebada Caramelo 120 (que aportan notas de toffee y frutas secas).
+Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja verdadera (la baya madura del Piper nigrum), pimienta larga quebrada (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), nibs de cacao tostados, pimienta negra en grano y granos de Malta de Cebada Caramelo 120 (que aportan notas de toffee, ciruelas pasas y frutas secas).
 
-⚠️ CONTIENE GLUTEN (CEBADA).
+El resultado: un perfil complejo de calor profundo, dulzura resinosa, notas de chocolate amargo y una calidez envolvente. No es picante — es profundo.
 
-Sugerencias: Cerdo laqueado (bondiola), pato, calabazas asadas, repostería fina con chocolate amargo, trufas y café espresso.
+⚠️ CONTIENE GLUTEN (CEBADA) Y CACAO.
 
-Tip del blender: Moler en el momento sobre el plato terminado. El calor residual de la comida libera los aceites esenciales del cacao y los aromas malteados.
+Sugerencias: Bondiola laqueada, pato dorado, calabaza y batata asadas, reducciones de vino o aceto, repostería con chocolate amargo, trufas y espresso.
+
+Tip del blender: Moler en el momento sobre el plato terminado. El calor residual de la comida libera los aceites esenciales del cacao y los aromas malteados de la cebada.
 
 📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
-        ingredientes: "Pimienta roja, pimienta larga, nibs de cacao, pimienta negra en grano, malta de cebada caramelo (Caramelo 120). ⚠️ CONTIENE GLUTEN.",
+        ingredientes: "Pimienta roja, pimienta larga (Piper longum), nibs de cacao tostados, pimienta negra en grano, malta de cebada caramelo tostada entera (Caramelo 120). ⚠️ CONTIENE GLUTEN (CEBADA) Y CACAO. PUEDE CONTENER SÉSAMO Y MOSTAZA.",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
     },    
+    {
+        id: 40,
+        nombre: "Pimienta Verde de Autor",
+        categoria: "pimientas",
+        emoji: "🟢",
+        imagen: "products/pimienta_verde_de_autor_mockup.png",
+        tagline: "Bosque amargo y electricidad fría",
+        descripcion: `🟢 PIMIENTA VERDE DE AUTOR — Edición de Autor
+Bosque Amargo y Electricidad Fría · Rojo Malbec
+
+Este no es un molinillo de pimienta común. Es un blend de tensión aromática diseñado para paladares adultos. Combina pimienta verde seca (la base vegetal fresca y resinosa), pimienta blanca (el soporte de picor limpio y elegante), bayas de enebro entero y quebrado (que aportan notas de pino profundo y bosque europeo), semillas de coriandro (activadas con un tostado flash para liberar notas cítricas de linalool), coronando con el golpe eléctrico de la pimienta de Sichuan — que no pica, sino que genera un hormigueo frío expansivo en el paladar.
+
+El resultado: tensión botánica, resina de bosque, frescura cítrica-floral y vibración fría. No tiene humo, no se tuesta — es resina limpia y vibración pura. Inspirado en la elegancia botánica de un Dry Gin clásico.
+
+100% LIBRE DE SODIO · APTO VEGANOS · SIN T.A.C.C.
+
+Sugerencias: Pescados grasos (salmón, trucha, caballa), carnes de caza (conejo, aves), quesos de cabra con aceite de oliva, escabeches, manteca avellanada (beurre noisette), o para aromatizar la copa de un Gin Tonic o Vermut seco.
+
+Tip del blender: Moler en el momento sobre el plato terminado. El calor residual de la comida libera los aceites volátiles del enebro y la electricidad de la Sichuan.
+
+📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Pimienta verde, pimienta blanca, bayas de enebro, pimienta de Sichuan, semillas de coriandro. PUEDE CONTENER SÉSAMO Y MOSTAZA.",
+        maridaje: "Salmón, trucha, conejo, quesos de cabra, gin tonic, vermut"
+    },
+    {
+        id: 41,
+        nombre: "Pimienta Negra de Autor",
+        categoria: "pimientas",
+        emoji: "⚫",
+        imagen: "products/pimienta_negra_de_autor_mockup.png",
+        tagline: "Tostado intenso, café espresso y picor rústico",
+        descripcion: `⚫ PIMIENTA NEGRA DE AUTOR — Edición de Autor
+Selección Artesanal · Rojo Malbec
+
+Este no es un molinillo de pimienta común. Es un blend de autor de tostado intenso que combina pimienta negra (Piper nigrum) con pimienta larga quebrada (la especia ancestral de calor profundo y persistente), Malta de Cebada Chocolate tostada entera (que aporta notas de café espresso, chocolate negro y color carbón profundo), Kalonji o Comino Negro (Nigella sativa, que suma un perfil salado-umami a cebolla tostada y orégano silvestre) y Pimienta de Jamaica (que equilibra con un acento balsámico cálido de eugenol).
+
+El resultado: un viaje aromático que abre con notas de café tostado y madera, se desarrolla con picor rústico y cebolla asada, y cierra con un calor dulce y envolvente que se queda en la boca.
+
+⚠️ CONTIENE GLUTEN (CEBADA). NO APTO CELÍACOS.
+
+Sugerencias: Ojo de bife, cordero, hongos salteados a la plancha, vegetales asados (calabaza, batata), guisos de cocción lenta y ragú.
+
+Tip del blender: Moler en el momento. El vapor del plato caliente activa el kalonji y los furanos tostados de la malta chocolate. Sobre hongos frescos recién salteados es una experiencia única.
+
+📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Pimienta negra (Piper nigrum), pimienta larga (Piper longum), malta de cebada chocolate tostada entera, kalonji (Nigella sativa), pimienta de Jamaica. ⚠️ CONTIENE GLUTEN (CEBADA). PUEDE CONTENER SÉSAMO Y MOSTAZA.",
+        maridaje: "Carnes rojas, cordero, hongos, guisos, ragú, vegetales asados"
+    },
     {
         id: 17,
         nombre: "Panch Phoron",
