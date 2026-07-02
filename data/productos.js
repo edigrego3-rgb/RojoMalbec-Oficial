@@ -483,7 +483,7 @@ Ideal para: Hipertensos, dietas sin sal, deportistas y cocina plant-based de alt
         tagline: "Fuego suave, cacao y dulzura de malta caramelo",
         descripcion: `🖤 PIMIENTA ROJA & PIMIENTA LARGA — Blend Exótico de Autor Edición de Autor · Rojo Malbec
 
-Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja verdadera (la baya madura del Piper nigrum), pimienta larga quebrada (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), nibs de cacao tostados, pimienta negra en grano y granos de Malta de Cebada Caramelo 120 (que aportan notas de toffee, ciruelas pasas y frutas secas).
+Este no es un molinillo de pimienta común. Es un blend de autor que combina pimienta roja, pimienta larga quebrada (la especia ancestral que usaban los romanos antes de conocer la pimienta negra), nibs de cacao tostados, pimienta negra en grano y granos de Malta de Cebada Caramelo 120 (que aportan notas de toffee, ciruelas pasas y frutas secas).
 
 El resultado: un perfil complejo de calor profundo, dulzura resinosa, notas de chocolate amargo y una calidez envolvente. No es picante — es profundo.
 
@@ -511,7 +511,7 @@ Este no es un molinillo de pimienta común. Es un blend de tensión aromática d
 
 El resultado: tensión botánica, resina de bosque, frescura cítrica-floral y vibración fría. No tiene humo, no se tuesta — es resina limpia y vibración pura. Inspirado en la elegancia botánica de un Dry Gin clásico.
 
-100% LIBRE DE SODIO · APTO VEGANOS · SIN T.A.C.C.
+100% LIBRE DE SODIO · 
 
 Sugerencias: Pescados grasos (salmón, trucha, caballa), carnes de caza (conejo, aves), quesos de cabra con aceite de oliva, escabeches, manteca avellanada (beurre noisette), o para aromatizar la copa de un Gin Tonic o Vermut seco.
 
