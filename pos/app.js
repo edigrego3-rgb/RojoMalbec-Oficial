@@ -227,7 +227,8 @@ document.getElementById("fab-scan").addEventListener("click", () => {
         { facingMode: "environment" }, // forzar camara trasera
         { fps: 10, qrbox: {width: 250, height: 250} },
         (decodedText, decodedResult) => {
-            const p = catalogo.find(x => x.Codigo === decodedText);
+            const cleanCode = decodedText.trim().toUpperCase();
+            const p = catalogo.find(x => x.Codigo && x.Codigo.trim().toUpperCase() === cleanCode);
             if(p) {
                 agregarAlCarrito(p);
                 // Apagar camara despues de leer
