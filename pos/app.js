@@ -6,6 +6,10 @@ let comboSeleccionados = [];
 
 // INICIALIZACIÓN
 document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("rm_pos_cart");
+    if(saved) {
+        try { carrito = JSON.parse(saved); } catch(e){}
+    }
     renderCatalogo();
     renderCarrito();
     configNavigation();
@@ -86,7 +90,9 @@ function cambiarCantidad(id, delta) {
     }
 }
 
+function saveCart() { localStorage.setItem("rm_pos_cart", JSON.stringify(carrito)); }
 function renderCarrito() {
+    saveCart();
     const list = document.getElementById("cart-list");
     const empty = document.getElementById("empty-cart");
     list.innerHTML = "";
@@ -329,6 +335,7 @@ document.getElementById("btn-whatsapp").addEventListener("click", () => {
 document.getElementById("btn-nuevo-dia").addEventListener("click", () => {
     if(confirm("¿Seguro querés vaciar todo y arrancar de cero?")) {
         carrito = [];
+        localStorage.removeItem("rm_pos_cart");
         renderCarrito();
         document.getElementById("reporte-final").style.display = "none";
         document.getElementById("gastos-edu").value = "0";
