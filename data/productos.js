@@ -496,7 +496,6 @@ Tip del blender: Moler en el momento sobre el plato terminado. El calor residual
 📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
         ingredientes: "Pimienta roja, pimienta larga (Piper longum), nibs de cacao tostados, pimienta negra en grano, malta de cebada caramelo tostada entera (Caramelo 120). ⚠️ CONTIENE GLUTEN (CEBADA) Y CACAO. PUEDE CONTENER SÉSAMO Y MOSTAZA.",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
-<<<<<<< Updated upstream
     },    
     {
         id: 40,
@@ -725,7 +724,6 @@ El resultado es un mate que no se lava rápido, con un perfume a chocolate y cí
         uso: "🧉 PARA EL MATE: Agregá 1 o 2 cucharadas soperas del blend directamente sobre tu yerba mate seca en el termo o en el mate, mezclá un poco y cebá normalmente. \n☕ OTROS USOS DE AUTOR: Increíble para infusionar en leche caliente, espolvorear sobre la espuma de tu café, o agregarlo al filtro de la cafetera.",
         ingredientes: "Cascarilla de cacao premium, escamas de coco tostado, juliana de cáscara de mandarina deshidratada (sin albedo).",
         maridaje: "Alfajores de maicena, budines de vainilla, medialunas, o una buena charla de tarde."
-=======
     },
 
     {
@@ -810,7 +808,6 @@ Inspirado en la brisa fresca de las sierras, este blend de té verde Pekoe aport
 📦 Envase 80g · Elaboración artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
         ingredientes: "Té verde Pekoe, cedrón, semillas de cilantro, jengibre deshidratado, flores de jazmín, menta marroquí",
         maridaje: "Ensaladas frescas, repostería con frutas cítricas, pescados ligeros, sushi"
->>>>>>> Stashed changes
     }
 ];
 // Categorías con sus detalles
