@@ -1,4 +1,4 @@
-
+﻿
 let carrito = [];
 let historial_ventas = [];
 let contactos_b2b = [];
@@ -181,10 +181,7 @@ document.getElementById("btn-save-precio").addEventListener("click", () => {
 
 // AGREGAR MANUAL
 document.getElementById("btn-manual").addEventListener("click", () => {
-    let p = parseFloat(prompt("Ingrese precio del producto manual:"));
-    if(!isNaN(p) && p > 0) {
-        agregarAlCarrito({ Nombre: "Producto Manual", Precio_Venta: p, Precio_Mayorista: p/2, Codigo: "MANUAL" });
-    }
+    document.querySelector('[data-target="view-catalogo"]').click();
 });
 
 // COMBO ARMADOR
@@ -229,9 +226,9 @@ function actualizarCifrasCombo() {
     }
 }
 document.getElementById("btn-save-combo").addEventListener("click", () => {
-    if(comboSeleccionados.length === 0) return alert("Elegí al menos un producto");
+    if(comboSeleccionados.length === 0) return alert("ElegÃ­ al menos un producto");
     let pFinal = parseFloat(document.getElementById("combo-precio-final").value);
-    if(isNaN(pFinal)) return alert("Poné un precio válido");
+    if(isNaN(pFinal)) return alert("PonÃ© un precio vÃ¡lido");
     let tCosto = comboSeleccionados.reduce((s, p) => s + parseFloat(p.Precio_Mayorista), 0);
     let nombres = comboSeleccionados.map(p => p.Nombre);
     agregarAlCarrito({ Nombre: "Combo Armado", Precio_Mayorista: tCosto, Precio_Venta: pFinal, Codigo: "COMBO" }, true, nombres);
@@ -273,10 +270,10 @@ document.getElementById("fab-scan").addEventListener("click", () => {
                 agregarAlCarrito(p);
                 html5QrCode.stop().then(() => { html5QrCode.clear(); html5QrCode = null; readerDiv.style.display = "none"; });
             } else {
-                alert("Código no reconocido: " + decodedText);
+                alert("CÃ³digo no reconocido: " + decodedText);
             }
         }, (err) => {}
-    ).catch(err => { alert("Error al abrir cámara."); readerDiv.style.display = "none"; html5QrCode = null; });
+    ).catch(err => { alert("Error al abrir cÃ¡mara."); readerDiv.style.display = "none"; html5QrCode = null; });
 });
 
 // LOGICA COBRO Y MEDIOS DE PAGO
@@ -306,7 +303,7 @@ function procesarPago(medio) {
     
     // Quick toast
     const m = document.createElement("div");
-    m.innerText = `¡Pagado con ${medio}!`;
+    m.innerText = `Â¡Pagado con ${medio}!`;
     m.style.cssText = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#4CAF50; color:white; padding:10px 20px; border-radius:5px; z-index:9999;";
     document.body.appendChild(m);
     setTimeout(() => m.remove(), 1500);
@@ -354,7 +351,7 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
             instruccion = `Alberto se lleva <b>$${albLeCorresponde.toLocaleString()}</b> de la caja (billetes). Eduardo se queda con el resto del efectivo y todo el MercadoPago.`;
         } else {
             let faltante = albLeCorresponde - tEfe;
-            instruccion = `Alberto se lleva <b>todo el efectivo</b> de la caja ($${tEfe.toLocaleString()}). Además, Eduardo le debe transferir <b>$${faltante.toLocaleString()}</b> por MercadoPago.`;
+            instruccion = `Alberto se lleva <b>todo el efectivo</b> de la caja ($${tEfe.toLocaleString()}). AdemÃ¡s, Eduardo le debe transferir <b>$${faltante.toLocaleString()}</b> por MercadoPago.`;
         }
     } else {
         instruccion = `Eduardo se lleva todo.`;
@@ -399,7 +396,7 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
 
 // VACIAR TODO
 document.getElementById("btn-nuevo-dia").addEventListener("click", () => {
-    if(confirm("¿Seguro querés vaciar TODO (Ventas, B2B y Carrito)? Hacelo SÓLO si ya descargaste el archivo ERP.")) {
+    if(confirm("Â¿Seguro querÃ©s vaciar TODO (Ventas, B2B y Carrito)? Hacelo SÃ“LO si ya descargaste el archivo ERP.")) {
         carrito = [];
         historial_ventas = [];
         contactos_b2b = [];
@@ -410,6 +407,6 @@ document.getElementById("btn-nuevo-dia").addEventListener("click", () => {
         document.getElementById("gastos-edu").value = "0";
         document.getElementById("gastos-alb").value = "0";
         document.querySelector('[data-target="view-vender"]').click();
-        alert("Caja en Cero. Listo para un nuevo día.");
+        alert("Caja en Cero. Listo para un nuevo dÃ­a.");
     }
 });
