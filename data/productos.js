@@ -496,6 +496,7 @@ Tip del blender: Moler en el momento sobre el plato terminado. El calor residual
 📦 Envase 40g (Ziplock + Kraft) · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
         ingredientes: "Pimienta roja, pimienta larga (Piper longum), nibs de cacao tostados, pimienta negra en grano, malta de cebada caramelo tostada entera (Caramelo 120). ⚠️ CONTIENE GLUTEN (CEBADA) Y CACAO. PUEDE CONTENER SÉSAMO Y MOSTAZA.",
         maridaje: "Cerdo, pato, postres de chocolate, frutas asadas, quesos cremosos"
+<<<<<<< Updated upstream
     },    
     {
         id: 40,
@@ -724,6 +725,92 @@ El resultado es un mate que no se lava rápido, con un perfume a chocolate y cí
         uso: "🧉 PARA EL MATE: Agregá 1 o 2 cucharadas soperas del blend directamente sobre tu yerba mate seca en el termo o en el mate, mezclá un poco y cebá normalmente. \n☕ OTROS USOS DE AUTOR: Increíble para infusionar en leche caliente, espolvorear sobre la espuma de tu café, o agregarlo al filtro de la cafetera.",
         ingredientes: "Cascarilla de cacao premium, escamas de coco tostado, juliana de cáscara de mandarina deshidratada (sin albedo).",
         maridaje: "Alfajores de maicena, budines de vainilla, medialunas, o una buena charla de tarde."
+=======
+    },
+
+    {
+        id: 61,
+        nombre: "Té Karak Tradicional",
+        categoria: "tes",
+        emoji: "☕",
+        imagen: "products/te_karak.png",
+        tagline: "El alma de las calles de Dubái en tu taza.",
+        descripcion: `☕ TÉ KARAK TRADICIONAL | El Sabor Callejero del Golfo Pérsico
+
+Nacido en los puertos de Dubái y Qatar, el Karak es un té fuerte, especiado y dulce, diseñado para hervirse con leche evaporada.
+
+✨ El Secreto del Blend: Combinamos nuestro té negro de hebras finas con una proporción masiva de cardamomo (10%) y el toque cítrico-picante de jengibre deshidratado que define al auténtico té Karak de todos los días. La canela y el clavo de olor completan este blend robusto y reconfortante.
+
+🍽️ Ritual de Preparación: Hervir 2 cucharadas colmadas en 250ml de agua por 5 minutos. Añadir 200ml de leche evaporada (o leche común) y azúcar a gusto. Dejar reducir a fuego lento por 3 minutos. Colar y servir bien caliente.
+
+📦 Envase 100g · Elaboración artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Té negro argentino, cardamomo verde, jengibre deshidratado, canela cassia, clavo de olor",
+        maridaje: "Leche evaporada, repostería árabe, dátiles, picadas dulces"
+    },
+
+    {
+        id: 62,
+        nombre: "Té Pu-erh Rojo Malbec",
+        categoria: "tes",
+        emoji: "🍵",
+        imagen: "products/te_puerh_rojo_malbec.png",
+        tagline: "El carácter de la tierra con el brillo del sol.",
+        descripcion: `🍷 TÉ PU-ERH ROJO MALBEC | Blend de Autor · Línea Tierra Lotus
+
+Inspirado en el maridaje ancestral chino 'Chenpi', este blend equilibra el cuerpo denso, húmedo y amaderado del té rojo Pu-erh con la cáscara de mandarina deshidratada y el brillo de la naranja dulce.
+
+✨ Notas de Autor: La canela de Ceilán aporta un dulzor sutil y amaderado de fondo, mientras que una dosis mínima de jengibre deshidratado limpio limpia el paladar en el retrogusto. El licor en taza revela un color caoba oscuro con destellos rubí, emulando la copa de un vino Malbec joven.
+
+🍽️ Ritual de Preparación: Infundir 2g (una cucharada colmada) en 200ml de agua a 90°C - 95°C durante 4 a 5 minutos.
+
+🍫 Maridaje Perfecto: Ideal para acompañar chocolates amargos (70% cacao o más) y como digestivo de sobremesa.
+
+📦 Envase 80g · Elaboración artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Té rojo Pu-erh, cáscara de mandarina, cáscara de naranja, canela de Ceilán, jengibre deshidratado",
+        maridaje: "Chocolates amargos, postres con cacao, sobremesas"
+    },
+
+    {
+        id: 63,
+        nombre: "Rooibos Ámbar Africano",
+        categoria: "tes",
+        emoji: "🍂",
+        imagen: "products/rooibos_ambar.png",
+        tagline: "El alma de Sudáfrica en una infusión de autor.",
+        descripcion: `🍂 ROOIBOS ÁMBAR AFRICANO | Naturalmente Libre de Cafeína · Blend de Autor
+
+Este blend equilibra la calidez terrosa y melosa del rooibos rojo sudafricano con la acidez frutal de la rosa mosqueta patagónica. La miel deshidratada en polvo aporta una textura sedosa en boca, mientras que el jengibre deshidratado añade un final levemente picante.
+
+✨ Perfil Sensorial: Una infusión ámbar brillante, de aroma cítrico-floral dulce y final limpio. Al no tener taninos amargos ni cafeína, es el blend perfecto para cualquier momento del día o de la noche.
+
+🍽️ Ritual de Preparación: Infundir 3g en 200ml de agua a 90°C - 95°C durante 5 a 7 minutos. Excelente para disfrutar caliente o como un refrescante Iced Tea de verano con mucho hielo y naranja fresca.
+
+📦 Envase 80g · 100% Natural · Sin cafeína · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Rooibos, rosa mosqueta, jengibre deshidratado, miel en polvo, cáscara de naranja, pétalos de rosa, cáscara de limón",
+        maridaje: "Galletas de avena, tartas frutales, quesos suaves, Iced Tea"
+    },
+
+    {
+        id: 64,
+        nombre: "Té Verde Rocío Andino",
+        categoria: "tes",
+        emoji: "🌱",
+        imagen: "products/rocio_andino.png",
+        tagline: "Un blend aéreo para refrescar y elevar los sentidos.",
+        descripcion: `🌱 TÉ VERDE ROCÍO ANDINO | Blend de Autor · Línea Tierra Lotus
+
+Inspirado en la brisa fresca de las sierras, este blend de té verde Pekoe aporta ligereza y frescura. El cedrón local se une al dulzor cítrico de las semillas de cilantro agrietadas para crear un perfil herbal vibrante.
+
+✨ Notas de Autor: La menta marroquí limpia el paladar con su frescura mentolada, mientras el jengibre añade una nota cálida y los capullos de jazmín perfuman la taza con una elegancia floral única.
+
+🍽️ Ritual de Preparación: Infundir 3g en 200ml de agua a 75°C - 80°C durante 2 a 3 minutos. *Evitar agua hirviendo para no amargar el té verde.*
+
+🍹 Sugerencia Cold Brew: Infundir 12g en 1 litro de agua fría en heladera durante 8-12 horas. Colar y servir con hielo.
+
+📦 Envase 80g · Elaboración artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Té verde Pekoe, cedrón, semillas de cilantro, jengibre deshidratado, flores de jazmín, menta marroquí",
+        maridaje: "Ensaladas frescas, repostería con frutas cítricas, pescados ligeros, sushi"
+>>>>>>> Stashed changes
     }
 ];
 // Categorías con sus detalles
