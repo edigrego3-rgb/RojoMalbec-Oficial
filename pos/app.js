@@ -131,17 +131,19 @@ function renderCarrito() {
     carrito.forEach(item => {
         total += (item.precioFinal * item.cantidad);
         let li = document.createElement("li");
-        li.className = "cart-item";
+        li.className = "cart-card";
+        let extra = item.esCombo ? `<div style="font-size:0.75rem; color:#aaa;">${item.comboItems.join(", ")}</div>` : '';
         li.innerHTML = `
-            <div class="cart-item-details">
-                <div class="cart-item-name">${item.nombre}</div>
-                <div class="cart-item-price" onclick="abrirModalPrecio('${item.id}', '${item.nombre}')" style="cursor:pointer; color:#d4af37; text-decoration:underline;">
-                    $${item.precioFinal} 
+            <div class="cart-card-info">
+                <div class="cart-card-title">${item.nombre}</div>
+                ${extra}
+                <div style="margin-top:5px;">
+                    <span class="cart-card-price" onclick="abrirModalPrecio('${item.id}', '${item.nombre}')">$ ${item.precioFinal}</span>
                 </div>
             </div>
-            <div class="cart-item-actions">
+            <div class="cart-card-qty">
                 <button class="qty-btn" onclick="cambiarCantidad('${item.id}', -1)">-</button>
-                <span style="width:20px; text-align:center;">${item.cantidad}</span>
+                <span style="font-size:1.2rem; font-weight:bold; width:25px; text-align:center;">${item.cantidad}</span>
                 <button class="qty-btn" onclick="cambiarCantidad('${item.id}', 1)">+</button>
             </div>
         `;
