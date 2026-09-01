@@ -1,6 +1,6 @@
 ﻿let catalogo = typeof catalogo_data !== "undefined" ? catalogo_data : [];
 let carrito = [];
-let html5QrcodeScanner = null;
+let html5QrCode = null;
 let currentEditId = null;
 let comboSeleccionados = [];
 
@@ -57,7 +57,6 @@ document.getElementById('btn-manual').addEventListener('click', () => {
 
 // CARRITO
 function agregarAlCarrito(prod, isCombo = false, comboItems = []) {
-    // Si ya existe y no es combo, sumar cantidad
     let existente = carrito.find(x => x.codigo === prod.Codigo && !x.esCombo);
     if(existente && !isCombo) {
         existente.cantidad += 1;
@@ -169,7 +168,7 @@ function renderComboList() {
         clist.appendChild(cdiv);
     });
 }
-window.addToCombo = function(codigo) { // global for onclick
+window.addToCombo = function(codigo) {
     const p = catalogo.find(x => x.Codigo === codigo);
     if(p) {
         comboSeleccionados.push(p);
@@ -184,7 +183,6 @@ function actualizarCifrasCombo() {
     document.getElementById("combo-costo").innerText = tCosto.toLocaleString();
     document.getElementById("combo-normal").innerText = tNormal.toLocaleString();
     
-    // Auto-llenar sugerencia
     if(document.getElementById("combo-precio-final").value === "" || document.getElementById("combo-precio-final").value === "0") {
         document.getElementById("combo-precio-final").value = tNormal;
     }
@@ -207,29 +205,49 @@ document.getElementById("btn-save-combo").addEventListener("click", () => {
     document.getElementById("modal-combo").style.display = "none";
 });
 
-// ESCANER FAB
+// ESCANER FAB - NATIVO DIRECTO
 document.getElementById("fab-scan").addEventListener("click", () => {
     const readerDiv = document.getElementById("reader");
-    if(readerDiv.style.display === "block") {
-        readerDiv.style.display = "none";
-        if(html5QrcodeScanner) { html5QrcodeScanner.clear(); html5QrcodeScanner = null; }
+    
+    // Si ya está prendida, la apagamos
+    if(html5QrCode != null) {
+        html5QrCode.stop().then(() => {
+            html5QrCode.clear();
+            html5QrCode = null;
+            readerDiv.style.display = "none";
+        }).catch(err => console.log(err));
         return;
     }
     
+    // Prender cámara directo
     readerDiv.style.display = "block";
-    html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: {width: 250, height: 250} }, false);
-    html5QrcodeScanner.render(
-        (text) => {
-            const p = catalogo.find(x => x.Codigo === text);
+    html5QrCode = new Html5Qrcode("reader");
+    
+    html5QrCode.start(
+        { facingMode: "environment" }, // forzar camara trasera
+        { fps: 10, qrbox: {width: 250, height: 250} },
+        (decodedText, decodedResult) => {
+            const p = catalogo.find(x => x.Codigo === decodedText);
             if(p) {
                 agregarAlCarrito(p);
-                alert("Agregado: " + p.Nombre);
+                // Apagar camara despues de leer
+                html5QrCode.stop().then(() => {
+                    html5QrCode.clear();
+                    html5QrCode = null;
+                    readerDiv.style.display = "none";
+                });
             } else {
-                alert("Código no reconocido: " + text);
+                alert("Código no reconocido: " + decodedText);
             }
-        }, 
-        (err) => {}
-    );
+        },
+        (errorMessage) => {
+            // Ignorar errores por frame vacio
+        }
+    ).catch(err => {
+        alert("Error al abrir cámara. Fijate si le diste permiso a Chrome.");
+        readerDiv.style.display = "none";
+        html5QrCode = null;
+    });
 });
 
 // CIERRE DE CAJA TICKET
@@ -242,8 +260,6 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
     
     let tVentas = 0;
     let tCostos = 0;
-    
-    // Agrupar para ticket
     let resumenStock = {};
     
     carrito.forEach(i => {
@@ -263,8 +279,8 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
     let neta = tVentas - tCostos - gEdu - gAlb;
     if(neta < 0) neta = 0;
     
-    let eduFinal = isSocio ? (tCostos + gEdu + (neta/2)) : tVentas;
-    let albFinal = isSocio ? (gAlb + (neta/2)) : 0;
+    let eduFinal = isSocio ? (tCostos + gEdu + (neta/2)) : (tVentas - gAlb);
+    let albFinal = isSocio ? (gAlb + (neta/2)) : gAlb;
     
     document.getElementById("rep-caja").innerText = "$ " + tVentas.toLocaleString();
     document.getElementById("rep-costos").innerText = "$ " + tCostos.toLocaleString();
@@ -280,7 +296,6 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
         document.getElementById("rep-socio-box").style.display = "none";
     }
     
-    // Lista stock
     const ulStock = document.getElementById("lista-vendidos");
     ulStock.innerHTML = "";
     for(const [nombre, cant] of Object.entries(resumenStock)) {
@@ -290,7 +305,6 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
     document.getElementById("reporte-final").style.display = "block";
 });
 
-// WHATSAPP
 document.getElementById("btn-whatsapp").addEventListener("click", () => {
     let tVentas = document.getElementById("rep-caja").innerText;
     let tEdu = document.getElementById("rep-edu").innerText;

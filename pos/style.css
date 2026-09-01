@@ -27,7 +27,7 @@ main { padding: 15px; }
 .large-input { width: 100%; padding: 12px; background: #222; border: 1px solid #555; color: #fff; border-radius: 8px; font-size: 1.1rem; }
 
 /* FAB */
-#fab-scan { position: fixed; bottom: 85px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #d4af37; border: none; box-shadow: 0 4px 10px rgba(212,175,55,0.4); display: flex; justify-content: center; align-items: center; z-index: 100; cursor: pointer; }
+#fab-scan { position: fixed; bottom: 140px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #d4af37; border: none; box-shadow: 0 4px 10px rgba(212,175,55,0.4); display: flex; justify-content: center; align-items: center; z-index: 100; cursor: pointer; }
 #fab-scan .icon { font-size: 1.8rem; }
 
 /* Bottom Nav */
