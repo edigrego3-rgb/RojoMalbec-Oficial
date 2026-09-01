@@ -70,14 +70,13 @@ function renderCatalogo() {
     cont.innerHTML = "";
     catalogo_data.forEach(p => {
         let div = document.createElement("div");
-        div.className = "cat-item";
+        div.className = "cart-card";
         div.innerHTML = `
-            <div class="cat-info">
-                <strong>${p.Nombre}</strong>
-                <span style="color:#aaa; font-size:0.8rem;">Cod: ${p.Codigo}</span>
+            <div class="cart-card-info">
+                <div class="cart-card-title">${p.Nombre}</div>
+                <div style="color:#aaa; font-size:0.9rem;">$ ${p.Precio_Venta}</div>
             </div>
-            <div class="cat-price">$${p.Precio_Venta}</div>
-            <button class="cat-add-btn" onclick="agregarAlCarritoPorCodigo('${p.Codigo}')">+</button>
+            <button class="action-btn outline" style="padding:8px; flex:none; width:80px;" onclick="agregarAlCarritoPorCodigo('${p.Codigo}')">Vender</button>
         `;
         cont.appendChild(div);
     });
