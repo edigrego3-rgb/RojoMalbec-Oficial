@@ -29,6 +29,7 @@
         <section id="view-vender" class="view active">
             <div class="top-actions">
                 <button id="btn-manual" class="action-btn">➕ Agregar a mano</button>
+                <button id="btn-b2b" class="action-btn outline">📝 Mayorista</button>
                 <button id="btn-crear-combo" class="action-btn outline">🎁 Armar Combo</button>
             </div>
             
@@ -39,10 +40,11 @@
                 <ul id="cart-list"></ul>
             </div>
             
-            <div class="cart-total-bar">
+            <div class="cart-total-bar" style="display:flex; justify-content:space-between; align-items:center;">
                 <span>TOTAL VENTA:</span>
-                <strong id="tot-vendido">$ 0</strong>
+                <strong id="tot-vendido" style="font-size:1.3rem;">$ 0</strong>
             </div>
+            <button id="btn-cobrar" class="primary-btn" style="margin-top:10px; width:100%; font-size:1.2rem; padding:15px; background-color:#4CAF50; color:white; border-radius:10px; display:none;">COBRAR TICKET</button>
         </section>
 
         <!-- VISTA: CATÁLOGO -->
@@ -56,7 +58,15 @@
             <h2 style="color:#d4af37; margin-bottom:15px;">Hoja de Cierre</h2>
             
             <div class="card">
-                <h3 style="margin-bottom:10px;">1. Gastos del Evento</h3>
+                <div class="card" style="margin-bottom:15px; text-align:center;">
+                <p>Total Acumulado Hoy</p>
+                <h3 id="stat-total" style="font-size:2rem; color:#4CAF50; margin:10px 0;"></h3>
+                <div style="display:flex; justify-content:space-between; font-size:0.9rem; color:#aaa;">
+                    <span>Efectivo: <b id="stat-efectivo"></b></span>
+                    <span>MP: <b id="stat-mp"></b></span>
+                </div>
+            </div>
+            <h3 style="margin-bottom:10px;">Gastos del Evento</h3>
                 <label>Tus Gastos (Espacio, Insumos):</label>
                 <input type="number" id="gastos-edu" value="0" class="large-input">
                 <label style="margin-top:10px; display:block;">Gastos Socio (Nafta, Peajes):</label>
@@ -77,14 +87,9 @@
                     </div>
 
                     <div class="reparto-caja">
-                        <h4>Reparto Físico de Billetes</h4>
-                        <div class="split-box">
-                            <span class="name">Eduardo</span>
-                            <span class="amount" id="rep-edu">$0</span>
-                        </div>
-                        <div class="split-box" id="rep-socio-box">
-                            <span class="name">Socio</span>
-                            <span class="amount" id="rep-alb">$0</span>
+                        <h4>Instrucción de Liquidación</h4>
+                        <div id="instruccion-liquidacion" style="background:#222; padding:10px; border-radius:8px; font-size:0.95rem; line-height:1.4; color:#ddd; margin-bottom:10px;">
+                            (Calculando repartición...)
                         </div>
                     </div>
 
@@ -96,7 +101,8 @@
                 
                 <div style="display:flex; gap:10px; margin-top:15px;">
                     <button id="btn-whatsapp" class="action-btn outline">📲 Enviar a WhatsApp</button>
-                    <button id="btn-nuevo-dia" class="action-btn">Comenzar Nuevo Día</button>
+                    <button id="btn-download-json" class="action-btn" style="background-color:#d4af37; color:#000;">📥 Bajar Ventas ERP</button>
+                    <button id="btn-nuevo-dia" class="action-btn" style="background-color:#555;">Vaciar Todo</button>
                 </div>
             </div>
         </section>
@@ -154,6 +160,35 @@
             <div style="display:flex; gap:10px; margin-top:15px;">
                 <button id="btn-cancel-combo" class="action-btn outline">Cancelar</button>
                 <button id="btn-save-combo" class="action-btn">Agregar Combo</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL DE COBRO -->
+    <div id="modal-cobro" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3 style="color:#4CAF50; margin-bottom:15px;">¿Medio de pago?</h3>
+            <p style="font-size:1.5rem; text-align:center; margin-bottom:20px; font-weight:bold;" id="cobro-total-txt"></p>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+                <button id="btn-pago-efectivo" class="primary-btn" style="background-color:#2e7d32; padding:15px; font-size:1.1rem;">💵 Efectivo</button>
+                <button id="btn-pago-mp" class="primary-btn" style="background-color:#009ee3; padding:15px; font-size:1.1rem;">📱 MercadoPago</button>
+                <button id="btn-pago-cancel" class="action-btn outline" style="margin-top:10px;">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL B2B -->
+    <div id="modal-b2b" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3 style="color:#d4af37;">Nuevo Contacto Mayorista</h3>
+            <label style="margin-top:10px; display:block;">Nombre / Negocio:</label>
+            <input type="text" id="b2b-nombre" class="large-input" placeholder="Ej: Vinoteca San Martín">
+            <label style="margin-top:10px; display:block;">WhatsApp / Instagram:</label>
+            <input type="text" id="b2b-contacto" class="large-input" placeholder="Ej: 351...">
+            <div style="display:flex; gap:10px; margin-top:15px;">
+                <button id="btn-cancel-b2b" class="action-btn outline">Cancelar</button>
+                <button id="btn-save-b2b" class="action-btn">Guardar Lead</button>
             </div>
         </div>
     </div>
