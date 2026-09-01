@@ -83,7 +83,10 @@ function renderCatalogo() {
 }
 window.agregarAlCarritoPorCodigo = function(cod) {
     const p = catalogo_data.find(x => x.Codigo === cod);
-    if(p) agregarAlCarrito(p);
+    if(p) {
+        agregarAlCarrito(p);
+        document.querySelector('[data-target="view-vender"]').click();
+    }
 };
 
 // LOGICA CARRITO
