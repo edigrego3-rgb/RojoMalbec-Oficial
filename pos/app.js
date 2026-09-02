@@ -526,23 +526,23 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
         alert("¡Archivo descargado! Buscalo en tu carpeta de Descargas.");
     };
 
-    // INTENTO DE COMPARTIR DIRECTO A WHATSAPP (Web Share API)
-    if (navigator.share && navigator.canShare) {
-        const file = new File([blob], filename, { type: "application/json" });
-        if (navigator.canShare({ files: [file] })) {
-            navigator.share({
-                title: 'Ventas Rojo Malbec',
-                files: [file]
-            }).catch((err) => {
-                console.log("Usuario cancelo o fallo:", err);
-                triggerDownload(); // Si falla, intenta descarga clasica
-            });
-        } else {
-            triggerDownload();
-        }
-    } else {
-        triggerDownload();
-    }
+    const url = URL.createObjectURL(blob);
+    
+    // Configurar enlace real
+    const linkReal = document.getElementById('enlace-descarga-real');
+    linkReal.href = url;
+    linkReal.download = filename;
+    
+    // Intento automático (puede fallar en Xiaomi)
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    // Mostrar modal manual por si el automático falló
+    document.getElementById("modal-descarga-segura").style.display = "flex";
 });
 
 // VACIAR TODO
