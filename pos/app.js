@@ -299,21 +299,47 @@ document.getElementById("btn-save-combo").addEventListener("click", () => {
     document.getElementById("modal-combo").style.display = "none";
 });
 
-// MAYORISTA B2B
-document.getElementById("btn-b2b").addEventListener("click", () => {
-    document.getElementById("b2b-nombre").value = "";
-    document.getElementById("b2b-contacto").value = "";
-    document.getElementById("modal-b2b").style.display = "flex";
-});
-document.getElementById("btn-cancel-b2b").addEventListener("click", () => document.getElementById("modal-b2b").style.display = "none");
-document.getElementById("btn-save-b2b").addEventListener("click", () => {
-    let nom = document.getElementById("b2b-nombre").value.trim();
-    let con = document.getElementById("b2b-contacto").value.trim();
-    if(!nom) return alert("Ingresa el nombre");
-    contactos_b2b.push({ nombre: nom, contacto: con, fecha: new Date().toISOString() });
-    saveState();
-    alert("Lead Mayorista Guardado!");
-    document.getElementById("modal-b2b").style.display = "none";
+// COMPARTIR CATALOGO Y LEADS
+document.addEventListener("DOMContentLoaded", () => {
+    let btnComp = document.getElementById("btn-compartir");
+    if(btnComp) {
+        btnComp.addEventListener("click", () => {
+            document.getElementById("comp-nombre").value = "";
+            document.getElementById("comp-tel").value = "";
+            document.getElementById("modal-compartir").style.display = "flex";
+        });
+    }
+
+    let btnCancelComp = document.getElementById("btn-cancel-comp");
+    if(btnCancelComp) {
+        btnCancelComp.addEventListener("click", () => document.getElementById("modal-compartir").style.display = "none");
+    }
+
+    let btnSaveComp = document.getElementById("btn-save-comp");
+    if(btnSaveComp) {
+        btnSaveComp.addEventListener("click", () => {
+            let nom = document.getElementById("comp-nombre").value.trim();
+            let tel = document.getElementById("comp-tel").value.trim();
+            let tipo = document.getElementById("comp-tipo").value;
+            
+            if(!tel) return alert("Ingresa un número de WhatsApp");
+            
+            contactos_b2b.push({ nombre: nom || "Contacto Feria", contacto: tel, tipo: tipo, fecha: new Date().toISOString() });
+            saveState();
+            
+            let mensaje = "";
+            if (tipo === "feria") {
+                mensaje = `¡Hola${nom ? ' ' + nom : ''}! Qué lindo conocerte en la feria. Acá te dejo nuestra tienda online para cuando necesites más blends: https://rojomalbec.com.ar`;
+            } else {
+                mensaje = `¡Hola${nom ? ' ' + nom : ''}! Un gusto conocerte. Acá te dejo el acceso a nuestro portal exclusivo de distribuidores y mayoristas: https://rojomalbec-b2b.streamlit.app/ (Avisame y te paso tu clave de acceso).`;
+            }
+            
+            let urlWA = `https://wa.me/${tel}?text=${encodeURIComponent(mensaje)}`;
+            window.open(urlWA, '_blank');
+            
+            document.getElementById("modal-compartir").style.display = "none";
+        });
+    }
 });
 
 // ESCANER
