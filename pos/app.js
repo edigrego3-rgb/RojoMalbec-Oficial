@@ -1,4 +1,4 @@
-const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwHDJroAzaO3fRlHPIRFHIkZ9uqsSwS15UDwvH-fi1yHkNog4JCiAaSKTM0qNuMkV2a/exec";
+const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzrS9ao96aZxD5kUXJLhYo-DwISRh0wXYPkNeLrDbIZrvmfqnq5yQPih2dNhb4IyB0O/exec";
 
 ﻿
 let carrito = [];
