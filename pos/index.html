@@ -6,20 +6,23 @@
     <title>POS Rojo Malbec Pro</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style.css?v=3.1">
     <script src="https://unpkg.com/html5-qrcode"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- HEADER -->
-    <header>
-        <h1>🍷 Rojo Malbec</h1>
-        <div class="toggle-container">
-            <label class="switch">
-                <input type="checkbox" id="chk-socio" checked>
-                <span class="slider round"></span>
-            </label>
-            <span id="lbl-socio">Con Socio</span>
+        <header style="display:flex; justify-content:space-between; align-items:center; padding:15px 20px;">
+        <h1 style="margin:0; font-size:1.4rem;">🍷 <span id="app-title">RM</span></h1>
+        <div style="display:flex; gap:15px; align-items:center;">
+            <div class="toggle-container" style="margin:0;">
+                <label class="switch"><input type="checkbox" id="chk-modo-mayorista"><span class="slider round"></span></label>
+                <span id="lbl-mayorista" style="font-size:0.8rem;">B2B</span>
+            </div>
+            <div class="toggle-container" id="container-socio" style="margin:0;">
+                <label class="switch"><input type="checkbox" id="chk-socio" checked><span class="slider round"></span></label>
+                <span id="lbl-socio" style="font-size:0.8rem;">Socio</span>
+            </div>
         </div>
     </header>
 
@@ -216,6 +219,6 @@
     </div>
 
     <script src="catalogo.js"></script>
-    <script src="app.js?v=3.0"></script>
+    <script src="app.js?v=3.1"></script>
 </body>
 </html>
