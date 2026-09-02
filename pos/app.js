@@ -1,4 +1,4 @@
-const GAS_WEBHOOK_URL = ""; // URL pendiente de configurar en la compu
+const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwHDJroAzaO3fRlHPIRFHIkZ9uqsSwS15UDwvH-fi1yHkNog4JCiAaSKTM0qNuMkV2a/exec";
 
 ﻿
 let carrito = [];
