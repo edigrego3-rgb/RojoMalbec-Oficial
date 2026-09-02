@@ -1,10 +1,11 @@
-const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwKLzOEyJwKpkL3pPP5z7QK9CTnZsyWr916GEGMdc79d2UyXKCbP_PLmAuRN8fvSuofMg/exec";
+﻿const GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwKLzOEyJwKpkL3pPP5z7QK9CTnZsyWr916GEGMdc79d2UyXKCbP_PLmAuRN8fvSuofMg/exec";
 
-﻿
+
 let carrito = [];
 let historial_ventas = [];
 let historial_pedidos_b2b = [];
 let app_mode = 'feria'; // 'feria' o 'mayorista'
+let hiddenProducts = JSON.parse(localStorage.getItem('pos_hidden_products') || '[]');
 let contactos_b2b = [];
 let comboSeleccionados = [];
 let currentEditId = null;
