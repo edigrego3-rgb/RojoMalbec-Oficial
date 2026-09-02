@@ -125,7 +125,8 @@ function actualizarEstadisticasRapidas() {
 function renderCatalogo() {
     const cont = document.getElementById("catalogo-list");
     cont.innerHTML = "";
-    catalogo_data.forEach(p => {
+    const visibles = catalogo_data.filter(p => !hiddenProducts.includes(p.Codigo));
+    visibles.forEach(p => {
         let div = document.createElement("div");
         div.className = "cart-card";
         let displayPrice = app_mode === 'mayorista' ? p.Precio_Mayorista : p.Precio_Venta;
@@ -562,43 +563,47 @@ document.getElementById("btn-nuevo-dia").addEventListener("click", () => {
 
 
 // ------------------------------------------------------------------
+// ------------------------------------------------------------------
 // LOGICA DE LA VITRINA (AJUSTES)
 // ------------------------------------------------------------------
-document.getElementById("btn-settings").addEventListener("click", () => {
-    const list = document.getElementById("settings-products-list");
-    list.innerHTML = "";
+document.addEventListener("DOMContentLoaded", () => {
     
-    catalogo_data.forEach(p => {
-        const isHidden = hiddenProducts.includes(p.Codigo);
+    document.getElementById("btn-settings").addEventListener("click", () => {
+        const list = document.getElementById("settings-products-list");
+        list.innerHTML = "";
         
-        const div = document.createElement("div");
-        div.style = "display:flex; justify-content:space-between; align-items:center; padding:12px 5px; border-bottom:1px solid #333;";
-        div.innerHTML = `
-            <span style="font-size:0.95rem;">${p.Nombre}</span>
-            <label class="switch" style="margin:0;">
-                <input type="checkbox" class="chk-visibility" data-codigo="${p.Codigo}" ${!isHidden ? 'checked' : ''}>
-                <span class="slider round"></span>
-            </label>
-        `;
-        list.appendChild(div);
-    });
-    
-    document.querySelectorAll(".chk-visibility").forEach(chk => {
-        chk.addEventListener("change", (e) => {
-            const cod = e.target.getAttribute("data-codigo");
-            if (!e.target.checked) {
-                if(!hiddenProducts.includes(cod)) hiddenProducts.push(cod);
-            } else {
-                hiddenProducts = hiddenProducts.filter(x => x !== cod);
-            }
-            localStorage.setItem('pos_hidden_products', JSON.stringify(hiddenProducts));
-            renderCatalogo();
+        catalogo_data.forEach(p => {
+            const isHidden = hiddenProducts.includes(p.Codigo);
+            
+            const div = document.createElement("div");
+            div.style = "display:flex; justify-content:space-between; align-items:center; padding:12px 5px; border-bottom:1px solid #333;";
+            div.innerHTML = `
+                <span style="font-size:0.95rem;">${p.Nombre}</span>
+                <label class="switch" style="margin:0;">
+                    <input type="checkbox" class="chk-visibility" data-codigo="${p.Codigo}" ${!isHidden ? 'checked' : ''}>
+                    <span class="slider round"></span>
+                </label>
+            `;
+            list.appendChild(div);
         });
+        
+        document.querySelectorAll(".chk-visibility").forEach(chk => {
+            chk.addEventListener("change", (e) => {
+                const cod = e.target.getAttribute("data-codigo");
+                if (!e.target.checked) {
+                    if(!hiddenProducts.includes(cod)) hiddenProducts.push(cod);
+                } else {
+                    hiddenProducts = hiddenProducts.filter(x => x !== cod);
+                }
+                localStorage.setItem('pos_hidden_products', JSON.stringify(hiddenProducts));
+                renderCatalogo();
+            });
+        });
+
+        document.getElementById("modal-settings").style.display = "flex";
     });
 
-    document.getElementById("modal-settings").style.display = "flex";
-});
-
-document.getElementById("btn-settings-close").addEventListener("click", () => {
-    document.getElementById("modal-settings").style.display = "none";
+    document.getElementById("btn-settings-close").addEventListener("click", () => {
+        document.getElementById("modal-settings").style.display = "none";
+    });
 });
