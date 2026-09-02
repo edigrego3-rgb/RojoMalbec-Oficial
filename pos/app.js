@@ -539,7 +539,7 @@ document.getElementById("btn-whatsapp").addEventListener("click", () => {
 
 // SINCRONIZAR DATOS A GOOGLE SHEETS (NUBE)
 document.getElementById("btn-sync-cloud").addEventListener("click", async () => {
-    if(historial_ventas.length === 0 && contactos_b2b.length === 0 && historial_pedidos_b2b.length === 0) return alert("No hay datos para sincronizar.");
+    if(historial_ventas.length === 0 && contactos_b2b.length === 0 && historial_pedidos_b2b.length === 0) return alert("Ya está todo sincronizado, quedate tranquilo. ✅");
     
     if(!GAS_WEBHOOK_URL) {
         return alert("Primero debemos configurar la conexión con el ERP en la computadora. (Falta Webhook URL)");
@@ -569,7 +569,12 @@ document.getElementById("btn-sync-cloud").addEventListener("click", async () => 
         });
         
         if(response.ok) {
-            alert("☁️ ¡Sincronización Exitosa! Los datos ya están en el Buzón de tu Google Sheet.");
+            historial_ventas = [];
+            historial_pedidos_b2b = [];
+            contactos_b2b = [];
+            saveState();
+            actualizarEstadisticasRapidas();
+            alert("✅ ¡Sincronización Exitosa! Los datos se enviaron y la memoria quedó limpia. Podés seguir vendiendo tranquilo.");
         } else {
             alert("Hubo un problema de conexión con Google Sheets. Intentá de nuevo.");
         }
