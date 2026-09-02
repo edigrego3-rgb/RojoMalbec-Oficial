@@ -6,7 +6,7 @@
     <title>POS Rojo Malbec Pro</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="stylesheet" href="style.css?v=3.2">
     <script src="https://unpkg.com/html5-qrcode"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -57,39 +57,38 @@
         </section>
 
         <!-- VISTA: CIERRE -->
-        <section id="view-cierre" class="view">
-            <h2 style="color:#d4af37; margin-bottom:15px;">Hoja de Cierre</h2>
+                <section id="view-cierre" class="view">
+            <h2 id="cierre-title" style="color:#d4af37; margin-bottom:15px;">Hoja de Cierre</h2>
             
-            <div class="card">
-                <div class="card" style="margin-bottom:15px; text-align:center;">
-                <p>Total Acumulado Hoy</p>
-                <h3 id="stat-total" style="font-size:2rem; color:#4CAF50; margin:10px 0;"></h3>
-                <div style="display:flex; justify-content:space-between; font-size:0.9rem; color:#aaa;">
-                    <span>Efectivo: <b id="stat-efectivo"></b></span>
-                    <span>MP: <b id="stat-mp"></b></span>
-                </div>
-            </div>
-            <h3 style="margin-bottom:10px;">Gastos del Evento</h3>
-                <label>Tus Gastos (Espacio, Insumos):</label>
-                <input type="number" id="gastos-edu" value="0" class="large-input">
-                <label style="margin-top:10px; display:block;">Gastos Socio (Nafta, Peajes):</label>
-                <input type="number" id="gastos-alb" value="0" class="large-input">
-            </div>
-
-            <button id="btn-calcular-cierre" class="primary-btn" style="margin:15px 0;">Calcular Reparto</button>
-
-            <div id="reporte-final" style="display:none;">
-                <div class="card ticket">
-                    <h3 style="text-align:center; color:#d4af37; border-bottom:1px dashed #d4af37; padding-bottom:10px;">TICKET DE FIN DE DÍA</h3>
-                    
-                    <div class="resumen-plata">
-                        <p>Venta Total (Ef + MP): <strong id="rep-caja">$0</strong></p>
-                        <p>Costo Recuperado: <span id="rep-costos">$0</span></p>
-                        <p>Gastos Recuperados: <span id="rep-gastos">$0</span></p>
-                        <p>Ganancia Neta Pura: <strong style="color:#4CAF50;" id="rep-neta">$0</strong></p>
+            <!-- SECCION FERIA -->
+            <div id="cierre-feria-section">
+                <div class="card">
+                    <div class="card" style="margin-bottom:15px; text-align:center;">
+                    <p>Total Acumulado Hoy</p>
+                    <h3 id="stat-total" style="font-size:2rem; color:#4CAF50; margin:10px 0;"></h3>
+                    <div style="display:flex; justify-content:space-between; font-size:0.9rem; color:#aaa;">
+                        <span>Efectivo: <b id="stat-efectivo"></b></span>
+                        <span>MP: <b id="stat-mp"></b></span>
                     </div>
+                </div>
+                <h3 style="margin-bottom:10px;">Gastos del Evento</h3>
+                    <label>Tus Gastos (Espacio, Insumos):</label>
+                    <input type="number" id="gastos-edu" value="0" class="large-input">
+                    <label style="margin-top:10px; display:block;">Gastos Socio (Nafta, Peajes):</label>
+                    <input type="number" id="gastos-alb" value="0" class="large-input">
+                </div>
 
-                    <div class="reparto-caja">
+                <button id="btn-calcular-cierre" class="primary-btn" style="margin:15px 0;">Calcular Reparto</button>
+
+                <div id="reporte-final" style="display:none; background:#1a1a1a; padding:15px; border-radius:10px; border:1px solid #d4af37; margin-bottom:15px;">
+                    <div style="margin-bottom:15px; font-size:1.1rem;">
+                        <p>Venta Total (Ef + MP): <strong id="rep-caja">$0</strong></p>
+                        <p style="color:#aaa; font-size:0.9rem;">Costo Recuperado: <span id="rep-costos">$0</span></p>
+                        <p style="color:#aaa; font-size:0.9rem;">Gastos Recuperados: <span id="rep-gastos">$0</span></p>
+                        <p style="color:#4CAF50;">Ganancia Neta Pura: <strong id="rep-neta">$0</strong></p>
+                    </div>
+                    
+                    <div style="background:#fff; color:#000; padding:15px; border-radius:8px;">
                         <h4>Instrucción de Liquidación</h4>
                         <div class="split-box">
                             <span class="name">Eduardo</span>
@@ -102,20 +101,24 @@
                         <div id="instruccion-liquidacion" style="background:#222; padding:10px; border-radius:8px; font-size:0.85rem; line-height:1.4; color:#ddd; margin-bottom:10px; text-align:center;">
                             (Calculando cómo dividir los pagos físicos...)
                         </div>
-                    </div>
-
-                    <div class="inventario-vendido">
-                        <h4>Detalle de Unidades Vendidas</h4>
-                        <ul id="lista-vendidos"></ul>
+                        
+                        <h4 style="margin-top:15px; border-bottom:1px solid #ccc; padding-bottom:5px;">Detalle de Unidades Vendidas</h4>
+                        <ul id="lista-vendidos" class="lista-detalles"></ul>
                     </div>
                 </div>
-                
-                <div style="display:flex; gap:10px; margin-top:15px;">
-                    <button id="btn-whatsapp" class="action-btn outline">📲 Enviar a WhatsApp</button>
-                    <button id="btn-download-json" class="action-btn" style="background-color:#d4af37; color:#000;">📥 Bajar Ventas ERP</button>
-                    <button id="btn-nuevo-dia" class="action-btn" style="background-color:#555;">Vaciar Todo</button>
+            </div> <!-- End Cierre Feria Section -->
+            
+            <!-- SECCION B2B -->
+            <div id="cierre-b2b-section" style="display:none;">
+                <div class="card" style="border-color:#4fa3d1;">
+                    <p style="text-align:center; color:#aaa;">Total Pedidos B2B Hoy</p>
+                    <h3 id="stat-total-b2b" style="font-size:2.2rem; color:#4fa3d1; margin:10px 0; text-align:center;">$0</h3>
+                </div>
+                <div id="lista-pedidos-b2b" style="margin-top:15px; display:flex; flex-direction:column; gap:10px;">
+                    <!-- B2B cards here -->
                 </div>
             </div>
+            
         </section>
     </main>
 
@@ -219,6 +222,6 @@
     </div>
 
     <script src="catalogo.js"></script>
-    <script src="app.js?v=3.1"></script>
+    <script src="app.js?v=3.2"></script>
 </body>
 </html>
