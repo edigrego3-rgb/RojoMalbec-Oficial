@@ -6,7 +6,7 @@
     <title>POS Rojo Malbec Pro</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="style.css?v=4.3">
+    <link rel="stylesheet" href="style.css?v=4.4">
     <script src="https://unpkg.com/html5-qrcode"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -15,6 +15,7 @@
         <header style="display:flex; justify-content:space-between; align-items:center; padding:15px 20px;">
         <h1 style="margin:0; font-size:1.4rem;">🍷 <span id="app-title">RM</span></h1>
         <div style="display:flex; gap:15px; align-items:center;">
+            <button id="btn-settings" style="background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0; margin:0 5px;" title="Configurar Vitrina">⚙️</button>
             <div class="toggle-container" style="margin:0;">
                 <label class="switch"><input type="checkbox" id="chk-modo-mayorista"><span class="slider round"></span></label>
                 <span id="lbl-mayorista" style="font-size:0.8rem;">B2B</span>
@@ -229,7 +230,21 @@
     </div>
 
     <script src="catalogo.js"></script>
-    <script src="app.js?v=4.3"></script>
+    <script src="app.js?v=4.4"></script>
+
+    <!-- MODAL SETTINGS (VITRINA) -->
+    <div id="modal-settings" class="modal" style="display:none;">
+        <div class="modal-content" style="border-color:#d4af37;">
+            <h3 style="color:#d4af37; margin-bottom:10px;">⚙️ Tu Vitrina Hoy</h3>
+            <p style="font-size:0.9rem; color:#aaa; margin-bottom:15px; line-height:1.3;">
+                Apagá los productos que NO trajiste hoy. Esto los ocultará de tu pantalla para que no te confundas al cobrar.
+            </p>
+            <div id="settings-products-list" style="max-height: 50vh; overflow-y: auto; margin-bottom: 20px; text-align:left;">
+                <!-- Switches inyectados desde JS -->
+            </div>
+            <button id="btn-settings-close" class="primary-btn">Listo, a vender</button>
+        </div>
+    </div>
 
     <!-- MODAL DESCARGA SEGURA -->
     <div id="modal-descarga-segura" class="modal" style="display:none;">
