@@ -6,7 +6,7 @@
     <title>POS Rojo Malbec Pro</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="style.css?v=2.4">
+    <link rel="stylesheet" href="style.css?v=2.5">
     <script src="https://unpkg.com/html5-qrcode"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -80,7 +80,7 @@
                     <h3 style="text-align:center; color:#d4af37; border-bottom:1px dashed #d4af37; padding-bottom:10px;">TICKET DE FIN DE DÍA</h3>
                     
                     <div class="resumen-plata">
-                        <p>Total en Efectivo: <strong id="rep-caja">$0</strong></p>
+                        <p>Venta Total (Ef + MP): <strong id="rep-caja">$0</strong></p>
                         <p>Costo Recuperado: <span id="rep-costos">$0</span></p>
                         <p>Gastos Recuperados: <span id="rep-gastos">$0</span></p>
                         <p>Ganancia Neta Pura: <strong style="color:#4CAF50;" id="rep-neta">$0</strong></p>
@@ -88,8 +88,16 @@
 
                     <div class="reparto-caja">
                         <h4>Instrucción de Liquidación</h4>
-                        <div id="instruccion-liquidacion" style="background:#222; padding:10px; border-radius:8px; font-size:0.95rem; line-height:1.4; color:#ddd; margin-bottom:10px;">
-                            (Calculando repartición...)
+                        <div class="split-box">
+                            <span class="name">Eduardo</span>
+                            <span class="amount" id="rep-edu">$0</span>
+                        </div>
+                        <div class="split-box" id="rep-socio-box" style="margin-bottom: 10px;">
+                            <span class="name">Socio</span>
+                            <span class="amount" id="rep-alb">$0</span>
+                        </div>
+                        <div id="instruccion-liquidacion" style="background:#222; padding:10px; border-radius:8px; font-size:0.85rem; line-height:1.4; color:#ddd; margin-bottom:10px; text-align:center;">
+                            (Calculando cómo dividir los pagos físicos...)
                         </div>
                     </div>
 
@@ -194,6 +202,6 @@
     </div>
 
     <script src="catalogo.js"></script>
-    <script src="app.js?v=2.4"></script>
+    <script src="app.js?v=2.5"></script>
 </body>
 </html>

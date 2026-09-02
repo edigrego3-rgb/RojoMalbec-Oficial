@@ -377,6 +377,27 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
     document.getElementById("reporte-final").style.display = "block";
 });
 
+// BOTON WHATSAPP RESTAURADO
+document.getElementById("btn-whatsapp").addEventListener("click", () => {
+    let tVentas = document.getElementById("rep-caja").innerText;
+    let tEdu = document.getElementById("rep-edu").innerText;
+    let tAlb = document.getElementById("rep-alb").innerText;
+    let isSocio = document.getElementById("chk-socio").checked;
+    
+    let msj = `*CIERRE FERIA ROJO MALBEC* %0A`;
+    msj += `Venta Total: ${tVentas}%0A`;
+    msj += `Eduardo: ${tEdu}%0A`;
+    if(isSocio) msj += `Acompañante: ${tAlb}%0A%0A`;
+    
+    msj += `*Unidades Vendidas:*%0A`;
+    const lis = document.querySelectorAll("#lista-vendidos li");
+    lis.forEach(li => {
+        msj += `- ${li.innerText.replace('\n', ' ')}%0A`;
+    });
+    
+    window.open(`https://wa.me/?text=${msj}`, '_blank');
+});
+
 // DESCARGAR JSON PARA ERP
 document.getElementById("btn-download-json").addEventListener("click", () => {
     if(historial_ventas.length === 0 && contactos_b2b.length === 0) return alert("No hay datos para exportar.");
@@ -396,6 +417,9 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
     dlAnchorElem.setAttribute("href", dataStr);
     dlAnchorElem.setAttribute("download", `ventas_feria_${new Date().getTime()}.json`);
     dlAnchorElem.click();
+    
+    // VISUAL FEEDBACK
+    alert("¡Archivo guardado en las Descargas de tu celular! Ya lo podés mandar por WhatsApp para el ERP.");
 });
 
 // VACIAR TODO
