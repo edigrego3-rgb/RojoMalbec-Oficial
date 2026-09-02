@@ -435,7 +435,7 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
 
 // VACIAR TODO
 document.getElementById("btn-nuevo-dia").addEventListener("click", () => {
-    if(confirm("Â¿Seguro querÃ©s vaciar TODO (Ventas, B2B y Carrito)? Hacelo SÃ“LO si ya descargaste el archivo ERP.")) {
+    if(confirm("¿Seguro queres vaciar TODO (Ventas, B2B y Carrito)? Hacelo SOLO si ya descargaste el archivo ERP.")) {
         carrito = [];
         historial_ventas = [];
         contactos_b2b = [];
