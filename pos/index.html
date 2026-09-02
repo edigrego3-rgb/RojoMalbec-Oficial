@@ -6,7 +6,7 @@
     <title>POS Rojo Malbec Pro</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="style.css?v=2.6">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <script src="https://unpkg.com/html5-qrcode"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -186,6 +186,20 @@
         </div>
     </div>
 
+    <!-- MODAL PEDIDO B2B -->
+    <div id="modal-pedido-b2b" class="modal" style="display:none;">
+        <div class="modal-content" style="border-color:#4fa3d1;">
+            <h3 style="color:#4fa3d1; margin-bottom:15px;">Generar Pedido B2B</h3>
+            <p style="font-size:1.2rem; text-align:center; margin-bottom:10px;" id="b2b-total-txt"></p>
+            <label style="display:block; margin-bottom:5px;">Nombre del Comercio / Cliente:</label>
+            <input type="text" id="input-b2b-cliente" class="large-input" placeholder="Ej: Vinoteca San Martin">
+            <div style="display:flex; gap:10px; margin-top:20px;">
+                <button id="btn-b2b-cancel" class="action-btn outline" style="flex:1;">Cancelar</button>
+                <button id="btn-b2b-guardar" class="primary-btn" style="flex:1; background-color:#4fa3d1;">Guardar Pedido</button>
+            </div>
+        </div>
+    </div>
+
     <!-- MODAL B2B -->
     <div id="modal-b2b" class="modal" style="display:none;">
         <div class="modal-content">
@@ -202,6 +216,6 @@
     </div>
 
     <script src="catalogo.js"></script>
-    <script src="app.js?v=2.6"></script>
+    <script src="app.js?v=3.0"></script>
 </body>
 </html>

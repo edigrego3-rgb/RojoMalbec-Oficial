@@ -68,3 +68,36 @@ main { padding: 15px; }
 /* Combo List Item */
 .combo-sel-item { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #333; align-items:center;}
 .combo-sel-btn { background:#d4af37; color:#111; border:none; padding:5px 10px; border-radius:4px; font-weight:bold; cursor:pointer;}
+/* MODO MAYORISTA (B2B) */
+body.modo-mayorista {
+    background-color: #0d1f2d;
+}
+body.modo-mayorista header {
+    border-bottom: 2px solid #4fa3d1;
+}
+body.modo-mayorista #app-title {
+    color: #4fa3d1;
+}
+body.modo-mayorista .active {
+    color: #4fa3d1 !important;
+}
+body.modo-mayorista .cart-card {
+    border-left-color: #4fa3d1;
+}
+body.modo-mayorista .cart-card-price {
+    color: #4fa3d1;
+}
+body.modo-mayorista .action-btn {
+    border-color: #4fa3d1;
+    color: #4fa3d1;
+}
+body.modo-mayorista .primary-btn {
+    background: #4fa3d1;
+    color: #fff;
+}
+body.modo-mayorista #btn-cobrar {
+    background: #4fa3d1;
+}
+body.modo-mayorista #cierre-title {
+    color: #4fa3d1 !important;
+}

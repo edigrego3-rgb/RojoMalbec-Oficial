@@ -1,6 +1,8 @@
 ﻿
 let carrito = [];
 let historial_ventas = [];
+let historial_pedidos_b2b = [];
+let app_mode = 'feria'; // 'feria' o 'mayorista'
 let contactos_b2b = [];
 let comboSeleccionados = [];
 let currentEditId = null;
@@ -24,6 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const savedB2b = localStorage.getItem("rm_pos_b2b");
     if(savedB2b) { try { contactos_b2b = JSON.parse(savedB2b); } catch(e){} }
 
+    const savedB2bOrders = localStorage.getItem("rm_pos_b2b_pedidos");
+    if(savedB2bOrders) { try { historial_pedidos_b2b = JSON.parse(savedB2bOrders); } catch(e){} }
+
     renderCatalogo();
     renderCarrito();
     configNavigation();
@@ -34,7 +39,35 @@ function saveState() {
     localStorage.setItem("rm_pos_cart", JSON.stringify(carrito));
     localStorage.setItem("rm_pos_historial", JSON.stringify(historial_ventas));
     localStorage.setItem("rm_pos_b2b", JSON.stringify(contactos_b2b));
+    localStorage.setItem("rm_pos_b2b_pedidos", JSON.stringify(historial_pedidos_b2b));
 }
+
+
+// MODO MAYORISTA SWITCH
+document.getElementById("chk-modo-mayorista").addEventListener("change", (e) => {
+    if(carrito.length > 0) {
+        if(!confirm("Cambiar de modo vaciará tu carrito actual para no mezclar precios. ¿Estás seguro?")) {
+            e.preventDefault();
+            e.target.checked = !e.target.checked;
+            return;
+        }
+        carrito = [];
+    }
+    
+    app_mode = e.target.checked ? 'mayorista' : 'feria';
+    
+    if(app_mode === 'mayorista') {
+        document.body.classList.add("modo-mayorista");
+        document.getElementById("btn-cobrar").innerText = "GENERAR PEDIDO";
+    } else {
+        document.body.classList.remove("modo-mayorista");
+        document.getElementById("btn-cobrar").innerText = "COBRAR TICKET";
+    }
+    
+    renderCatalogo();
+    renderCarrito();
+    actualizarEstadisticasRapidas();
+});
 
 // NAVEGACION
 function configNavigation() {
@@ -53,15 +86,36 @@ function configNavigation() {
 }
 
 function actualizarEstadisticasRapidas() {
-    let tTotal = 0, tEfe = 0, tMP = 0;
-    historial_ventas.forEach(v => {
-        tTotal += v.total;
-        if(v.medio === 'Efectivo') tEfe += v.total;
-        else tMP += v.total;
-    });
-    document.getElementById("stat-total").innerText = "$ " + tTotal.toLocaleString();
-    document.getElementById("stat-efectivo").innerText = "$ " + tEfe.toLocaleString();
-    document.getElementById("stat-mp").innerText = "$ " + tMP.toLocaleString();
+    if(app_mode === 'mayorista') {
+        let tB2b = historial_pedidos_b2b.reduce((sum, p) => sum + p.total, 0);
+        document.getElementById("cierre-feria-section").style.display = "none";
+        document.getElementById("cierre-b2b-section").style.display = "block";
+        document.getElementById("stat-total-b2b").innerText = "$ " + tB2b.toLocaleString();
+        
+        let list = document.getElementById("lista-pedidos-b2b");
+        list.innerHTML = "";
+        historial_pedidos_b2b.forEach(p => {
+            let desc = p.items.map(i => `${i.cantidad}x ${i.nombre}`).join(", ");
+            list.innerHTML += `<div class="cart-card" style="border-left-color:#4fa3d1; display:block;">
+                <strong style="color:#4fa3d1;">${p.cliente}</strong> <span style="float:right; font-weight:bold;">$${p.total}</span>
+                <div style="font-size:0.8rem; color:#aaa; margin-top:5px;">${desc}</div>
+            </div>`;
+        });
+        
+    } else {
+        document.getElementById("cierre-feria-section").style.display = "block";
+        document.getElementById("cierre-b2b-section").style.display = "none";
+        
+        let tTotal = 0, tEfe = 0, tMP = 0;
+        historial_ventas.forEach(v => {
+            tTotal += v.total;
+            if(v.medio === 'Efectivo') tEfe += v.total;
+            else tMP += v.total;
+        });
+        document.getElementById("stat-total").innerText = "$ " + tTotal.toLocaleString();
+        document.getElementById("stat-efectivo").innerText = "$ " + tEfe.toLocaleString();
+        document.getElementById("stat-mp").innerText = "$ " + tMP.toLocaleString();
+    }
 }
 
 // RENDERIZADO CATALOGO
@@ -71,10 +125,11 @@ function renderCatalogo() {
     catalogo_data.forEach(p => {
         let div = document.createElement("div");
         div.className = "cart-card";
+        let displayPrice = app_mode === 'mayorista' ? p.Precio_Mayorista : p.Precio_Venta;
         div.innerHTML = `
             <div class="cart-card-info">
                 <div class="cart-card-title">${p.Nombre}</div>
-                <div style="color:#aaa; font-size:0.9rem;">$ ${p.Precio_Venta}</div>
+                <div style="color:#aaa; font-size:0.9rem;">$ ${displayPrice}</div>
             </div>
             <button class="action-btn outline" style="padding:8px; flex:none; width:80px;" onclick="agregarAlCarritoPorCodigo('${p.Codigo}')">Vender</button>
         `;
@@ -95,12 +150,13 @@ function agregarAlCarrito(producto, isCombo=false, comboNombres=[]) {
     if(exist) {
         exist.cantidad += 1;
     } else {
+        let pFinal = app_mode === 'mayorista' ? producto.Precio_Mayorista : producto.Precio_Venta;
         carrito.push({
             id: Date.now().toString() + Math.random().toString(36).substr(2, 5),
             codigo: producto.Codigo || "GENERICO",
             nombre: producto.Nombre,
-            precioOriginal: producto.Precio_Venta,
-            precioFinal: producto.Precio_Venta,
+            precioOriginal: pFinal,
+            precioFinal: pFinal,
             costoUnitario: producto.Precio_Mayorista,
             cantidad: 1,
             esCombo: isCombo,
@@ -284,9 +340,36 @@ document.getElementById("fab-scan").addEventListener("click", () => {
 document.getElementById("btn-cobrar").addEventListener("click", () => {
     if(carrito.length === 0) return;
     let t = carrito.reduce((s,i) => s + (i.precioFinal * i.cantidad), 0);
-    document.getElementById("cobro-total-txt").innerText = "A COBRAR: $" + t.toLocaleString();
-    document.getElementById("modal-cobro").style.display = "flex";
+    
+    if(app_mode === 'mayorista') {
+        document.getElementById("b2b-total-txt").innerText = "TOTAL B2B: $" + t.toLocaleString();
+        document.getElementById("input-b2b-cliente").value = "";
+        document.getElementById("modal-pedido-b2b").style.display = "flex";
+    } else {
+        document.getElementById("cobro-total-txt").innerText = "A COBRAR: $" + t.toLocaleString();
+        document.getElementById("modal-cobro").style.display = "flex";
+    }
 });
+document.getElementById("btn-b2b-cancel").addEventListener("click", () => document.getElementById("modal-pedido-b2b").style.display = "none");
+document.getElementById("btn-b2b-guardar").addEventListener("click", () => {
+    let cli = document.getElementById("input-b2b-cliente").value.trim();
+    if(!cli) return alert("Ingresa el nombre del cliente/vinoteca");
+    
+    let t = carrito.reduce((s,i) => s + (i.precioFinal * i.cantidad), 0);
+    historial_pedidos_b2b.push({
+        id: "B2B-" + Date.now(),
+        fecha: new Date().toISOString(),
+        cliente: cli,
+        items: JSON.parse(JSON.stringify(carrito)),
+        total: t
+    });
+    
+    carrito = [];
+    renderCarrito();
+    document.getElementById("modal-pedido-b2b").style.display = "none";
+    alert(`Pedido B2B guardado exitosamente para ${cli}`);
+});
+
 document.getElementById("btn-pago-cancel").addEventListener("click", () => document.getElementById("modal-cobro").style.display = "none");
 
 function procesarPago(medio) {
@@ -416,6 +499,7 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
     const payload = {
         fecha_exportacion: new Date().toISOString(),
         ventas: historial_ventas,
+        pedidos_mayoristas: historial_pedidos_b2b,
         contactos_b2b: contactos_b2b,
         gastos: {
             eduardo: parseFloat(document.getElementById("gastos-edu").value) || 0,
@@ -438,6 +522,7 @@ document.getElementById("btn-nuevo-dia").addEventListener("click", () => {
     if(confirm("¿Seguro queres vaciar TODO (Ventas, B2B y Carrito)? Hacelo SOLO si ya descargaste el archivo ERP.")) {
         carrito = [];
         historial_ventas = [];
+        historial_pedidos_b2b = [];
         contactos_b2b = [];
         saveState();
         renderCarrito();
