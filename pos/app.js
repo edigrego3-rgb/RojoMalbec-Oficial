@@ -334,7 +334,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 mensaje = `¡Hola${nom ? ' ' + nom : ''}! Un gusto conocerte. Acá te dejo el acceso a nuestro portal exclusivo de distribuidores y mayoristas: https://rojomalbec-b2b.streamlit.app/ (Avisame y te paso tu clave de acceso).`;
             }
             
-            let urlWA = `https://wa.me/${tel}?text=${encodeURIComponent(mensaje)}`;
+            let telClean = tel.replace(/\D/g,'');
+            if (telClean.length === 10) {
+                telClean = "549" + telClean;
+            } else if (telClean.length === 13 && telClean.startsWith("54")) {
+                // already fine
+            }
+            let urlWA = `https://wa.me/${telClean}?text=${encodeURIComponent(mensaje)}`;
             window.open(urlWA, '_blank');
             
             document.getElementById("modal-compartir").style.display = "none";
