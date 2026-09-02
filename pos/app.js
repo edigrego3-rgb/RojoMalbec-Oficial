@@ -509,14 +509,40 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
         }
     };
     
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(payload, null, 2));
-    const dlAnchorElem = document.createElement('a');
-    dlAnchorElem.setAttribute("href", dataStr);
-    dlAnchorElem.setAttribute("download", `ventas_feria_${new Date().getTime()}.json`);
-    dlAnchorElem.click();
-    
-    // VISUAL FEEDBACK
-    alert("¡Archivo guardado en las Descargas de tu celular! Ya lo podés mandar por WhatsApp para el ERP.");
+    const filename = `ventas_feria_${new Date().getTime()}.json`;
+    const jsonStr = JSON.stringify(payload, null, 2);
+    const blob = new Blob([jsonStr], { type: "application/json" });
+
+    // Función clásica de descarga segura
+    const triggerDownload = () => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        alert("¡Archivo descargado! Buscalo en tu carpeta de Descargas.");
+    };
+
+    // INTENTO DE COMPARTIR DIRECTO A WHATSAPP (Web Share API)
+    if (navigator.share && navigator.canShare) {
+        const file = new File([blob], filename, { type: "application/json" });
+        if (navigator.canShare({ files: [file] })) {
+            navigator.share({
+                title: 'Ventas Rojo Malbec',
+                files: [file]
+            }).catch((err) => {
+                console.log("Usuario cancelo o fallo:", err);
+                triggerDownload(); // Si falla, intenta descarga clasica
+            });
+        } else {
+            triggerDownload();
+        }
+    } else {
+        triggerDownload();
+    }
 });
 
 // VACIAR TODO
