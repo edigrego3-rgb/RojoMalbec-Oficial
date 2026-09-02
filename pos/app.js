@@ -364,8 +364,10 @@ document.getElementById("btn-b2b-guardar").addEventListener("click", () => {
         total: t
     });
     
+    saveState();
     carrito = [];
     renderCarrito();
+    actualizarEstadisticasRapidas();
     document.getElementById("modal-pedido-b2b").style.display = "none";
     alert(`Pedido B2B guardado exitosamente para ${cli}`);
 });
