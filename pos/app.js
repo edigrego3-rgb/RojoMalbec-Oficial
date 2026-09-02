@@ -1,3 +1,5 @@
+const GAS_WEBHOOK_URL = ""; // URL pendiente de configurar en la compu
+
 ﻿
 let carrito = [];
 let historial_ventas = [];
@@ -437,10 +439,10 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
     let instruccion = "";
     if(isSocio) {
         if(tEfe >= albLeCorresponde) {
-            instruccion = `Alberto se lleva <b>$${albLeCorresponde.toLocaleString()}</b> de la caja (billetes). Eduardo se queda con el resto del efectivo y todo el MercadoPago.`;
+            instruccion = `El Socio se lleva <b>$${albLeCorresponde.toLocaleString()}</b> de la caja (billetes). Eduardo se queda con el resto del efectivo y todo el MercadoPago.`;
         } else {
             let faltante = albLeCorresponde - tEfe;
-            instruccion = `Alberto se lleva todo el efectivo fisico ($${tEfe.toLocaleString()}). Ademas, Eduardo le debe transferir <b>$${faltante.toLocaleString()}</b> por MercadoPago para completar su parte.`;
+            instruccion = `El Socio se lleva todo el efectivo fisico ($${tEfe.toLocaleString()}). Ademas, Eduardo le debe transferir <b>$${faltante.toLocaleString()}</b> por MercadoPago para completar su parte.`;
         }
     } else {
         instruccion = ``;
@@ -483,7 +485,7 @@ document.getElementById("btn-whatsapp").addEventListener("click", () => {
     let msj = `*CIERRE FERIA ROJO MALBEC* %0A`;
     msj += `Venta Total: ${tVentas}%0A`;
     msj += `Eduardo: ${tEdu}%0A`;
-    if(isSocio) msj += `Acompañante: ${tAlb}%0A%0A`;
+    if(isSocio) msj += `Socio: ${tAlb}%0A%0A`;
     
     msj += `*Unidades Vendidas:*%0A`;
     const lis = document.querySelectorAll("#lista-vendidos li");
@@ -494,9 +496,13 @@ document.getElementById("btn-whatsapp").addEventListener("click", () => {
     window.open(`https://wa.me/?text=${msj}`, '_blank');
 });
 
-// DESCARGAR JSON PARA ERP
-document.getElementById("btn-download-json").addEventListener("click", () => {
-    if(historial_ventas.length === 0 && contactos_b2b.length === 0) return alert("No hay datos para exportar.");
+// SINCRONIZAR DATOS A GOOGLE SHEETS (NUBE)
+document.getElementById("btn-sync-cloud").addEventListener("click", async () => {
+    if(historial_ventas.length === 0 && contactos_b2b.length === 0 && historial_pedidos_b2b.length === 0) return alert("No hay datos para sincronizar.");
+    
+    if(!GAS_WEBHOOK_URL) {
+        return alert("Primero debemos configurar la conexión con el ERP en la computadora. (Falta Webhook URL)");
+    }
     
     const payload = {
         fecha_exportacion: new Date().toISOString(),
@@ -509,40 +515,30 @@ document.getElementById("btn-download-json").addEventListener("click", () => {
         }
     };
     
-    const filename = `ventas_feria_${new Date().getTime()}.json`;
-    const jsonStr = JSON.stringify(payload, null, 2);
-    const blob = new Blob([jsonStr], { type: "application/json" });
-
-    // Función clásica de descarga segura
-    const triggerDownload = () => {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        alert("¡Archivo descargado! Buscalo en tu carpeta de Descargas.");
-    };
-
-    const url = URL.createObjectURL(blob);
+    const btn = document.getElementById("btn-sync-cloud");
+    btn.innerText = "⏳ Sincronizando...";
+    btn.disabled = true;
     
-    // Configurar enlace real
-    const linkReal = document.getElementById('enlace-descarga-real');
-    linkReal.href = url;
-    linkReal.download = filename;
-    
-    // Intento automático (puede fallar en Xiaomi)
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    
-    // Mostrar modal manual por si el automático falló
-    document.getElementById("modal-descarga-segura").style.display = "flex";
+    try {
+        const response = await fetch(GAS_WEBHOOK_URL, {
+            method: "POST",
+            // Se usa text/plain para evitar que el navegador bloquee la solicitud por CORS preflight
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload)
+        });
+        
+        if(response.ok) {
+            alert("☁️ ¡Sincronización Exitosa! Los datos ya están en el Buzón de tu Google Sheet.");
+        } else {
+            alert("Hubo un problema de conexión con Google Sheets. Intentá de nuevo.");
+        }
+    } catch(err) {
+        console.error("Error sync:", err);
+        alert("Error de conexión. Chequeá tu internet de datos/WiFi e intentá de nuevo.");
+    } finally {
+        btn.innerText = "☁️ Sincronizar a la Nube";
+        btn.disabled = false;
+    }
 });
 
 // VACIAR TODO
