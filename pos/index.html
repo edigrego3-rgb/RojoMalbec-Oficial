@@ -6,7 +6,7 @@
     <title>POS Rojo Malbec Pro</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="style.css?v=4.6">
+    <link rel="stylesheet" href="style.css?v=4.7">
     <script src="https://unpkg.com/html5-qrcode"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -214,23 +214,33 @@
         </div>
     </div>
 
-    <!-- MODAL B2B -->
-    <div id="modal-b2b" class="modal" style="display:none;">
-        <div class="modal-content">
-            <h3 style="color:#d4af37;">Nuevo Contacto Mayorista</h3>
-            <label style="margin-top:10px; display:block;">Nombre / Negocio:</label>
-            <input type="text" id="b2b-nombre" class="large-input" placeholder="Ej: Vinoteca San Martín">
-            <label style="margin-top:10px; display:block;">WhatsApp / Instagram:</label>
-            <input type="text" id="b2b-contacto" class="large-input" placeholder="Ej: 351...">
-            <div style="display:flex; gap:10px; margin-top:15px;">
-                <button id="btn-cancel-b2b" class="action-btn outline">Cancelar</button>
-                <button id="btn-save-b2b" class="action-btn">Guardar Lead</button>
+    <!-- MODAL COMPARTIR / LEAD -->
+    <div id="modal-compartir" class="modal" style="display:none;">
+        <div class="modal-content" style="border-color:#25D366;">
+            <h3 style="color:#25D366;">📲 Compartir Catálogo</h3>
+            <p style="font-size:0.9rem; color:#aaa; margin-bottom:15px;">Enviá el link por WhatsApp y guardá el contacto para el futuro.</p>
+            
+            <label style="margin-top:10px; display:block;">Nombre del Cliente:</label>
+            <input type="text" id="comp-nombre" class="large-input" placeholder="Ej: Juan de Vinoteca...">
+            
+            <label style="margin-top:10px; display:block;">WhatsApp (solo números):</label>
+            <input type="number" id="comp-tel" class="large-input" placeholder="Ej: 3512345678">
+            
+            <label style="margin-top:15px; display:block;">Tipo de Cliente:</label>
+            <select id="comp-tipo" class="large-input" style="background:#111; color:white;">
+                <option value="feria">🛒 Cliente de Feria (Catálogo Minorista)</option>
+                <option value="mayorista">🏢 Distribuidor / Mayorista (Portal B2B)</option>
+            </select>
+            
+            <div style="display:flex; gap:10px; margin-top:20px;">
+                <button id="btn-cancel-comp" class="action-btn outline">Cancelar</button>
+                <button id="btn-save-comp" class="action-btn" style="background:#25D366; border:none; color:white;">Enviar y Guardar</button>
             </div>
         </div>
     </div>
 
     <script src="catalogo.js"></script>
-    <script src="app.js?v=4.6"></script>
+    <script src="app.js?v=4.7"></script>
 
     <!-- MODAL SETTINGS (VITRINA) -->
     <div id="modal-settings" class="modal" style="display:none;">
