@@ -335,10 +335,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             
             let telClean = tel.replace(/\D/g,'');
-            if (telClean.length === 10) {
+            if (telClean.startsWith("549")) {
+                // Ya está perfecto
+            } else if (telClean.startsWith("54")) {
+                telClean = "549" + telClean.substring(2);
+            } else {
+                if (telClean.startsWith("0")) telClean = telClean.substring(1);
+                // Si la persona le metió el 15 (ej: 351 15 2345678 -> largo 12)
+                if (telClean.length === 12 && telClean.indexOf("15") > 0) {
+                    telClean = telClean.replace("15", ""); 
+                }
                 telClean = "549" + telClean;
-            } else if (telClean.length === 13 && telClean.startsWith("54")) {
-                // already fine
             }
             let urlWA = `https://wa.me/${telClean}?text=${encodeURIComponent(mensaje)}`;
             window.open(urlWA, '_blank');
