@@ -355,16 +355,27 @@ document.getElementById("btn-calcular-cierre").addEventListener("click", () => {
             instruccion = `Alberto se lleva <b>$${albLeCorresponde.toLocaleString()}</b> de la caja (billetes). Eduardo se queda con el resto del efectivo y todo el MercadoPago.`;
         } else {
             let faltante = albLeCorresponde - tEfe;
-            instruccion = `Alberto se lleva <b>todo el efectivo</b> de la caja ($${tEfe.toLocaleString()}). AdemÃ¡s, Eduardo le debe transferir <b>$${faltante.toLocaleString()}</b> por MercadoPago.`;
+            instruccion = `Alberto se lleva todo el efectivo fisico ($${tEfe.toLocaleString()}). Ademas, Eduardo le debe transferir <b>$${faltante.toLocaleString()}</b> por MercadoPago para completar su parte.`;
         }
     } else {
-        instruccion = `Eduardo se lleva todo.`;
+        instruccion = ``;
     }
     
     document.getElementById("rep-caja").innerText = "$ " + tVentas.toLocaleString();
     document.getElementById("rep-costos").innerText = "$ " + tCostos.toLocaleString();
     document.getElementById("rep-gastos").innerText = "$ " + (gEdu + gAlb).toLocaleString();
     document.getElementById("rep-neta").innerText = "$ " + neta.toLocaleString();
+    
+    // RESTORED UI BOXES LOGIC
+    document.getElementById("rep-edu").innerText = "$ " + eduLeCorresponde.toLocaleString();
+    if(isSocio) {
+        document.getElementById("rep-socio-box").style.display = "flex";
+        document.getElementById("rep-alb").innerText = "$ " + albLeCorresponde.toLocaleString();
+        document.getElementById("instruccion-liquidacion").style.display = "block";
+    } else {
+        document.getElementById("rep-socio-box").style.display = "none";
+        document.getElementById("instruccion-liquidacion").style.display = "none";
+    }
     
     document.getElementById("instruccion-liquidacion").innerHTML = instruccion;
     
