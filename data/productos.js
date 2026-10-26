@@ -38,6 +38,40 @@ No es para cualquier asado. Es para cuando querés lucirte. Pedí tu lata y dale
     },
 
     {
+        id: 28,
+        nombre: "Sal al Malbec & Té Ahumado",
+        categoria: "sales",
+        emoji: "🍷",
+        imagen: "products/sal-malbec-te-ahumado.jpg",
+        tagline: "El encuentro del viñedo, el humo de pino y el bosque en cada cristal.",
+        descripcion: `🍷🔥 Sal al Malbec & Té Ahumado (Lapsang Souchong) | El Secreto del Fuego y el Bosque
+
+Hay sabores que nacen en la copa y otros que nacen en las brasas. Esta sal de autor une ambos mundos: cristales de sal marina impregnados en reducción de vino Malbec, fusionados con las míticas hebras del té negro Lapsang Souchong —ahumado artesanalmente sobre fuegos de madera de pino en las montañas de Fujian— y la profundidad terrosa de los hongos del bosque.
+
+🌲 La Alquimia de sus Botánicos
+
+🍇 Cristales al Malbec: La acidez frutal y los taninos dulces del vino tinto abrazan la sal marina, creando el puente perfecto con los jugos de la carne.
+
+🔥 Té Negro Lapsang Souchong: El primer té negro de la historia, secado al calor de brasas de pino resinoso. Aporta un ahumado limpio, profundo y elegante (sin químicos ni humo líquido) que se activa apenas toca un plato caliente.
+
+🍄 Hongos del Bosque & Puerro: Un corazón de umami natural y notas dulces de huerta que redondean el paladar y multiplican el sabor de cada bocado.
+
+🌶️ Pimienta Larga (Piper longum): La joya exótica del blend. Su calor lento, especiado y ligeramente dulzón prolonga el final en boca con matices de nuez moscada y madera.
+
+🥩 ¿Cómo usarla? (Sal de Terminación)
+
+Fue creada para el instante mágico en que el plato sale del fuego:
+
+Carnes a las Brasas o Plancha: Espolvoreá una pizca generosa sobre un Ojo de Bife, Bife de Chorizo, Entraña o Cordero recién cortado. El calor propio de la carne despierta al instante el perfume del pino ahumado, los hongos y el vino.
+
+Cocina de Olla y Hongos: El toque maestro para coronar un risotto de hongos, pastas rellenas con manteca de salvia, carnes de caza o vegetales asados al rescoldo.
+
+📦 Envase 100g · Hecho a mano · Producto artesanal · Traslasierra 🌐 rojomalbec.com.ar`,
+        ingredientes: "Sal marina, vino Malbec, té negro ahumado (Lapsang Souchong), hongos del bosque deshidratados, puerro en escamas, pimienta larga",
+        maridaje: "Ojo de bife y carnes a las brasas, cordero, carnes de caza, risottos de hongos, vegetales al rescoldo"
+    },
+
+    {
         id: 2,
         nombre: "Sal British",
         categoria: "sales",
